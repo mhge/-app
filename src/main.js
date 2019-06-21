@@ -6,8 +6,10 @@ import Vant from "vant";
 import "vant/lib/index.css";
 import router from "./router";
 
+
 Vue.config.productionTip = false;
 Vue.use(Vant);
+
 
 /* eslint-disable no-new */
 new Vue({

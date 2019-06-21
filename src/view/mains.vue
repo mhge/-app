@@ -1,6 +1,5 @@
 <template>
   <div>
-    <van-nav-bar :title="tit" right-text="按钮" left-arrow @click-left="onClickLeft"/>
     <router-view @get="name"></router-view>
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o" to="/main">首页</van-tabbar-item>
@@ -32,4 +31,5 @@ export default {
 </script>
 
 <style>
+
 </style>
