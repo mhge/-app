@@ -8,12 +8,11 @@ import Fb from "../view/fb.vue";
 import Zcq from "../view/zcq.vue";
 
 import Xz from "../view/xz.vue";
-import Xz1 from "../view/xz.1.vue";
 import Search from "../view/search.vue";
 
-import Bmain from "../view/bmain.vue";
 import Banner from "../view/banner.vue";
 import Baoming from "../view/baoming.vue";
+import Jqbm from "../view/jqbm.vue";
 
 import Tjsh from "../view/tjsh.vue";
 
@@ -23,6 +22,13 @@ import Zyz from "../view/zyz.vue";
 
 import Qbhds from "../view/qbhds.vue";
 import Qbhd from "../view/qbhd.vue";
+import Fpzk from "../view/fpzk.vue";
+import Jlzl from "../view/jlzl.vue";
+import Gaet from "../view/gaet.vue";
+
+import Xq from "../view/xq.vue";
+import Jzdt from "../view/jzdt.vue";
+import Jzhb from "../view/jzhb.vue";
 
 Vue.use(Router);
 
@@ -30,7 +36,7 @@ export default new Router({
   routes: [
     {
       path: "/",
-      redirect: "/mains"
+      redirect: "/main"
     },
     {
       path: "/mains",
@@ -58,27 +64,22 @@ export default new Router({
       path: "/xz",
       component: Xz
     },
-    {
-      path: "/xz1",
-      component: Xz1
-    },
+
     {
       path: "/search",
       component: Search
     },
     {
-      path: "/bmain",
-      component: Bmain,
-      children: [
-        {
-          path: "/banner",
-          component: Banner
-        },
-        {
-          path: "/baoming",
-          component: Baoming
-        }
-      ]
+      path: "/baoming",
+      component: Baoming
+    },
+    {
+      path: "/banner",
+      component: Banner
+    },
+    {
+      path: "/jqbm",
+      component: Jqbm
     },
     {
       path: "/tjsh",
@@ -94,11 +95,29 @@ export default new Router({
     },
     {
       path: "/qbhds",
-      component: Qbhds
+      component: Qbhds,
+      children: [
+        {
+          path: "/qbhd",
+          component: Qbhd
+        },
+        {
+          path: "/fpzk",
+          component: Fpzk
+        },
+        {
+          path: "/jlzl",
+          component: Jlzl
+        },
+        {
+          path: "/gaet",
+          component: Gaet
+        }
+      ]
     },
-    {
-      path: "/qbhd",
-      component: Qbhd
-    }
+
+    { path: "/xq", component: Xq },
+    { path: "/jzhb", component: Jzhb },
+    { path: "/jzdt", component: Jzdt }
   ]
 });

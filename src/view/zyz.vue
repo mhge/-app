@@ -57,7 +57,7 @@
       </van-col>
     </van-row>
 
-    <van-row class="color">
+    <van-row>
       <van-col span="20" offset="1">
         <div>
           <h4>作为志愿者的创建者，我有什么样的责任和义务？</h4>
@@ -66,8 +66,6 @@
           <p>3、deleniti commodi ab impedit dignissimos exercitationem recusandae quia veritatis?</p>
         </div>
       </van-col>
-    </van-row>
-    <van-row class="color">
       <van-col span="20" offset="1">
         <div>
           <h4>哪些志愿团队可以接收我？</h4>
@@ -76,8 +74,6 @@
           <p>3、deleniti commodi ab impedit dignissimos exercitationem recusandae quia veritatis?</p>
         </div>
       </van-col>
-    </van-row>
-    <van-row class="color">
       <van-col span="20" offset="1">
         <div>
           <h4>原来的志愿团队去哪了？</h4>
@@ -93,7 +89,7 @@
 export default {
   methods: {
     onClickLeft() {
-      Toast("返回");
+      this.$router.push("/main");
     }
   }
 };
@@ -107,12 +103,12 @@ img {
   height: 4rem;
 }
 .back {
-  height: 120px;
+  height: 113px;
 
   background-image: url("../assets/xz.jpg");
 }
 .bcont {
-  margin-top: 50px;
+  margin-top: 26px;
 }
 
 .bcont > .van-cell__title .van-cell__label {

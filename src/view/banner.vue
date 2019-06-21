@@ -1,5 +1,7 @@
 <template>
   <div class="head">
+    <van-nav-bar title="童话八音盒" fixed left-arrow @click-left="onClickLeft"/>
+    <van-field/>
     <van-panel title="标题">
       <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed minus quidem voluptas facilis consequatur molestias, tenetur impedit tempore fugit id ad incidunt voluptatem cumque, nemo explicabo obcaecati, placeat laudantium.</div>
     </van-panel>
@@ -131,24 +133,22 @@
       </van-col>
     </van-row>
     <p>有任何问题欢迎咨询！！！</p>
+
+    <van-tabbar v-model="active">
+      <van-tabbar-item to="baoming">报名</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 <script>
 export default {
-  data() {
-    return { list: "报名", title: "童话八音盒" };
-  },
-  mounted() {
-    this.$emit("send", this.list);
-    this.$emit("dt", this.title);
+  methods: {
+    onClickLeft() {
+      this.$router.push("/main");
+    }
   }
 };
 </script>
 <style scoped>
-.head {
-  margin-top: 46px;
-  margin-bottom: 70px;
-}
 .van-cell {
   color: #8f8f90;
 }
@@ -177,8 +177,8 @@ a {
 }
 p > img,
 .li-chi > img {
-  width: 6rem;
-  height: 4rem;
+  width: 260px;
+  height: 150px;
 }
 .van-panel__content {
   margin: 4px 0;
@@ -188,7 +188,7 @@ p > img,
 }
 .color {
   background: gainsboro;
-  margin: 20px 1.6rem;
+  margin: 40px 52px;
 }
 .color a {
   display: inline-block;
@@ -240,5 +240,9 @@ h4 {
   width: 6rem;
   margin: 0 auto;
   text-align: center;
+}
+.van-tabbar-item {
+  background-color: #e8e8ea;
+  color: black;
 }
 </style>

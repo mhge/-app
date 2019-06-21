@@ -1,5 +1,6 @@
 <template>
   <div class="head">
+    <van-nav-bar title="志愿者认证" fixed left-arrow @click-left="onClickLeft"/>
     <van-cell-group>
       <van-field/>
       <van-field v-model="username" label="真实姓名" placeholder="请输入真实的姓名"/>
@@ -17,6 +18,9 @@
         <div contenteditable="true">请简要描述你本人的主要情况，如:家庭、教育等</div>
       </van-col>
     </van-row>
+    <van-tabbar v-model="active">
+      <van-tabbar-item to="tjsh">提交</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
@@ -24,8 +28,7 @@
 export default {
   data() {
     return {
-      list: "提交",
-      title: "志愿者认证",
+      active: 0,
       username: "",
       sfz: "",
       age: "",
@@ -35,16 +38,14 @@ export default {
       work: ""
     };
   },
-  mounted() {
-    this.$emit("send", this.list);
-    this.$emit("dt", this.title);
+  methods: {
+    onClickLeft() {
+      Toast("返回");
+    }
   }
 };
 </script>
 <style scoped>
-.head {
-  margin-bottom: 4.375rem;
-}
 .width {
   background: #f2f2f9;
   height: 0.625rem;
@@ -62,5 +63,9 @@ p:nth-of-type(2) {
 }
 div:focus {
   outline: none;
+}
+.van-tabbar-item {
+  background-color: #e8e8ea;
+  color: black;
 }
 </style>

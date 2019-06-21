@@ -3,7 +3,7 @@
     <van-col span="20" offset="2">
       <img src="../assets/xz.jpg">
       <p>提交成功，等待审核</p>
-      <a>返回首页</a>
+      <a href="/main">返回首页</a>
     </van-col>
   </van-row>
 </template>

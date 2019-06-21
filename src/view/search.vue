@@ -25,7 +25,9 @@ export default {
     onSearch() {
       console.log("手机键盘调用搜索");
     },
-    onCancel() {}
+    onCancel() {
+      this.$router.push("/main");
+    }
   }
 };
 </script>
