@@ -1,7 +1,6 @@
 <template>
   <div>
-    <van-nav-bar :title="tit" right-text="按钮" left-arrow @click-left="onClickLeft"/>
-    <router-view @get="send"></router-view>
+    <router-view @get="name"></router-view>
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o" to="/main">首页</van-tabbar-item>
       <van-tabbar-item icon="search" to="/dtqb">动态</van-tabbar-item>
@@ -13,6 +12,7 @@
 
 <script>
 export default {
+  name: "mains",
   data() {
     return {
       active: 0,
@@ -23,8 +23,7 @@ export default {
     onClickLeft() {
       Toast("返回");
     },
-    send(data) {
-      console.log(data);
+    name(data) {
       this.tit = data;
     }
   }
@@ -32,4 +31,5 @@ export default {
 </script>
 
 <style>
+
 </style>
