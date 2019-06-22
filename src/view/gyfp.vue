@@ -1,31 +1,27 @@
 <template>
   <div>
-<van-row type="flex" justify="center">
-  <van-col span="12" class="imgs">
-  <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-  </van-col>
-</van-row>
+    <van-row type="flex" justify="center">
+      <van-col span="12" class="imgs">
+        <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+      </van-col>
+    </van-row>
   </div>
 </template>
 <script>
 export default {
   data() {
-    return {
-
-    };
+    return {};
   },
-  mounted() {
-
-  }
+  mounted() {}
 };
 </script>
 <style scoped>
-.imgs{
+.imgs {
   height: 120px;
-  margin-top:80px; 
+  margin-top: 80px;
 }
-img{
-  width:100% ;
+img {
+  width: 100%;
   height: 100%;
 }
 </style>

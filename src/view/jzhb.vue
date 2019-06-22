@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-row class="li">
-      <van-col span="20" class="li-chi" offset="2">
+      <van-col span="23" class="li-chi" offset="1">
         <a>
           <span></span>
         </a>
@@ -14,7 +14,7 @@
         <img src="../assets/xz.jpg">
         <img src="../assets/xz.jpg">
       </van-col>
-      <van-col span="20" class="li-chi" offset="2">
+      <van-col span="23" class="li-chi" offset="1">
         <a>
           <span></span>
         </a>
