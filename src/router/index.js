@@ -32,8 +32,6 @@ import Xmxqs from "../view/xmxqs.vue";
 import Xmxq from "../view/xmxq.vue";
 import Zyz from "../view/zyz.vue";
 
-
-<<<<<<< HEAD
 import Zcq from "../view/zcq.vue";
 import Dl from "../view/dl.vue";
 import Dlu from "../view/dlu.vue";
@@ -43,8 +41,6 @@ import Wode from "../view/wode.vue";
 
 Vue.use(Router);
 
-=======
->>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
 export default new Router({
   routes: [
     {
@@ -62,30 +58,30 @@ export default new Router({
         }
       ]
     },
-		{
-		  path: "/zcq",
-		  component: Zcq
-		},
-		{
-		  path: "/dl",
-		  component: Dl
-		},
-		{
-		  path: "/dlu",
-		  component: Dlu
-		},
-		{
-		  path: "/zz",
-		  component: Zz
-		},
-		{
-		  path: "/wjmm",
-		  component: Wjmm
-		},
-		 {
-		  path: "/wode",
-		  component: Wode
-		},
+    {
+      path: "/zcq",
+      component: Zcq
+    },
+    {
+      path: "/dl",
+      component: Dl
+    },
+    {
+      path: "/dlu",
+      component: Dlu
+    },
+    {
+      path: "/zz",
+      component: Zz
+    },
+    {
+      path: "/wjmm",
+      component: Wjmm
+    },
+    {
+      path: "/wode",
+      component: Wode
+    },
     {
       path: "/xz",
       component: Xz
@@ -140,12 +136,6 @@ export default new Router({
         }
       ]
     },
-
-<<<<<<< HEAD
-    { path: "/jzhb", component: Jzhb },
-    { path: "/jzdt", component: Jzdt },
-=======
->>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
     {
       path: "/zxzms",
       component: Zxzms,
@@ -201,14 +191,11 @@ export default new Router({
           path: "/jzdt",
           component: Jzdt
         },
-<<<<<<< HEAD
         {
           path: "/Jzhb",
           component: Jzhb
-        }
-=======
+        },
         { path: "/jzhb", component: Jzhb }
->>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
       ]
     }
   ]
