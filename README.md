@@ -1,6 +1,7 @@
-# app
+﻿# app
 
-> A Vue.js project
+> 捐赠爱心app
+
 
 ## Build Setup
 

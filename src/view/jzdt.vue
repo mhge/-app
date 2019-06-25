@@ -9,27 +9,27 @@
             </van-col>
           </div>
         </van-col>
-        <van-col span="22" class="flex" offset="2">
+        <van-col span="24" class="flex">
           <img src="../assets/xz.jpg">
           <van-cell title="赵小五" value="募捐50元" label="1小时之前"/>
         </van-col>
-        <van-col span="22" class="flex" offset="2">
+        <van-col span="24" class="flex">
           <img src="../assets/xz.jpg">
           <van-cell title="赵小五" value="募捐50元" label="1小时之前"/>
         </van-col>
-        <van-col span="22" class="flex" offset="2">
+        <van-col span="24" class="flex">
           <img src="../assets/xz.jpg">
           <van-cell title="赵小五" value="募捐50元" label="1小时之前"/>
         </van-col>
-        <van-col span="22" class="flex" offset="2">
+        <van-col span="24" class="flex">
           <img src="../assets/xz.jpg">
           <van-cell title="赵小五" value="募捐50元" label="1小时之前"/>
         </van-col>
-        <van-col span="22" class="flex" offset="2">
+        <van-col span="24" class="flex">
           <img src="../assets/xz.jpg">
           <van-cell title="赵小五" value="募捐50元" label="1小时之前"/>
         </van-col>
-        <van-col span="22" class="flex" offset="2">
+        <van-col span="24" class="flex">
           <img src="../assets/xz.jpg">
           <van-cell title="赵小五" value="募捐50元" label="1小时之前"/>
         </van-col>

@@ -67,7 +67,13 @@
         <van-row type="flex" justify="space-around">
           <van-col span="10" class="spans">
             <van-row type="flex" justify="space-around">
+<<<<<<< HEAD
               <van-col span="24" class="spans1" @click="rz">组织入住</van-col>
+=======
+              <van-col span="24" class="spans1">
+                <span @click="rz">组织入住</span>
+              </van-col>
+>>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
             </van-row>
             <van-row type="flex" justify="space-around">
               <van-col span="24" class="spans2">志愿组织755个</van-col>
@@ -75,7 +81,9 @@
           </van-col>
           <van-col span="10" class="spans">
             <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans1">成为志愿者</van-col>
+              <van-col span="24" class="spans1">
+                <span @click="zyz">成为志愿者</span>
+              </van-col>
             </van-row>
             <van-row type="flex" justify="space-around">
               <van-col span="24" class="spans2">志愿者16353个</van-col>
@@ -95,7 +103,7 @@
             </van-row>
             <van-row type="flex">
               <van-col span="24">
-                <span>扶贫助困</span>
+                <span @click="fpzk">扶贫助困</span>
               </van-col>
             </van-row>
           </van-col>
@@ -107,7 +115,7 @@
             </van-row>
             <van-row type="flex">
               <van-col span="24">
-                <span>敬老助老</span>
+                <span @click="jlzl">敬老助老</span>
               </van-col>
             </van-row>
           </van-col>
@@ -119,7 +127,7 @@
             </van-row>
             <van-row type="flex">
               <van-col span="24">
-                <span>关爱儿童</span>
+                <span @click="gaet">关爱儿童</span>
               </van-col>
             </van-row>
           </van-col>
@@ -181,7 +189,7 @@
             </van-row>
             <van-row type="flex">
               <van-col span="24">
-                <span>全部活动</span>
+                <span @click="qbhd">全部活动</span>
               </van-col>
             </van-row>
           </van-col>
@@ -198,32 +206,34 @@
         </van-row>
         <van-row class="panels" @click="res">
           <van-col span="22" offset="1">
-            <van-row type="flex" justify="space-between" class="panel">
-              <van-col span="16">
-                <h5>美新路大朋友项目志愿者</h5>
-                <van-row type="flex" justify="space-between" class="panel3">
-                  <van-col span="11" class="time">
-                    <van-row>
-                      <van-col span="4">
-                        <van-icon name="location-o"/>
-                      </van-col>
-                      <van-col span="19" class="ditu">郑州市</van-col>
-                    </van-row>
-                  </van-col>|
-                  <van-col span="11" class="time">
-                    <van-row>
-                      <van-col span="4">
-                        <van-icon name="clock-o"/>
-                      </van-col>
-                      <van-col span="19" class="ditu">六天前发布</van-col>
-                    </van-row>
-                  </van-col>
-                </van-row>
-              </van-col>
-              <van-col span="6" class="panel2">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-              </van-col>
-            </van-row>
+            <div @click="jqbm">
+              <van-row type="flex" justify="space-between" class="panel">
+                <van-col span="16">
+                  <h5>美新路大朋友项目志愿者</h5>
+                  <van-row type="flex" justify="space-between" class="panel3">
+                    <van-col span="11" class="time">
+                      <van-row>
+                        <van-col span="4">
+                          <van-icon name="location-o"/>
+                        </van-col>
+                        <van-col span="19" class="ditu">郑州市</van-col>
+                      </van-row>
+                    </van-col>|
+                    <van-col span="11" class="time">
+                      <van-row>
+                        <van-col span="4">
+                          <van-icon name="clock-o"/>
+                        </van-col>
+                        <van-col span="19" class="ditu">六天前发布</van-col>
+                      </van-row>
+                    </van-col>
+                  </van-row>
+                </van-col>
+                <van-col span="6" class="panel2">
+                  <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+                </van-col>
+              </van-row>
+            </div>
             <van-row class="panel4">
               <van-col span="24">
                 <span>发起方：北京市石景山乐龄老年社会工作服务中心</span>
@@ -505,6 +515,30 @@ export default {
     },
     rz() {
       this.$router.push("./rz");
+<<<<<<< HEAD
+=======
+    },
+    zyz() {
+      this.$router.push("./zyz");
+    },
+    jlzl() {
+      this.$router.push("./jlzl");
+    },
+    gaet() {
+      this.$router.push("./gaet");
+    },
+    fpzk() {
+      this.$router.push("./fpzk");
+    },
+    qbhd() {
+      this.$router.push("./qbhd");
+    },
+    qbhd() {
+      this.$router.push("./qbhd");
+    },
+    jqbm() {
+      this.$router.push("./jqbm");
+>>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
     }
   }
 };
