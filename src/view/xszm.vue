@@ -188,7 +188,7 @@ export default {
   font-size: 13px;
 }
 .panel2 .btn {
-  width: 68px;
+  width: 84px;
   height: 21px;
   margin-top: 40px;
   font-size: 10px;

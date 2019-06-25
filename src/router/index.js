@@ -2,9 +2,9 @@ import Vue from "vue";
 import Router from "vue-router";
 import Mains from "../view/mains.vue";
 import Main from "../view/main.vue";
-import Dtqb from "../view/dtqb.vue";
-import Fb from "../view/fb.vue";
-import Zcq from "../view/zcq.vue";
+// import Dtqb from "../view/dtqb.vue";
+// import Fb from "../view/fb.vue";
+// import Zcq from "../view/zcq.vue";
 import Zxzms from "../view/zxzms.vue"
 import Zxzm from "../view/zxzm.vue"
 import Tczy from "../view/tczy.vue"
@@ -18,35 +18,29 @@ import Xmxqs from "../view/xmxqs.vue"
 import Xmxq from "../view/xmxq.vue"
 import Jzdt from "../view/jzdt.vue"
 import Jzhb from "../view/jzhb.vue"
+import Zyz from "../view/zyz.vue"
+import Rz from "../view/rz.vue"
+import Tjsh from "../view/tjsh.vue"
 
 
 
-<<<<<<< HEAD
+
 import Xz from "../view/xz.vue";
 import Search from "../view/search.vue";
 
 import Banner from "../view/banner.vue";
 import Baoming from "../view/baoming.vue";
 import Jqbm from "../view/jqbm.vue";
-=======
-
->>>>>>> de222b1c01dfcd4edb0d74e97f7a82028c82100f
 
 
 
 
-<<<<<<< HEAD
+
 import Qbhds from "../view/qbhds.vue";
 import Qbhd from "../view/qbhd.vue";
 import Fpzk from "../view/fpzk.vue";
 import Jlzl from "../view/jlzl.vue";
 import Gaet from "../view/gaet.vue";
-
-import Xq from "../view/xq.vue";
-import Jzdt from "../view/jzdt.vue";
-import Jzhb from "../view/jzhb.vue";
-=======
->>>>>>> de222b1c01dfcd4edb0d74e97f7a82028c82100f
 
 Vue.use(Router);
 
@@ -66,22 +60,21 @@ export default new Router({
           path: "/main",
           component: Main
         },
-        {
-          path: "/dtqb",
-          component: Dtqb
-        },
-        {
-          path: "/fb",
-          component: Fb
-        },
-        {
-          path: "/zcq",
-          component: Zcq
-        }
+        // {
+        //   path: "/dtqb",
+        //   component: Dtqb
+        // },
+        // {
+        //   path: "/fb",
+        //   component: Fb
+        // },
+        // {
+        //   path: "/zcq",
+        //   component: Zcq
+        // }
       ]
     },
     {
-<<<<<<< HEAD
       path: "/xz",
       component: Xz
     },
@@ -117,6 +110,7 @@ export default new Router({
     {
       path: "/qbhds",
       component: Qbhds,
+      redirect:"/qbhd",
       children: [
         {
           path: "/qbhd",
@@ -136,12 +130,7 @@ export default new Router({
         }
       ]
     },
-
-    { path: "/xq", component: Xq },
-    { path: "/jzhb", component: Jzhb },
-    { path: "/jzdt", component: Jzdt }
-=======
-      path:"/zxzms",
+     { path:"/zxzms",
       component:Zxzms,
       redirect:"/zxzm",
       children:[
@@ -201,6 +190,5 @@ export default new Router({
         }
       ]
     }
->>>>>>> de222b1c01dfcd4edb0d74e97f7a82028c82100f
   ]
 });

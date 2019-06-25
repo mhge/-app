@@ -188,10 +188,10 @@ export default {
   font-size: 13px;
 }
 .panel2 .btn {
-  width: 68px;
+  width: 84px;
   height: 21px;
   margin-top: 40px;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 20px;
   background: rgb(247, 245, 245);
   color: #A9A9A9

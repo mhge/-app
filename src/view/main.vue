@@ -3,10 +3,11 @@
     <!-- <h4>首页</h4> -->
     <!-- 头部及点击蒙版 -->
     <van-nav-bar left-text="logo名字" fixed class="left">
-      <van-icon name="location" slot="right" color="inherit" @click="showBasics"/>
-      <van-icon name="hot" slot="right" color="inherit"/>
+      <van-icon name="location" slot="right" color="inherit" @click="showBasics" class="icons"/>
+
+      <van-icon name="hot" slot="right" color="inherit" @click='icons' class="icons" style="margin-left:10px;"/>
     </van-nav-bar>
-    <van-popup v-model="showBasic">
+    <van-popup v-model="showBasic" :close-on-click-overlay="false">
       <van-row type="flex" class="san">
         <van-col span="24">
           <van-row type="flex" class="san1">
@@ -39,33 +40,34 @@
               <van-row type="flex">
                 <van-col span="22" offset="1" class="san6">
                   <van-button round type="danger" class="btn">点击完成日行一善</van-button>
+                  <van-icon name="close" class="icon" @click="icon"/>
                 </van-col>
               </van-row>
             </van-col>
           </van-row>
         </van-col>
       </van-row>
-      <van-icon name="close" class="icon"/>
+
     </van-popup>
 
     <!-- 非固定页面 -->
     <section>
       <!-- 搜索框 -->
       <div>
-        <van-search v-model="val" placeholder="搜索你想知道的" shape="round" @search="onSearch"></van-search>
+        <van-search v-model="val" placeholder="搜索你想知道的" shape="round" @click="search"></van-search>
       </div>
       <div>
         <!-- 轮播图 -->
         <van-swipe :autoplay="3000" indicator-color="black" :height="190" class="swipe">
           <van-swipe-item v-for="(image, index) in list" :key="index">
-            <img :src="image.banner_img_url">
+            <img :src="image.banner_img_url"  @click="imgs">
           </van-swipe-item>
         </van-swipe>
       </div>
       <!-- 组织入住及成为志愿者 -->
       <div>
         <van-row type="flex" justify="space-around">
-          <van-col span="10" class="spans">
+          <van-col span="10" class="spans"  @click.native="spans1">
             <van-row type="flex" justify="space-around">
               <van-col span="24" class="spans1">组织入住</van-col>
             </van-row>
@@ -73,7 +75,7 @@
               <van-col span="24" class="spans2">志愿组织755个</van-col>
             </van-row>
           </van-col>
-          <van-col span="10" class="spans">
+          <van-col span="10" class="spans"  @click.native="spans2">
             <van-row type="flex" justify="space-around">
               <van-col span="24" class="spans1">成为志愿者</van-col>
             </van-row>
@@ -90,7 +92,7 @@
           <van-col span="6" class="nav" offset="2">
             <van-row type="flex">
               <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+                <img src="https://img.yzcdn.cn/vant/cat.jpeg" @click="flg1">
               </van-col>
             </van-row>
             <van-row type="flex">
@@ -102,7 +104,7 @@
           <van-col span="6" class="nav">
             <van-row type="flex">
               <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+                <img src="https://img.yzcdn.cn/vant/cat.jpeg" @click="flg2">
               </van-col>
             </van-row>
             <van-row type="flex">
@@ -114,7 +116,7 @@
           <van-col span="6" class="nav">
             <van-row type="flex">
               <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+                <img src="https://img.yzcdn.cn/vant/cat.jpeg" @click="flg3">
               </van-col>
             </van-row>
             <van-row type="flex">
@@ -176,7 +178,7 @@
           <van-col span="6" class="nav">
             <van-row type="flex">
               <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+                <img src="https://img.yzcdn.cn/vant/cat.jpeg" @click="flg" alt>
               </van-col>
             </van-row>
             <van-row type="flex">
@@ -326,8 +328,8 @@
                   v-model="value"
                   active-color="#A9A9A9"
                   bar-height="6px"
-                  :min="30"
-                  :max="90"
+                  :min="this.$store.state.mony"
+                  :max="100"
                 >
                   <div slot="button" class="custom-button">
                     <van-icon name="gold-coin"/>
@@ -471,7 +473,7 @@ export default {
       list: [],
       value: 0,
       val: "",
-      showBasic: false
+      showBasic: false,
     };
   },
   mounted() {
@@ -487,9 +489,9 @@ export default {
     });
   },
   methods: {
-    onSearch() {},
-    onClickRight() {
-      Toast("按钮");
+    search() {
+      this.$router.push("./search");
+
     },
     con() {
       this.$router.push("./zxzms");
@@ -502,6 +504,36 @@ export default {
     },
     res() {
       this.$router.push("./xmxqs");
+    },
+    flg(){
+      this.$router.push("./qbhds");
+    },
+    flg1(){
+      this.$router.push("./gyfp");
+    },
+    flg2(){
+      this.$router.push("./jlzl");
+    },
+    flg3(){
+      this.$router.push("./gaet");
+    },
+    icons(){
+      this.$router.push("./xz");
+    },
+    icon(){
+      this.showBasic = false;
+    },
+    spans2(){
+      this.$router.push("./zyz");
+
+    },
+    spans1(){
+      this.$router.push("./rz");
+
+    },
+    imgs(){
+      this.$router.push("./banner");
+
     }
   }
 };
@@ -644,5 +676,13 @@ section {
   color: black;
   border-color: #fff;
   width: 90%;
+}
+.icon{
+  font-size: 40px;
+  color:#A9A9A9;
+}
+.icons{
+  font-size: 20px;
+  color:#A9A9A9;
 }
 </style>

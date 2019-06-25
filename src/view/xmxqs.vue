@@ -119,30 +119,32 @@
               <span>进展汇报</span>
             </van-tabbar-item>
           </van-tabbar>
-          <router-view></router-view>
         </van-col>
       </van-row>
+      <router-view></router-view>
     </section>
+    <!-- 底部 -->
     <!-- <van-row >
-      <van-col span="22" offset="1"> -->
-        <van-tabbar v-model="act" active-color="#A9A9A9" inactive-color="#A9A9A9" class="bottom">
-          <!-- <van-col span="4"> -->
-            <van-tabbar-item icon="like-o"></van-tabbar-item>
-          <!-- </van-col>
-          <van-col span="4"> -->
-            <van-tabbar-item icon="comment-o"></van-tabbar-item>
-          <!-- </van-col>
-          <van-col span="4"> -->
-            <van-tabbar-item icon="exchange"></van-tabbar-item>
-          <!-- </van-col>
-          <van-col span="10" offset='2'> -->
-            <van-tabbar-item class="bottom1">
-<van-button type="default">默认按钮</van-button>
-            </van-tabbar-item>
-          <!-- </van-col> -->
-        </van-tabbar>
+    <van-col span="22" offset="1">-->
+    <van-tabbar v-model="act" active-color="#A9A9A9" inactive-color="#A9A9A9" class="bottom">
+      <!-- <van-col span="4"> -->
+      <van-tabbar-item icon="like-o"></van-tabbar-item>
       <!-- </van-col>
-    </van-row> -->
+      <van-col span="4">-->
+      <van-tabbar-item icon="comment-o"></van-tabbar-item>
+      <!-- </van-col>
+      <van-col span="4">-->
+      <van-tabbar-item icon="exchange"></van-tabbar-item>
+      <!-- </van-col>
+      <van-col span="10" offset='2'>-->
+      <van-tabbar-item class="bottom1">
+        <!-- <van-button type="default">默认按钮</van-button> -->
+        <span>我要捐钱</span>
+      </van-tabbar-item>
+      <!-- </van-col> -->
+    </van-tabbar>
+    <!-- </van-col>
+    </van-row>-->
   </div>
 </template>
 <script>
@@ -210,7 +212,7 @@ section {
   background: rgb(236, 233, 233);
   margin-top: 20px;
 }
-.bottom1{
-  width: 200px
+.bottom1 {
+  width: 200px;
 }
 </style>

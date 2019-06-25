@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-row class="li">
-      <van-col span="20" class="li-chi" offset="2">
+      <van-col span="21" class="li-chi" offset="2">
         <a>
           <span></span>
         </a>

@@ -4,12 +4,10 @@ import Vue from "vue";
 import App from "./App";
 
 import Vant from "vant";
-<<<<<<< HEAD
 import flexible from "lib-flexible";
-=======
-import "vant/lib/index.css";
->>>>>>> de222b1c01dfcd4edb0d74e97f7a82028c82100f
+// import "vant/lib/index.css";
 import router from "./router";
+import store from "./store"
 
 
 Vue.config.productionTip = false;
@@ -20,6 +18,8 @@ Vue.use(Vant);
 new Vue({
   el: "#app",
   router,
+  store,
+  flexible,
   components: { App },
   template: "<App/>"
 });

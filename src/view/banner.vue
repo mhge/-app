@@ -2,18 +2,19 @@
   <div class="head">
     <van-nav-bar title="童话八音盒" fixed left-arrow @click-left="onClickLeft"/>
     <van-field/>
-    <van-panel title="标题">
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed minus quidem voluptas facilis consequatur molestias, tenetur impedit tempore fugit id ad incidunt voluptatem cumque, nemo explicabo obcaecati, placeat laudantium.</div>
+    <van-panel class="tit">
+      <div>童话八音盒图书"历险"计划志愿招募（补录）</div>
+      <div>童话八音盒--图书历险计划，希望更多的人了解盲童，并从全国手机对他们的祝福。</div>
     </van-panel>
     <p class="width"></p>
     <van-cell-group>
       <van-cell title="招募人数" value="1111"/>
-      <van-cell title="报名起止" is-link value="内容"/>
-      <van-cell title="活动地点" is-link value="内容"/>
-      <van-cell title="咨询人" is-link value="内容"/>
+      <van-cell title="报名起止" is-link value="2019/1/24～2019/3/20" style="font-size:12px"/>
+      <van-cell title="活动地点" is-link value="线上"/>
+      <van-cell title="咨询人" is-link value="jacky"/>
     </van-cell-group>
     <p class="width"></p>
-    <van-cell title="单元格" is-link label="描述"/>
+    <van-cell title="童话八音盒" is-link label="给盲童讲故事，我们走进去，他们走出来" style="font-size:12px;color:black;"/>
     <p class="width">招募详情</p>
 
     <van-row type="flex" justify="center">
@@ -29,14 +30,19 @@
     </van-row>
 
     <van-row>
-      <van-col offset="3" span="18">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab dolorum illo tempora esse doloremque, dicta aut perspiciatis cum rerum a culpa tenetur quisquam temporibus atque at, vel molestiae neque quod.</p>
+      <van-col offset="2" span="20">
+        <p>有一群小朋友,他们因为视力障碍,不能用眼睛去
+探知这个美好的世界,缺少与外界交流的机会。</p>
         <p>
           <img src="../assets/xz.jpg">
         </p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas? Eveniet, atque.</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas? Eveniet, atque.</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas? Eveniet, atque.</p>
+        <p>所以在2017年10月15日,国际盲人节那天,北京善
+源公益基金会发起了一个名叫“童话八音盒”的公
+益项目。</p>
+        <p>项目通过邀请知名主持人、演员作为“声音精灵
+给盲童讲故事,给他们送去温暖,并呼吁大家多多
+关注盲童,以及盲人群体。</p>
+        <p>现在月亮姐姐、钱峰、董倩等明星都已加入进来。</p>
         <p>
           <img src="../assets/xz.jpg">
         </p>
@@ -121,26 +127,35 @@
       <van-col span="24">
         <div>
           <p>
-            <a>1</a>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <a>1</a>我们希望你有足够的责任心,并且确保可以找到
+小孩和你共同参与。
           </p>
           <p>
-            <a>2</a>, deleniti commodi ab impedit dignissimos exercitationem recusandae quia veritatis?
+            <a>2</a>这是一本承载着来自各地人们祝福的书,盲童们
+非常珍惜它,所以请你一定要保护好它,别让它在
+你的城市走丢了。
           </p>
           <p>
-            <a>3</a>, deleniti commodi ab impedit dignissimos exercitationem recusandae quia veritatis?
+            <a>3</a>图书请以顺丰到付的形式寄出,大家可以通过邮
+寄凭证,或者发票报销快递费用。
           </p>
         </div>
       </van-col>
     </van-row>
-    <p>有任何问题欢迎咨询！！！</p>
-
-    <van-tabbar v-model="active">
+    <p>有任何疑问欢迎找咨询人咨询</p>
+      
+    <van-tabbar v-model="active" class="tab">
       <van-tabbar-item to="baoming">报名</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
 <script>
 export default {
+  data(){
+    return {
+      active:0
+    }
+  },
   methods: {
     onClickLeft() {
       this.$router.push("/main");
@@ -149,6 +164,9 @@ export default {
 };
 </script>
 <style scoped>
+.tit div{
+  margin:10px 0;
+}
 .van-cell {
   color: #8f8f90;
 }
@@ -182,6 +200,9 @@ p > img,
 }
 .van-panel__content {
   margin: 4px 0;
+}
+.van-panel__header{
+  padding:0
 }
 .list {
   background: gainsboro;
@@ -245,4 +266,5 @@ h4 {
   background-color: #e8e8ea;
   color: black;
 }
+
 </style>
