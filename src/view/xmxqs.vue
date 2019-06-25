@@ -137,7 +137,7 @@
       <van-tabbar-item icon="exchange"></van-tabbar-item>
       <!-- </van-col>
       <van-col span="10" offset='2'>-->
-      <van-tabbar-item class="bottom1">
+      <van-tabbar-item class="bottom1" @click="bot">
         <!-- <van-button type="default">默认按钮</van-button> -->
         <span>我要捐钱</span>
       </van-tabbar-item>
@@ -163,6 +163,9 @@ export default {
   methods: {
     onClickLeft() {
       this.$router.go(-1);
+    },
+    bot(){
+      this.$router.push("./jk")
     }
   }
 };
