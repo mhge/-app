@@ -67,7 +67,7 @@
         <van-row type="flex" justify="space-around">
           <van-col span="10" class="spans">
             <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans1">组织入住</van-col>
+              <van-col span="24" class="spans1" @click="rz">组织入住</van-col>
             </van-row>
             <van-row type="flex" justify="space-around">
               <van-col span="24" class="spans2">志愿组织755个</van-col>
@@ -502,6 +502,9 @@ export default {
     },
     res() {
       this.$router.push("./xmxqs");
+    },
+    rz() {
+      this.$router.push("./rz");
     }
   }
 };
@@ -535,12 +538,12 @@ export default {
   border: 1px solid rgba(187, 187, 187, 1);
 }
 .navs img {
-  width:100%;
-  height:100%;
-}
-.swipe img{
   width: 100%;
-  height: 100%
+  height: 100%;
+}
+.swipe img {
+  width: 100%;
+  height: 100%;
 }
 .copy {
   height: 10px;

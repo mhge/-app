@@ -4,17 +4,12 @@ import Vue from "vue";
 import App from "./App";
 
 import Vant from "vant";
-<<<<<<< HEAD
 import flexible from "lib-flexible";
-=======
-import "vant/lib/index.css";
->>>>>>> de222b1c01dfcd4edb0d74e97f7a82028c82100f
 import router from "./router";
-
 
 Vue.config.productionTip = false;
 Vue.use(Vant);
-
+Vue.use(flexible);
 
 /* eslint-disable no-new */
 new Vue({
