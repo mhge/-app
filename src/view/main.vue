@@ -67,13 +67,10 @@
         <van-row type="flex" justify="space-around">
           <van-col span="10" class="spans">
             <van-row type="flex" justify="space-around">
-<<<<<<< HEAD
               <van-col span="24" class="spans1" @click="rz">组织入住</van-col>
-=======
               <van-col span="24" class="spans1">
                 <span @click="rz">组织入住</span>
               </van-col>
->>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
             </van-row>
             <van-row type="flex" justify="space-around">
               <van-col span="24" class="spans2">志愿组织755个</van-col>
@@ -515,8 +512,6 @@ export default {
     },
     rz() {
       this.$router.push("./rz");
-<<<<<<< HEAD
-=======
     },
     zyz() {
       this.$router.push("./zyz");
@@ -538,7 +533,6 @@ export default {
     },
     jqbm() {
       this.$router.push("./jqbm");
->>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
     }
   }
 };

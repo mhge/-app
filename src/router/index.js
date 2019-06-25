@@ -33,7 +33,7 @@ import Xmxq from "../view/xmxq.vue";
 import Zyz from "../view/zyz.vue";
 
 
-<<<<<<< HEAD
+// wode
 import Zcq from "../view/zcq.vue";
 import Dl from "../view/dl.vue";
 import Dlu from "../view/dlu.vue";
@@ -41,10 +41,22 @@ import Zz from "../view/zz.vue";
 import Wjmm from "../view/wjmm.vue";
 import Wode from "../view/wode.vue";
 
+
+
+import Dt from '../view/Dt'
+import Dtxq from '../view/Dtxq'
+import Dtxc from '../view/Dtxc'
+import Dtqz from '../view/Dtqz'
+import Dtgn from '../view/Dtgn'
+import Jk from '../view/JK'
+import Xu from '../view/Xu'
+import Fb from '../view/Fb'
+import Aix from '../view/Aix'
+
+
 Vue.use(Router);
 
-=======
->>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
+
 export default new Router({
   routes: [
     {
@@ -85,6 +97,45 @@ export default new Router({
 		 {
 		  path: "/wode",
 		  component: Wode
+		},
+		{
+			path: "/fb",
+			component: Fb
+		},
+		{
+		  path:'/aix',
+		  component:Aix
+		},
+		{
+			path: "/dt",
+			redirect:'/dtxq',
+			component: Dt,
+			children:[
+			   {
+			    path:'/dtxq',
+			    component:Dtxq
+			  },
+			  {
+			    path:'/dtxc',
+			    component:Dtxc
+			  },
+			  {
+			    path:'/dtqz',
+			    component:Dtqz
+			  },
+			  {
+			    path:'/dtgn',
+			    component:Dtgn
+			  }
+			]
+		},
+		{
+		  path:'/xu',
+		  component:Xu
+		},
+		{
+		  path:'/jk',
+		  component:Jk
 		},
     {
       path: "/xz",
@@ -140,12 +191,6 @@ export default new Router({
         }
       ]
     },
-
-<<<<<<< HEAD
-    { path: "/jzhb", component: Jzhb },
-    { path: "/jzdt", component: Jzdt },
-=======
->>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
     {
       path: "/zxzms",
       component: Zxzms,
@@ -201,14 +246,14 @@ export default new Router({
           path: "/jzdt",
           component: Jzdt
         },
-<<<<<<< HEAD
+
         {
           path: "/Jzhb",
           component: Jzhb
-        }
-=======
-        { path: "/jzhb", component: Jzhb }
->>>>>>> 356622516ba3bd7fe9498739d3f2b219748de87c
+        },
+        { path: "/jzhb", 
+					component: Jzhb ,
+				}
       ]
     }
   ]
