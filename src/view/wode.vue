@@ -85,7 +85,7 @@
 					</van-row>
 				</van-row>
 			</router-link>
-			<router-link to="/zxzm" tag="span">
+			<router-link to="/jqbm" tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -144,7 +144,7 @@
 			<van-tabbar-item icon="home-o" to="/main">首页</van-tabbar-item>
 			<van-tabbar-item icon="search" to="/dt">动态</van-tabbar-item>
 			<van-tabbar-item icon="friends-o" to="/fb">发布</van-tabbar-item>
-			<van-tabbar-item icon="fire" to="/zcq">我的</van-tabbar-item>
+			<van-tabbar-item icon="fire" to="/wode">我的</van-tabbar-item>
 		</van-tabbar>
 	</div>
 

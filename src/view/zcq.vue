@@ -78,6 +78,7 @@
 
 
 			<div>
+			<router-link to="/tcc" tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -89,6 +90,7 @@
 						</van-col>
 					</van-row>
 				</van-row>
+			</router-link>
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />

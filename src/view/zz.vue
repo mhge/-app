@@ -3,9 +3,9 @@
     <van-nav-bar title="注册" left-text="返回" left-arrow @click-left="onClickLeft">
     </van-nav-bar>
     <van-cell-group>
-      <van-field input v-model="username"  label="手机号" placeholder="请输入手机号" size="large" />
-      <van-field input v-model="password" type="password" label="密码" placeholder="请输入密码" size="large" />
-      <van-field v-model="sms" center clearable label="短信验证码" placeholder="请输入短信验证码" size="large">
+      <van-field input onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')" v-model="username" maxlength="11"  label="手机号" placeholder="请输入手机号" size="large" />
+      <van-field input v-model="password" onkeyup="value=value.replace(/^(0+)|[^\dA-Za-z_./]+/g,'')" maxlength="16" type="password" label="密码" placeholder="请输入密码" size="large" />
+      <van-field onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')" maxlength="6" v-model="sms" center clearable label="短信验证码" placeholder="请输入短信验证码" size="large">
         <van-button slot="button" size="small" type="primary">发送验证码</van-button>
       </van-field>
     </van-cell-group>
@@ -49,7 +49,6 @@
             }
           }).then(res => {
             if (res.data.code == 1) {
-              alert('注册成功')
               this.$router.push('/Dlu')
             }
           })

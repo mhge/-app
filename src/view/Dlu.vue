@@ -6,14 +6,14 @@
 		<div class="Info">
 			<van-row type="flex" class="DID">
 				<van-icon name="circle" class="circle" />
-				<input type="" v-model="username" maxlength="11" placeholder="请输入手机号" />
+				<input type="String" onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')" v-model="username" maxlength="11" placeholder="请输入手机号" />										
 			</van-row>
 			<van-row type="flex" class="DID">
 				<van-icon name="circle" class="circle" />
-				<input type="password" v-model="password" maxlength="16" placeholder="请输入密码" />
+				<input type="password" onkeyup="value=value.replace(/^(0+)|[^\dA-Za-z_/.]+/g,'')" v-model="password" maxlength="16" placeholder="请输入密码" />
 			</van-row>
 
-			<van-button round size="large" class="DL" @click="onClickLogin" >登录</van-button>
+			<van-button round size="large" class="DL" @click="onClickLogin">登录</van-button>
 
 			<van-row type="flex" justify="space-between">
 				<van-col>
@@ -23,18 +23,18 @@
 					<router-link to="/wjmm" tag="a">忘记密码？</router-link>
 				</van-col>
 			</van-row>
-			
-				<van-button round size="large" class="QT" >其他快捷登录</van-button>		
-	
+
+			<van-button round size="large" class="QT">其他快捷登录</van-button>
+
 			<van-row type="flex" justify="space-between">
 				<van-col span="3">
-					<van-icon name="invition" class="circle"/>
+					<van-icon name="goods-collect-o" class="circle" />
 				</van-col>
 				<van-col span="3">
-					<van-icon name="invition" class="circle"/>
+					<van-icon name="bulb-o" class="circle" />
 				</van-col>
 				<van-col span="3">
-					<van-icon name="invition" class="circle"/>
+					<van-icon name="records" class="circle" />
 				</van-col>
 			</van-row>
 
@@ -88,13 +88,15 @@
 </script>
 
 <style scoped>
-	.QT{
+	.QT {
 		border-left: 0px;
 		border-top: 0px;
 		border-right: 0px;
 		border-bottom: 0px;
 		font-size: 0.3rem;
+		margin-bottom: 20px;
 	}
+
 	.DL {
 		border: 1px solid #aaa;
 		margin-bottom: 0.5rem;
@@ -116,7 +118,7 @@
 		border-top: 0px;
 		border-right: 0px;
 		border-bottom: 0px;
-		
+
 		font-size: 0.5rem;
 		color: red;
 	}
@@ -140,7 +142,6 @@
 
 	.mm {
 		text-align: right
-		
 	}
 
 	.van-row {

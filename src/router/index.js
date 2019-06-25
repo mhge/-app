@@ -54,6 +54,10 @@ import Fb from '../view/Fb'
 import Aix from '../view/Aix'
 
 
+
+import TCC from '../view/TCC'
+
+
 Vue.use(Router);
 
 
@@ -77,6 +81,10 @@ export default new Router({
 		{
 		  path: "/zcq",
 		  component: Zcq
+		},
+		{
+		  path: "/tcc",
+		  component: TCC
 		},
 		{
 		  path: "/dl",
