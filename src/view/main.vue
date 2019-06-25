@@ -38,7 +38,7 @@
               </van-row>
               <van-row type="flex">
                 <van-col span="22" offset="1" class="san6">
-                  <van-button round type="danger" class="btn">点击完成日行一善</van-button>
+                  <van-button round type="danger" class="btn" @click="yao()">点击完成日行一善</van-button>
                 </van-col>
               </van-row>
             </van-col>
@@ -507,6 +507,9 @@ export default {
     showBasics() {
       this.showBasic = true;
     },
+		yao(){
+			this.showBasic = false;
+		},
     res() {
       this.$router.push("./xmxqs");
     },

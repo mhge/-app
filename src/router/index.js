@@ -250,10 +250,7 @@ export default new Router({
         {
           path: "/Jzhb",
           component: Jzhb
-        },
-        { path: "/jzhb", 
-					component: Jzhb ,
-				}
+        }
       ]
     }
   ]
