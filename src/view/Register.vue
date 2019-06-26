@@ -24,7 +24,7 @@
   import axios from "axios";
   import qs from 'Qs'
   export default {
-    name: 'zz',
+    name: 'Register',
     data() {
       return {
         username: '',
@@ -36,20 +36,16 @@
       onClickLeft() {
         this.$router.go(-1)
       },
-      
       onClickRegister() {
-        var _this=this
-        // console.log(this.password)
           axios({
             url: "http://jx.xuzhixiang.top/ap/api/reg.php",
-            // method:'post',
             params: {
               username: this.username,
               password: this.password,
             }
           }).then(res => {
             if (res.data.code == 1) {
-              this.$router.push('/Dlu')
+              this.$router.push('/login')
             }
           })
         } 

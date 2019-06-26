@@ -7,7 +7,7 @@ var actions = {
 	onClickLogin({commit},name){
 		setTimeout(function(){
 			commit('onClickLogin',name)
-		},5000)
+		},100)
 	}
 }
 export default actions;

@@ -17,10 +17,10 @@
 
 			<van-row type="flex" justify="space-between">
 				<van-col>
-					<router-link to="/zz" tag="a">立即注册</router-link>
+					<router-link to="/register" tag="a">立即注册</router-link>
 				</van-col>
 				<van-col class="mm">
-					<router-link to="/wjmm" tag="a">忘记密码？</router-link>
+					<router-link to="/forget" tag="a">忘记密码？</router-link>
 				</van-col>
 			</van-row>
 
@@ -47,7 +47,7 @@
 	import {mapActions} from 'vuex';
 	
 	export default {
-		name: 'Dlu',
+		name: 'Login',
 		data() {
 			return {
 				username: '',

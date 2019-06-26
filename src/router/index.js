@@ -33,13 +33,13 @@ import Xmxq from "../view/xmxq.vue";
 import Zyz from "../view/zyz.vue";
 
 
-// wode
+// My
 import Zcq from "../view/zcq.vue";
-import Dl from "../view/dl.vue";
-import Dlu from "../view/dlu.vue";
-import Zz from "../view/zz.vue";
-import Wjmm from "../view/wjmm.vue";
-import Wode from "../view/wode.vue";
+import yao from "../view/Yao.vue";
+import Login from "../view/Login.vue";
+import Register from "../view/Register.vue";
+import Forget from "../view/Forget.vue";
+import My from "../view/My.vue";
 
 
 
@@ -87,24 +87,24 @@ export default new Router({
 		  component: TCC
 		},
 		{
-		  path: "/dl",
-		  component: Dl
+		  path: "/yao",
+		  component: yao
 		},
 		{
-		  path: "/dlu",
-		  component: Dlu
+		  path: "/login",
+		  component: Login
 		},
 		{
-		  path: "/zz",
-		  component: Zz
+		  path: "/register",
+		  component: Register
 		},
 		{
-		  path: "/wjmm",
-		  component: Wjmm
+		  path: "/forget",
+		  component: Forget
 		},
 		 {
-		  path: "/wode",
-		  component: Wode
+		  path: "/my",
+		  component: My
 		},
 		{
 			path: "/fb",

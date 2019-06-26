@@ -9,7 +9,7 @@
 					<router-link to="/dl" class="p">头像</router-link>
 				</van-col>
 				<van-col class="log">
-					<router-link to="/dl">登录</router-link>
+					<router-link to="/yao">登录</router-link>
 				</van-col>
 			</van-row>
 			<div class="van-hairline--bottom"></div>

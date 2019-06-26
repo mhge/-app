@@ -8,7 +8,7 @@ var mutations = {
 	},
 	onClickLogin(state,name){
 		state.name = name
-		router.push('/wode')
+		router.push('/my')
 	}
 }
 

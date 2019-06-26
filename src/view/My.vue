@@ -72,7 +72,7 @@
 					</van-row>
 				</van-row>
 				<div class="CX"></div>
-			<router-link to="/jk" tag="span">
+			<router-link to="/xu" tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -85,7 +85,7 @@
 					</van-row>
 				</van-row>
 			</router-link>
-			<router-link to="/jqbm" tag="span">
+			<router-link to="/" tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />

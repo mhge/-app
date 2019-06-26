@@ -17,7 +17,7 @@
 
 <script>
 	export default {
-		name: 'wjmm',
+		name: 'Forget',
 		data() {
 			return {
 				phone: '',
