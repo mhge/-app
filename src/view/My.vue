@@ -144,7 +144,7 @@
 			<van-tabbar-item icon="home-o" to="/main">首页</van-tabbar-item>
 			<van-tabbar-item icon="search" to="/dt">动态</van-tabbar-item>
 			<van-tabbar-item icon="friends-o" to="/fb">发布</van-tabbar-item>
-			<van-tabbar-item icon="fire" to="/wode">我的</van-tabbar-item>
+			<van-tabbar-item icon="fire" to="/my">我的</van-tabbar-item>
 		</van-tabbar>
 	</div>
 
