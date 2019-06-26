@@ -10,9 +10,9 @@
 				<van-row type="flex" justify="space-between" class="tt">
 					<van-col class="use">
 						<!-- <textarea></textarea> -->
-						<p>{{username}}</p>
+						<h2>{{this.$store.state.name}}</h2>
 						<van-col class="zyws">
-							志愿卫士
+							<b>志愿卫士</b>
 						</van-col>
 
 					</van-col>
@@ -169,7 +169,7 @@
 			axios({
 				url: "http://jx.xuzhixiang.top/ap/api/productlist.php",
 				params: {
-					uid: 10411
+					uid: 6440
 				}
 			}).then(res => {
 				console.log(res.data.data)
@@ -180,13 +180,13 @@
 </script>
 
 <style scoped>
-	p {
-		font-size: 14px;
+	h2 {
 		color: red;
-		width: 150px;
+		/* width: 150px;
 		white-space: nowrap;
 		overflow: hidden;
-		text-overflow: ellipsis;
+		text-overflow: ellipsis; */
+		margin-top: -4px;
 	}
 
 	.zyws {

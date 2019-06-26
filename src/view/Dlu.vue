@@ -13,7 +13,7 @@
 				<input type="password" onkeyup="value=value.replace(/^(0+)|[^\dA-Za-z_/.]+/g,'')" v-model="password" maxlength="16" placeholder="请输入密码" />
 			</van-row>
 
-			<van-button round size="large" class="DL" @click="onClickLogin">登录</van-button>
+			<van-button round size="large" class="DL" @click="onClickLogin(username)">登录</van-button>
 
 			<van-row type="flex" justify="space-between">
 				<van-col>
@@ -39,17 +39,13 @@
 			</van-row>
 
 		</div>
-
-
-
-
-
-
 	</div>
 </template>
 
 <script>
 	import axios from "axios";
+	import {mapActions} from 'vuex';
+	
 	export default {
 		name: 'Dlu',
 		data() {
@@ -59,30 +55,31 @@
 			}
 		},
 		methods: {
+			...mapActions(['onClickLogin']),
 			onClickLeft() {
 				this.$router.go(-1)
-			},
-			onClickLogin() {
-				var _this = this
-				// console.log(this.password)
-				axios({
-					url: "http://jx.xuzhixiang.top/ap/api/login.php",
-					params: {
-						username: this.username,
-						password: this.password
-					}
-				}).then(res => {
-					if (res.data.code == 1) {
-						// alert('登录成功')
-						this.$router.push('/wode')
-						localStorage.setItem('token', res.data.data.uid)
-						// localStorage.setItem('username', res.data.data.pname)
-						console.log(res.data.data.username)
-					} else {
-						alert('请重新输入密码')
-					}
-				})
-			}
+			},		
+			// onClickLogin() {
+			// 	var _this = this
+			// 	// console.log(this.password)
+			// 	axios({
+			// 		url: "http://jx.xuzhixiang.top/ap/api/login.php",
+			// 		params: {
+			// 			username: this.username,
+			// 			password: this.password
+			// 		}
+			// 	}).then(res => {
+			// 		if (res.data.code == 1) {
+			// 			// alert('登录成功')
+			// 			// this.$router.push('/wode')
+			// 			localStorage.setItem('token', res.data.data.uid)
+			// 			// localStorage.setItem('username', res.data.data.pname)
+			// 			console.log(res.data.data.username)
+			// 		} else {
+			// 			alert('请重新输入密码')
+			// 		}
+			// 	})
+			// }
 		}
 	}
 </script>
@@ -120,7 +117,7 @@
 		border-bottom: 0px;
 
 		font-size: 0.5rem;
-		color: red;
+		color: indigo;
 	}
 
 	.tx {
