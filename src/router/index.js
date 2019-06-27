@@ -71,18 +71,6 @@ export default new Router({
       ]
     },
     {
-      path: "/zcq",
-      component: Zcq
-    },
-    {
-      path: "/fb",
-      component: Fb
-    },
-    {
-      path: "/aix",
-      component: Aix
-    },
-    {
       path: "/dt",
       redirect: "/dtxq",
       component: Dt,
@@ -114,32 +102,12 @@ export default new Router({
       component: Jk
     },
     {
-      path: "/tcc",
-      component: TCC
-    },
-    {
-      path: "/yao",
-      component: yao
-    },
-    {
-      path: "/login",
-      component: Login
-    },
-    {
-      path: "/register",
-      component: Register
-    },
-    {
       path: "/forget",
       component: Forget
     },
     {
       path: "/my",
       component: My
-    },
-    {
-      path: "/fb",
-      component: Fb
     },
     {
       path: "/aix",
@@ -281,6 +249,30 @@ export default new Router({
         { path: "/jlzl", component: Jlzl },
         { path: "/gaet", component: Gaet }
       ]
+    },
+    {
+      path: "/fb",
+      component: Fb
+    },
+    {
+      path: "/zcq",
+      component: Zcq
+    },
+    {
+      path: "/tcc",
+      component: TCC
+    },
+    {
+      path: "/yao",
+      component: yao
+    },
+    {
+      path: "/login",
+      component: Login
+    },
+    {
+      path: "/register",
+      component: Register
     }
   ]
 });
