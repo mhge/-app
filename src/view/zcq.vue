@@ -6,7 +6,7 @@
 		<div>
 			<van-row type="flex" class="wo">
 				<van-col>
-					<router-link to="/dl" class="p">头像</router-link>
+					<router-link to="/yao" class="p">头像</router-link>
 				</van-col>
 				<van-col class="log">
 					<router-link to="/yao">登录</router-link>

@@ -10,7 +10,7 @@
               <span class="sh">已审核</span>
               <span class="gr">个人求助</span>
             </p>
-            <p class="dz">湖北省恩施土家族苗族自治州建始县</p>
+            <p class="dz"><van-icon name="location-o" />湖北省恩施土家族苗族自治州建始县</p>
           </div>
         </div>
         <h2>"生命诚可贵，梦想价更高"</h2>
@@ -45,7 +45,7 @@
               <span class="sh">已审核</span>
               <span class="gr">个人求助</span>
             </p>
-            <p class="dz">湖北省恩施土家族苗族自治州建始县</p>
+            <p class="dz"><van-icon name="location-o" />湖北省恩施土家族苗族自治州建始县</p>
           </div>
         </div>
         <h2>"生命诚可贵，梦想价更高"</h2>

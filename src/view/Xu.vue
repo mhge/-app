@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+  <div class="ll">
+    <header>
       <van-nav-bar
         title="需求详情页"
         left-text="返回"
@@ -9,6 +9,8 @@
         @click-left="onClickLeft"
         @click-right="onClickRight"
       />
+    </header>
+    <section>
       <div class="top">
         <div class="tou">
           <img class="tp1" src>
@@ -18,7 +20,7 @@
               <span class="sh">已审核</span>
               <span class="gr">个人求助</span>
             </p>
-            <p class="dz">湖北省恩施土家族苗族自治州建始县</p>
+            <p class="dz"><van-icon name="location-o"/>湖北省恩施土家族苗族自治州建始县</p>
           </div>
         </div>
         <h2>"生命诚可贵，梦想价更高"</h2>
@@ -155,15 +157,17 @@
           </ul>
         </div>
       </div>
+    </section>
+    <footer>
       <div class="bot">
         <p class="tbs">
           <van-icon name="like" class="ccc" v-bind:style="{color:coo1}" @click="dian()"/>
           <van-icon name="other-pay" class="ccc"/>
           <van-icon name="exchange" class="ccc"/>
         </p>
-        <p class="wyy" @click="jks()">我要捐款</p>
+        <p class="wyy" @click="jk()">我要捐款</p>
       </div>
-    </van-pull-refresh>
+    </footer>
   </div>
 </template>
 <script>
@@ -175,7 +179,7 @@ export default {
       checked: true,
       isLoading: false,
       coo: false,
-      coo1: "",
+      coo1: ""
     };
   },
   computed: {
@@ -190,15 +194,15 @@ export default {
     onClickRight() {
       Toast("按钮");
     },
-    jks() {
+    jk() {
       this.$router.push("/jk");
     },
     dian() {
       this.coo = !this.coo;
       if (this.coo == true) {
-        this.coo1 = 'red';
+        this.coo1 = "red";
       } else {
-        this.coo1 ='black';
+        this.coo1 = "black";
       }
     },
     onRefresh() {
@@ -210,7 +214,27 @@ export default {
   }
 };
 </script>
-<style scoped="">
+<style type="text/css" scoped>
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+.ll {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+section {
+  flex: 1;
+  overflow-y: auto;
+}
+footer{
+  height: 45px;
+  text-align: center;
+}
+header {
+  height: 60px;
+}
 .qian ul {
   display: flex;
   justify-content: space-between;
@@ -321,13 +345,6 @@ h2 {
   margin-bottom: 6px;
   background: #ffffff;
 }
-body,
-html {
-  height: 100%;
-  width: 100%;
-  background: #eeeeee;
-}
-
 .er {
   margin: 0 15px;
 }
@@ -335,7 +352,6 @@ html {
   display: flex;
   justify-content: space-between;
 }
-
 .xqxq {
   width: 64px;
   height: 22px;
@@ -365,7 +381,6 @@ html {
   height: 95px;
   margin-top: 7px;
 }
-
 .san {
   margin: 0 15px;
 }

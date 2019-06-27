@@ -18,7 +18,8 @@
         placeholder="选择输入金额"
         type="String"
         value="元"
-      >
+      />
+      <span class="yy">元</span>
     </div>
     <p class="zf">支付方式</p>
     <div class="fs">
@@ -89,6 +90,11 @@ export default {
 };
 </script>
 <style scoped="">
+.yy{
+  float: right;
+  font-size: 16px;
+  margin-top: -30px
+}
 .active {
   border: red 1px solid !important;
 }

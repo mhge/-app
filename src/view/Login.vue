@@ -6,12 +6,12 @@
 		<div class="Info">
 			<van-row type="flex" class="DID">
 				<van-icon name="circle" class="circle" />
-				<van-field class="input" type="String" @blur="checkname()" v-model="username" maxlength="11" placeholder="请输入手机号" right-icon="question-o"  @click-right-icon="$toast('请输入 150 | 152 | 132 开头的手机号')" />
+				<van-field class="input" type="String" @blur="checkname()" v-model="username"clearable maxlength="11" placeholder="请输入手机号" right-icon="question-o"  @click-right-icon="$toast('仅支持 150 | 152 | 132 开头的手机号')" />
 			</van-row>
 			<span><strong>{{msgname}}</strong></span>
 			<van-row type="flex" class="DID">
 				<van-icon name="circle" class="circle" />
-				<van-field class="input" type="password" @blur="yao()" @click="L" clearable v-model="password" maxlength="16" placeholder="请输入密码"/>
+				<van-field class="input" type="password" @blur="yao()" @click="L" clearable v-model="password" maxlength="16" placeholder="请输入密码" @keyup.13="onClickLogin()"/>
 				<!-- <input type="password"clearable onkeyup="value=value.replace(/^(0+)|[^\dA-Za-z_/.]+/g,'')" v-model="password" maxlength="16" placeholder="请输入密码" /> -->
 			</van-row>
 			<span><strong>{{lyao}}</strong></span>
@@ -66,10 +66,11 @@
 				var reg = /^(132|150|152)\d{8}$/;
 				if (!reg.test(this.username)) {
 					this.msgname = "手机格式错误"
+					this.isDisabled = true
 				} else {
 					this.msgname = " "
 					this.password = ""
-					console.log(42)
+					this.lyao = "请重新输入密码"
 				}
 			},
 			L(){
@@ -80,7 +81,8 @@
 				var _this = this
 				if (!rng.test(this.password)) {
 					this.lyao = "密码格式错误"
-				} else if(!_this.msgname==" "){
+				} else if(_this.msgname==" "){	
+					
 					this.isDisabled = false
 					this.lyao = ""
 				}else{
@@ -89,7 +91,6 @@
 					this.isDisabled = true
 				}
 			},
-
 
 			...mapActions(['onClickLogin']),
 			onClickLeft() {
