@@ -40,7 +40,6 @@
 					<van-icon name="records" class="circle" />
 				</van-col>
 			</van-row>
-
 		</div>
 		</section>
 	</div>

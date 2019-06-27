@@ -32,12 +32,17 @@ import Xmxqs from "../view/xmxqs.vue";
 import Xmxq from "../view/xmxq.vue";
 import Zyz from "../view/zyz.vue";
 
+
+// wode
 import Zcq from "../view/zcq.vue";
 import yao from "../view/Yao.vue";
 import Login from "../view/Login.vue";
 import Register from "../view/Register.vue";
 import Forget from "../view/Forget.vue";
 import My from "../view/My.vue";
+import TCC from "../view/TCC";
+
+
 
 import Dt from "../view/Dt";
 import Dtxq from "../view/Dtxq";
@@ -49,7 +54,6 @@ import Xu from "../view/Xu";
 import Fb from "../view/Fb";
 import Aix from "../view/Aix";
 
-import TCC from "../view/TCC";
 
 Vue.use(Router);
 
