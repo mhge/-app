@@ -38,7 +38,7 @@
               </van-row>
               <van-row type="flex">
                 <van-col span="22" offset="1" class="san6">
-                  <van-button round type="danger" class="btn">点击完成日行一善</van-button>
+                  <van-button round type="danger" class="btn" @click="yao()">点击完成日行一善</van-button>
                 </van-col>
               </van-row>
             </van-col>
@@ -51,8 +51,8 @@
     <!-- 非固定页面 -->
     <section>
       <!-- 搜索框 -->
-      <div>
-        <van-search v-model="val" placeholder="搜索你想知道的" shape="round" @search="onSearch"></van-search>
+      <div @click="search">
+        <van-search v-model="val" placeholder="搜索你想知道的" shape="round"></van-search>
       </div>
       <div>
         <!-- 轮播图 -->
@@ -67,20 +67,21 @@
         <van-row type="flex" justify="space-around">
           <van-col span="10" class="spans">
             <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans1" @click="rz">组织入住</van-col>
-            </van-row>
-            <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans2">志愿组织755个</van-col>
+              <div @click="rz">
+                <van-col span="24" class="spans1">组织入住</van-col>
+                <van-col span="24" class="spans2">志愿组织755个</van-col>
+              </div>
             </van-row>
           </van-col>
+
           <van-col span="10" class="spans">
             <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans1">
-                <span @click="zyz">成为志愿者</span>
-              </van-col>
-            </van-row>
-            <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans2">志愿者16353个</van-col>
+              <div @click="zyz">
+                <van-col span="24" class="spans1">
+                  <span>成为志愿者</span>
+                </van-col>
+                <van-col span="24" class="spans2">志愿者16353个</van-col>
+              </div>
             </van-row>
           </van-col>
         </van-row>
@@ -91,38 +92,39 @@
         <van-row type="flex" justify="space-around" class="navs">
           <van-col span="6" class="nav" offset="2">
             <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span @click="fpzk">扶贫助困</span>
-              </van-col>
-            </van-row>
-          </van-col>
-          <van-col span="6" class="nav">
-            <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span @click="jlzl">敬老助老</span>
-              </van-col>
+              <div @click="fpzk">
+                <van-col span="16" class="imgs">
+                  <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+                </van-col>
+                <van-col span="24">
+                  <span>扶贫助困</span>
+                </van-col>
+              </div>
             </van-row>
           </van-col>
           <van-col span="6" class="nav">
             <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-              </van-col>
+              <div @click="jlzl">
+                <van-col span="16" class="imgs">
+                  <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+                </van-col>
+
+                <van-col span="24">
+                  <span>敬老助老</span>
+                </van-col>
+              </div>
             </van-row>
+          </van-col>
+          <van-col span="6" class="nav">
             <van-row type="flex">
-              <van-col span="24">
-                <span @click="gaet">关爱儿童</span>
-              </van-col>
+              <div @click="gaet">
+                <van-col span="16" class="imgs">
+                  <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+                </van-col>
+                <van-col span="24">
+                  <span>关爱儿童</span>
+                </van-col>
+              </div>
             </van-row>
           </van-col>
           <van-col span="6" class="nav">
@@ -177,14 +179,14 @@
           </van-col>
           <van-col span="6" class="nav">
             <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span @click="qbhd">全部活动</span>
-              </van-col>
+              <div @click="qbhd">
+                <van-col span="16" class="imgs">
+                  <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+                </van-col>
+                <van-col span="24">
+                  <span>全部活动</span>
+                </van-col>
+              </div>
             </van-row>
           </van-col>
         </van-row>
@@ -491,7 +493,7 @@ export default {
     });
   },
   methods: {
-    onSearch() {
+    search() {
       this.$router.push("./search");
     },
     onClickRight() {
@@ -505,6 +507,9 @@ export default {
     },
     showBasics() {
       this.showBasic = true;
+    },
+    yao() {
+      this.showBasic = false;
     },
     res() {
       this.$router.push("./xmxqs");

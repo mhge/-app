@@ -1,8 +1,7 @@
 <template>
-	<div>
-
+	<div class="yao">
 		<van-row type="flex" justify="center">
-			<router-link class="yuan" to='/dlu'>
+			<router-link class="yuan" to='/login'>
 				<div class="D">登录</div>
 				<div>微善</div>
 			</router-link>
@@ -24,6 +23,9 @@
 
 </script>
 <style scoped>
+	.yao{
+		overflow: auto;
+	}
 	.yuan {
 		width: 2.25rem;
 		height: 2.25rem;

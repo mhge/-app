@@ -33,11 +33,11 @@ import Xmxq from "../view/xmxq.vue";
 import Zyz from "../view/zyz.vue";
 
 import Zcq from "../view/zcq.vue";
-import Dl from "../view/dl.vue";
-import Dlu from "../view/dlu.vue";
-import Zz from "../view/zz.vue";
-import Wjmm from "../view/wjmm.vue";
-import Wode from "../view/wode.vue";
+import yao from "../view/Yao.vue";
+import Login from "../view/Login.vue";
+import Register from "../view/Register.vue";
+import Forget from "../view/Forget.vue";
+import My from "../view/My.vue";
 
 import Dt from "../view/Dt";
 import Dtxq from "../view/Dtxq";
@@ -48,6 +48,8 @@ import Jk from "../view/JK";
 import Xu from "../view/Xu";
 import Fb from "../view/Fb";
 import Aix from "../view/Aix";
+
+import TCC from "../view/TCC";
 
 Vue.use(Router);
 
@@ -73,44 +75,71 @@ export default new Router({
       component: Zcq
     },
     {
-      path: "/dl",
-      component: Dl
+      path: "/fb",
+      component: Fb
     },
     {
-      path: "/dlu",
-      component: Dlu
+      path: "/aix",
+      component: Aix
     },
     {
-      path: "/zz",
-      component: Zz
+      path: "/dt",
+      redirect: "/dtxq",
+      component: Dt,
+      children: [
+        {
+          path: "/dtxq",
+          component: Dtxq
+        },
+        {
+          path: "/dtxc",
+          component: Dtxc
+        },
+        {
+          path: "/dtqz",
+          component: Dtqz
+        },
+        {
+          path: "/dtgn",
+          component: Dtgn
+        }
+      ]
     },
     {
-      path: "/wjmm",
-      component: Wjmm
+      path: "/xu",
+      component: Xu
     },
     {
-      path: "/wode",
-      component: Wode
+      path: "/jk",
+      component: Jk
     },
     {
-      path: "/dl",
-      component: Dl
+      path: "zcq",
+      component: Zcq
     },
     {
-      path: "/dlu",
-      component: Dlu
+      path: "/tcc",
+      component: TCC
     },
     {
-      path: "/zz",
-      component: Zz
+      path: "/yao",
+      component: yao
     },
     {
-      path: "/wjmm",
-      component: Wjmm
+      path: "/login",
+      component: Login
     },
     {
-      path: "/wode",
-      component: Wode
+      path: "/register",
+      component: Register
+    },
+    {
+      path: "/forget",
+      component: Forget
+    },
+    {
+      path: "/my",
+      component: My
     },
     {
       path: "/fb",
@@ -246,7 +275,6 @@ export default new Router({
         { path: "/jzhb", component: Jzhb }
       ]
     },
-
     {
       path: "/qbhds",
       component: Qbhds,
