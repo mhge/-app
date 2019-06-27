@@ -36,7 +36,7 @@
             <van-col>
               <van-icon name="arrow"/>
             </van-col>
-          </van-row>
+          </van-row> 
         </van-row>
         <van-row type="flex">
           <van-col class="icon">

@@ -126,8 +126,8 @@
 <style scoped>
 	section{
 		width:100%;
-		height:670px;
-		background:url(http://127.0.0.1:8848/%E3%82%9B%EF%BC%97%EF%BC%92%EF%BC%94%20.%C2%B0/QQ%E5%9B%BE%E7%89%8720190627144009.gif) no-repeat;
+		height:700px;
+		background:url(https://wx1.sinaimg.cn/large/0069SR0Aly1g4fqe2ykpsg30bu0l1b2e.gif) no-repeat;
 		background-size:cover;
 	}
 	.QT {
