@@ -71,16 +71,15 @@
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
 export default {
   name: "Dtxq",
   methods: {
-    tz(){
-			this.$router.push('/xu')
-		}
+    tz() {
+      this.$router.push("/xu");
+    }
   }
 };
 </script>
@@ -92,7 +91,7 @@ export default {
   color: rgba(187, 187, 187, 1);
   font-weight: 900;
 }
-.bob{
+.bob {
   background: #eeeeee;
   height: 100%;
   width: 100%;
@@ -115,7 +114,7 @@ export default {
   height: 42px;
   line-height: 20px;
   text-align: center;
-  border: 1px solid rgba(187, 187, 187, 1);
+
   margin-top: 18px;
   border-radius: 50%;
 }

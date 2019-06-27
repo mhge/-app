@@ -7,7 +7,6 @@
 			<van-row type="flex" class="wo">
 				<van-col>
 					<router-link to="/yao" class="p"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></router-link>
-					<!-- <div class="tx"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></div> -->
 				</van-col>
 				<van-col class="log">
 					<router-link to="/yao">登录</router-link>
@@ -77,21 +76,20 @@
 				</van-row>
 			</div>
 
-
 			<div>
-			<router-link to="/tcc" tag="span">
-				<van-row type="flex">
-					<van-col class="icon">
-						<van-icon name="circle" />
-					</van-col>
-					<van-row type="flex" justify="space-between" class="top">
-						<van-col>设置</van-col>
-						<van-col>
-							<van-icon name="arrow" />
+				<router-link to="/tcc" tag="span">
+					<van-row type="flex">
+						<van-col class="icon">
+							<van-icon name="circle" />
 						</van-col>
+						<van-row type="flex" justify="space-between" class="top">
+							<van-col>设置</van-col>
+							<van-col>
+								<van-icon name="arrow" />
+							</van-col>
+						</van-row>
 					</van-row>
-				</van-row>
-			</router-link>
+				</router-link>
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -118,30 +116,28 @@
 					<van-col class="icon">
 						
 					</van-col>
-					
 				</van-row>
 			</div>
 		</van-row>
-	<van-tabbar v-model="active">
-	  <van-tabbar-item icon="home-o" to="/main">首页</van-tabbar-item>
-	  <van-tabbar-item icon="search" to="/dt">动态</van-tabbar-item>
-	  <van-tabbar-item icon="friends-o" to="/fb">发布</van-tabbar-item>
-	  <van-tabbar-item icon="fire" to="/zcq">我的</van-tabbar-item>
-	</van-tabbar>
+		<van-tabbar v-model="active">
+			<van-tabbar-item icon="home-o" to="/main">首页</van-tabbar-item>
+			<van-tabbar-item icon="search" to="/dt">动态</van-tabbar-item>
+			<van-tabbar-item icon="friends-o" to="/fb">发布</van-tabbar-item>
+			<van-tabbar-item icon="fire" to="/zcq">我的</van-tabbar-item>
+		</van-tabbar>
 	</div>
-
 </template>
 
 <script>
 	export default {
-		name: 'zcq',
+		name: "zcq",
 		data() {
 			return {
-				title: '我',
-				active:3
-			}
+				title: "我",
+				active: 3
+			};
 		}
-	}
+	};
 </script>
 
 <style scoped>
@@ -158,8 +154,8 @@
 		border: 1px solid #555;
 		width: 70px;
 		height: 70px;
-		text-align:center;
-		line-height:70px;
+		text-align: center;
+		line-height: 70px;
 		color: #000000;
 	}
 	.p img{
@@ -181,13 +177,13 @@
 	}
 
 	.log a {
-		color: rgb(54, 48, 48)
+		color: rgb(54, 48, 48);
 	}
 
 	.info {
 		flex: 1;
 		flex-direction: column;
-		font-size: 14px
+		font-size: 14px;
 	}
 
 	.top {
@@ -204,16 +200,16 @@
 
 	.icon .van-icon {
 		margin: 12px 6px 0 10px;
-		font-size: 42px
+		font-size: 42px;
 	}
 
 	.van-icon {
 		color: #ccc;
-		font-size: 24px
+		font-size: 24px;
 	}
 
 	.mar {
-		border-top: 10px solid rgb(230, 230, 230, );
+		border-top: 10px solid rgb(230, 230, 230);
 		border-bottom: 10px solid rgb(230, 230, 230);
 	}
 </style>

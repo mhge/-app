@@ -49,18 +49,18 @@
       </van-col>
     </van-row>
     <van-tabbar v-model="active">
-      <van-tabbar-item to="tjsh">报名</van-tabbar-item>
+      <van-tabbar-item to="baoming">报名</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
 <script>
 export default {
   data() {
-    return {};
+    return {active:""};
   },
   methods: {
     onClickLeft() {
-      Toast("返回");
+      this.$router.push("/main");
     }
   }
 };

@@ -32,8 +32,6 @@ import Xmxqs from "../view/xmxqs.vue";
 import Xmxq from "../view/xmxq.vue";
 import Zyz from "../view/zyz.vue";
 
-
-// My
 import Zcq from "../view/zcq.vue";
 import yao from "../view/Yao.vue";
 import Login from "../view/Login.vue";
@@ -41,25 +39,19 @@ import Register from "../view/Register.vue";
 import Forget from "../view/Forget.vue";
 import My from "../view/My.vue";
 
+import Dt from "../view/Dt";
+import Dtxq from "../view/Dtxq";
+import Dtxc from "../view/Dtxc";
+import Dtqz from "../view/Dtqz";
+import Dtgn from "../view/Dtgn";
+import Jk from "../view/JK";
+import Xu from "../view/Xu";
+import Fb from "../view/Fb";
+import Aix from "../view/Aix";
 
-
-import Dt from '../view/Dt'
-import Dtxq from '../view/Dtxq'
-import Dtxc from '../view/Dtxc'
-import Dtqz from '../view/Dtqz'
-import Dtgn from '../view/Dtgn'
-import Jk from '../view/JK'
-import Xu from '../view/Xu'
-import Fb from '../view/Fb'
-import Aix from '../view/Aix'
-
-
-
-import TCC from '../view/TCC'
-
+import TCC from "../view/TCC";
 
 Vue.use(Router);
-
 
 export default new Router({
   routes: [
@@ -78,73 +70,112 @@ export default new Router({
         }
       ]
     },
-		{
-		  path: "/zcq",
-		  component: Zcq
-		},
-		{
-		  path: "/tcc",
-		  component: TCC
-		},
-		{
-		  path: "/yao",
-		  component: yao
-		},
-		{
-		  path: "/login",
-		  component: Login
-		},
-		{
-		  path: "/register",
-		  component: Register
-		},
-		{
-		  path: "/forget",
-		  component: Forget
-		},
-		 {
-		  path: "/my",
-		  component: My
-		},
-		{
-			path: "/fb",
-			component: Fb
-		},
-		{
-		  path:'/aix',
-		  component:Aix
-		},
-		{
-			path: "/dt",
-			redirect:'/dtxq',
-			component: Dt,
-			children:[
-			   {
-			    path:'/dtxq',
-			    component:Dtxq
-			  },
-			  {
-			    path:'/dtxc',
-			    component:Dtxc
-			  },
-			  {
-			    path:'/dtqz',
-			    component:Dtqz
-			  },
-			  {
-			    path:'/dtgn',
-			    component:Dtgn
-			  }
-			]
-		},
-		{
-		  path:'/xu',
-		  component:Xu
-		},
-		{
-		  path:'/jk',
-		  component:Jk
-		},
+    {
+      path: "/zcq",
+      component: Zcq
+    },
+    {
+      path: "/fb",
+      component: Fb
+    },
+    {
+      path: "/aix",
+      component: Aix
+    },
+    {
+      path: "/dt",
+      redirect: "/dtxq",
+      component: Dt,
+      children: [
+        {
+          path: "/dtxq",
+          component: Dtxq
+        },
+        {
+          path: "/dtxc",
+          component: Dtxc
+        },
+        {
+          path: "/dtqz",
+          component: Dtqz
+        },
+        {
+          path: "/dtgn",
+          component: Dtgn
+        }
+      ]
+    },
+    {
+      path: "/xu",
+      component: Xu
+    },
+    {
+      path: "/jk",
+      component: Jk
+    },
+    {
+      path: "/tcc",
+      component: TCC
+    },
+    {
+      path: "/yao",
+      component: yao
+    },
+    {
+      path: "/login",
+      component: Login
+    },
+    {
+      path: "/register",
+      component: Register
+    },
+    {
+      path: "/forget",
+      component: Forget
+    },
+    {
+      path: "/my",
+      component: My
+    },
+    {
+      path: "/fb",
+      component: Fb
+    },
+    {
+      path: "/aix",
+      component: Aix
+    },
+    {
+      path: "/dt",
+      redirect: "/dtxq",
+      component: Dt,
+      children: [
+        {
+          path: "/dtxq",
+          component: Dtxq
+        },
+        {
+          path: "/dtxc",
+          component: Dtxc
+        },
+        {
+          path: "/dtqz",
+          component: Dtqz
+        },
+        {
+          path: "/dtgn",
+          component: Dtgn
+        }
+      ]
+    },
+    {
+      path: "/xu",
+      component: Xu
+    },
+    {
+      path: "/jk",
+      component: Jk
+    },
     {
       path: "/xz",
       component: Xz
@@ -178,31 +209,9 @@ export default new Router({
       component: Zyz
     },
     {
-      path: "/qbhds",
-      component: Qbhds,
-      children: [
-        {
-          path: "/qbhd",
-          component: Qbhd
-        },
-        {
-          path: "/fpzk",
-          component: Fpzk
-        },
-        {
-          path: "/jlzl",
-          component: Jlzl
-        },
-        {
-          path: "/gaet",
-          component: Gaet
-        }
-      ]
-    },
-    {
       path: "/zxzms",
-      component: Zxzms,
       redirect: "/zxzm",
+      component: Zxzms,
       children: [
         {
           path: "/zxzm",
@@ -258,7 +267,19 @@ export default new Router({
         {
           path: "/Jzhb",
           component: Jzhb
-        }
+        },
+        { path: "/jzhb", component: Jzhb }
+      ]
+    },
+    {
+      path: "/qbhds",
+      component: Qbhds,
+      redirect: "/qbhd",
+      children: [
+        { path: "/qbhd", component: Qbhd },
+        { path: "/fpzk", component: Fpzk },
+        { path: "/jlzl", component: Jlzl },
+        { path: "/gaet", component: Gaet }
       ]
     }
   ]

@@ -283,9 +283,7 @@ header {
 .tp1 {
   width: 42px;
   height: 42px;
-  line-height: 20px;
   text-align: center;
-  border: 1px solid rgba(187, 187, 187, 1);
   margin-top: 18px;
   border-radius: 50%;
 }
@@ -486,13 +484,13 @@ h2 {
   background: #eeeeee;
 }
 
-.tbs{
-width: 60%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 15px;
-    font-size: 24px;
+.tbs {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 24px;
 }
 .wyy {
   width: 112px;

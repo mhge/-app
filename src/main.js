@@ -6,9 +6,8 @@ import App from "./App";
 import Vant from "vant";
 import flexible from "lib-flexible";
 import router from "./router";
-import store from './store'
-import './mock/gn'
-
+import store from './store';
+import './mock/gn';
 
 Vue.config.productionTip = false;
 Vue.use(Vant);
@@ -16,9 +15,11 @@ Vue.use(flexible);
 
 /* eslint-disable no-new */
 new Vue({
-  el: "#app",
-  router,
-  store,
-  components: { App },
-  template: "<App/>"
+	el: "#app",
+	router,
+	store,
+	components: {
+		App
+	},
+	template: "<App/>"
 });
