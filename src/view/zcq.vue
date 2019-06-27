@@ -50,43 +50,7 @@
           </van-row>
         </van-row>
       </div>
-      <div class="mar">
-        <van-row type="flex">
-          <van-col class="icon">
-            <van-icon name="circle"/>
-          </van-col>
-          <van-row type="flex" justify="space-between" class="top">
-            <van-col>捐助项目</van-col>
-            <van-col>
-              <van-icon name="arrow"/>
-            </van-col>
-          </van-row>
-        </van-row>
 
-        <van-row type="flex">
-          <van-col class="icon">
-            <van-icon name="circle"/>
-          </van-col>
-          <van-row type="flex" justify="space-between" class="top">
-            <van-col>我的组织</van-col>
-            <van-col>
-              <van-icon name="arrow"/>
-            </van-col>
-          </van-row>
-        </van-row>
-
-        <van-row type="flex">
-          <van-col class="icon">
-            <van-icon name="circle"/>
-          </van-col>
-          <van-row type="flex" justify="space-between" class="top">
-            <van-col>我的消息</van-col>
-            <van-col>
-              <van-icon name="arrow"/>
-            </van-col>
-          </van-row>
-        </van-row>
-      </div>
       <div class="mar">
         <van-row type="flex">
           <van-col class="icon">
