@@ -4,7 +4,7 @@
     <!-- 头部及点击蒙版 -->
     <van-nav-bar left-text="logo名字" fixed class="left">
       <van-icon name="location" slot="right" color="inherit" @click="showBasics"/>
-      <van-icon name="hot" slot="right" color="inherit"/>
+      <van-icon name="hot" slot="right" color="inherit" @click="send"/>
     </van-nav-bar>
     <van-popup v-model="showBasic">
       <van-row type="flex" class="san">
@@ -491,7 +491,9 @@ export default {
     });
   },
   methods: {
-    onSearch() {},
+    onSearch() {
+      this.$router.push("./search");
+    },
     onClickRight() {
       Toast("按钮");
     },
@@ -530,6 +532,9 @@ export default {
     },
     jqbm() {
       this.$router.push("./jqbm");
+    },
+    send() {
+      this.$router.push("./xz");
     }
   }
 };

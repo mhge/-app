@@ -1,0 +1,126 @@
+.tb {
+  font-size: 24px;
+  color: rgba(187, 187, 187, 1);
+  font-weight: 900;
+}
+.xm {
+  width: 36px;
+  height: 20px;
+  color: rgba(187, 187, 187, 1);
+  font-size: 14px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+  float: left;
+}
+.tp1{
+width: 42px;
+height: 42px;
+line-height: 20px;
+text-align: center;
+border: 1px solid rgba(187, 187, 187, 1);
+margin-top: 18px;
+border-radius: 50%;
+}
+.tou {
+  display: flex;
+}
+.xx{
+  width:305px;
+overflow: hidden;
+padding-right: 11px;
+margin-bottom:8px;
+}
+.bob{
+  background: #eeeeee;
+  height: 100%;
+  width: 100%;
+}
+.sh {
+  width: 44px;
+  height: 16px;
+  line-height: 15px;
+  border-radius: 4px;
+  background-color: rgba(248, 248, 248, 1);
+  color: rgba(187, 187, 187, 1);
+  font-size: 10px;
+  text-align: center;
+  font-family: Arial;
+  border: 1px solid rgba(255, 255, 255, 0);
+  float: right;
+}
+.bt {
+  font-size: 16px;
+  color: rgba(16, 16, 16, 1);
+  font-family: PingFangSC-regular;
+  font-weight: 800;
+}
+.gr {
+  width: 54px;
+  height: 16px;
+  line-height: 15px;
+  border-radius: 4px;
+  background-color: rgba(248, 248, 248, 1);
+  color: rgba(187, 187, 187, 1);
+  font-size: 10px;
+  text-align: center;
+  font-family: Arial;
+  border: 1px solid rgba(255, 255, 255, 0);
+  float: right;
+  margin-left: 6px;
+}
+.lb {
+  padding-left: 15px;
+  padding-right: 11px;
+  background: #ffffff;
+  margin-bottom: 8px;
+  padding-bottom: 8px;
+}
+.kd {
+  margin-top: 15px;
+  height:6px;
+  background: #eeeeee;
+  width: 100%;
+}
+.je{
+color: rgba(187, 187, 187, 1);
+font-size: 10px;
+text-align: left;
+font-family: PingFangSC-regular;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.je span{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.xxqk{
+height: 33px;
+color: rgba(187, 187, 187, 1);
+font-size: 10px;
+text-align: left;
+font-family: PingFangSC-regular;
+overflow: hidden;
+}
+.tpnr img{
+width: 109px;
+height: 95px;
+margin-bottom: 16px;
+}
+.dz {
+  height: 14px;
+  color: rgba(187, 187, 187, 1);
+  font-size: 10px;
+  text-align: left;
+  font-family: PingFangSC-regular;
+  margin-top: 8px;
+}
+h2{
+width: 200px;
+height: 20px;
+color: rgba(16, 16, 16, 1);
+font-size: 14px;
+text-align: left;
+font-family: PingFangSC-regular;
+}

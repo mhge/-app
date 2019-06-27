@@ -39,6 +39,16 @@ import Zz from "../view/zz.vue";
 import Wjmm from "../view/wjmm.vue";
 import Wode from "../view/wode.vue";
 
+import Dt from "../view/Dt";
+import Dtxq from "../view/Dtxq";
+import Dtxc from "../view/Dtxc";
+import Dtqz from "../view/Dtqz";
+import Dtgn from "../view/Dtgn";
+import Jk from "../view/JK";
+import Xu from "../view/Xu";
+import Fb from "../view/Fb";
+import Aix from "../view/Aix";
+
 Vue.use(Router);
 
 export default new Router({
@@ -83,6 +93,65 @@ export default new Router({
       component: Wode
     },
     {
+      path: "/dl",
+      component: Dl
+    },
+    {
+      path: "/dlu",
+      component: Dlu
+    },
+    {
+      path: "/zz",
+      component: Zz
+    },
+    {
+      path: "/wjmm",
+      component: Wjmm
+    },
+    {
+      path: "/wode",
+      component: Wode
+    },
+    {
+      path: "/fb",
+      component: Fb
+    },
+    {
+      path: "/aix",
+      component: Aix
+    },
+    {
+      path: "/dt",
+      redirect: "/dtxq",
+      component: Dt,
+      children: [
+        {
+          path: "/dtxq",
+          component: Dtxq
+        },
+        {
+          path: "/dtxc",
+          component: Dtxc
+        },
+        {
+          path: "/dtqz",
+          component: Dtqz
+        },
+        {
+          path: "/dtgn",
+          component: Dtgn
+        }
+      ]
+    },
+    {
+      path: "/xu",
+      component: Xu
+    },
+    {
+      path: "/jk",
+      component: Jk
+    },
+    {
       path: "/xz",
       component: Xz
     },
@@ -115,31 +184,9 @@ export default new Router({
       component: Zyz
     },
     {
-      path: "/qbhds",
-      component: Qbhds,
-      children: [
-        {
-          path: "/qbhd",
-          component: Qbhd
-        },
-        {
-          path: "/fpzk",
-          component: Fpzk
-        },
-        {
-          path: "/jlzl",
-          component: Jlzl
-        },
-        {
-          path: "/gaet",
-          component: Gaet
-        }
-      ]
-    },
-    {
       path: "/zxzms",
-      component: Zxzms,
       redirect: "/zxzm",
+      component: Zxzms,
       children: [
         {
           path: "/zxzm",
@@ -191,11 +238,24 @@ export default new Router({
           path: "/jzdt",
           component: Jzdt
         },
+
         {
           path: "/Jzhb",
           component: Jzhb
         },
         { path: "/jzhb", component: Jzhb }
+      ]
+    },
+
+    {
+      path: "/qbhds",
+      component: Qbhds,
+      redirect: "/qbhd",
+      children: [
+        { path: "/qbhd", component: Qbhd },
+        { path: "/fpzk", component: Fpzk },
+        { path: "/jlzl", component: Jlzl },
+        { path: "/gaet", component: Gaet }
       ]
     }
   ]
