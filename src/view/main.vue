@@ -485,11 +485,11 @@ export default {
     // this.title.style.font-size='18px';
     var that = this;
     axios({
-      url: "http://101.132.164.103:8080/together/activity.do"
-      // params: { uid: 11940 }
+      url: "http://jx.xuzhixiang.top/ap/api/bannerlist.php",
+      params: { uid: 11940 }
     }).then(function(data) {
-      console.log(data.data.data);
-      // that.list = data.data.data;
+      // console.log(data.data.data);
+      that.list = data.data.data;
     });
   },
   methods: {

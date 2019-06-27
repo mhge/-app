@@ -32,11 +32,9 @@ import Xmxqs from "../view/xmxqs.vue";
 import Xmxq from "../view/xmxq.vue";
 import Zyz from "../view/zyz.vue";
 
-<<<<<<< HEAD
 
 // wode
-=======
->>>>>>> 27f1407dd1e475cb8aaf8843ffaa7a5242ce7a35
+
 import Zcq from "../view/zcq.vue";
 import yao from "../view/Yao.vue";
 import Login from "../view/Login.vue";
@@ -45,17 +43,7 @@ import Forget from "../view/Forget.vue";
 import My from "../view/My.vue";
 import TCC from "../view/TCC";
 
-import Dt from "../view/Dt";
-import Dtxq from "../view/Dtxq";
-import Dtxc from "../view/Dtxc";
-import Dtqz from "../view/Dtqz";
-import Dtgn from "../view/Dtgn";
-import Jk from "../view/JK";
-import Xu from "../view/Xu";
-import Fb from "../view/Fb";
-import Aix from "../view/Aix";
 
-<<<<<<< HEAD
 
 import Dt from "../view/Dt";
 import Dtxq from "../view/Dtxq";
@@ -67,9 +55,6 @@ import Xu from "../view/Xu";
 import Fb from "../view/Fb";
 import Aix from "../view/Aix";
 
-=======
-import TCC from "../view/TCC";
->>>>>>> 27f1407dd1e475cb8aaf8843ffaa7a5242ce7a35
 
 Vue.use(Router);
 
@@ -91,21 +76,10 @@ export default new Router({
       ]
     },
     {
-<<<<<<< HEAD
-=======
-      path: "/zcq",
-      component: Zcq
-    },
-    {
-      path: "/fb",
-      component: Fb
-    },
-    {
       path: "/aix",
       component: Aix
     },
     {
->>>>>>> 27f1407dd1e475cb8aaf8843ffaa7a5242ce7a35
       path: "/dt",
       redirect: "/dtxq",
       component: Dt,
@@ -128,6 +102,10 @@ export default new Router({
         }
       ]
     },
+		{
+		  path: "/fb",
+		  component: Fb
+		},
     {
       path: "/xu",
       component: Xu
@@ -135,48 +113,6 @@ export default new Router({
     {
       path: "/jk",
       component: Jk
-    },
-    {
-<<<<<<< HEAD
-=======
-      path: "zcq",
-      component: Zcq
-    },
-    {
-      path: "/tcc",
-      component: TCC
-    },
-    {
-      path: "/yao",
-      component: yao
-    },
-    {
-      path: "/login",
-      component: Login
-    },
-    {
-      path: "/register",
-      component: Register
-    },
-    {
->>>>>>> 27f1407dd1e475cb8aaf8843ffaa7a5242ce7a35
-      path: "/forget",
-      component: Forget
-    },
-    {
-      path: "/my",
-      component: My
-    },
-    {
-<<<<<<< HEAD
-=======
-      path: "/fb",
-      component: Fb
-    },
-    {
->>>>>>> 27f1407dd1e475cb8aaf8843ffaa7a5242ce7a35
-      path: "/aix",
-      component: Aix
     },
     {
       path: "/dt",
@@ -296,7 +232,6 @@ export default new Router({
           path: "/jzdt",
           component: Jzdt
         },
-
         {
           path: "/Jzhb",
           component: Jzhb
@@ -314,10 +249,6 @@ export default new Router({
         { path: "/jlzl", component: Jlzl },
         { path: "/gaet", component: Gaet }
       ]
-    },
-    {
-      path: "/fb",
-      component: Fb
     },
     {
       path: "/zcq",
@@ -338,6 +269,14 @@ export default new Router({
     {
       path: "/register",
       component: Register
-    }
+    },
+		{
+			path: "/forget",
+			component: Forget
+		},
+		{
+				path: "/my",
+				component: My
+		}
   ]
 });
