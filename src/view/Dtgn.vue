@@ -9,7 +9,7 @@
               <span class="xm">{{item.name}}</span>
               <span class="sh">关注</span>
             </p>
-            <p class="dz">{{item.address}}</p>
+            <p class="dz"><van-icon name="location-o" />{{item.address}}</p>
           </div>
         </div>
 
@@ -49,7 +49,7 @@
               <span class="xm">何*兴</span>
               <span class="sh">关注</span>
             </p>
-            <p class="dz">湖北省恩施土家族苗族自治州建始县</p>
+            <p class="dz"><van-icon name="location-o" />湖北省恩施土家族苗族自治州建始县</p>
           </div>
         </div>
 

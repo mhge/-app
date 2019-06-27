@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div>
     <van-nav-bar :title="title" class="ti">
       <van-icon name="fire" slot="right" size="0.725rem" color="gray"/>
@@ -31,6 +32,71 @@
           <van-col class="icon">
             <van-icon name="circle"/>
           </van-col>
+=======
+	<div>
+		<van-nav-bar :title="title" class="ti">
+			<van-icon name="fire" slot="right" size="0.725rem" color="gray" />
+		</van-nav-bar>
+		<div>
+			<van-row type="flex" class="wo">
+				<van-col>
+					<router-link to="/yao" class="p">头像</router-link>
+				</van-col>
+				<van-col class="log">
+					<router-link to="/yao">登录</router-link>
+				</van-col>
+			</van-row>
+			<div class="van-hairline--bottom"></div>
+		</div>
+		<van-row type="flex" class="info">
+			<div class="mar">
+				<van-row type="flex" class="con">
+					<van-col class="icon">
+						<van-icon name="circle" />
+					</van-col>
+					<van-row type="flex" justify="space-between" class="top">
+						<van-col>我的动态</van-col>
+						<van-col>
+							<van-icon name="arrow" />
+						</van-col>
+					</van-row>
+				</van-row>
+				<van-row type="flex">
+					<van-col class="icon">
+						<van-icon name="circle" />
+					</van-col>
+					<van-row type="flex" justify="space-between" class="top">
+						<van-col>我的组织</van-col>
+						<van-col>
+							<van-icon name="arrow" />
+						</van-col>
+					</van-row>
+				</van-row>
+				<van-row type="flex">
+					<van-col class="icon">
+						<van-icon name="circle" />
+					</van-col>
+					<van-row type="flex" justify="space-between" class="top">
+						<van-col>我的消息</van-col>
+						<van-col>
+							<van-icon name="arrow" />
+						</van-col>
+					</van-row>
+				</van-row>
+			</div>
+			<div class="mar">
+				<van-row type="flex">
+					<van-col class="icon">
+						<van-icon name="circle" />
+					</van-col>
+					<van-row type="flex" justify="space-between" class="top">
+						<van-col>捐助项目</van-col>
+						<van-col>
+							<van-icon name="arrow" />
+						</van-col>
+					</van-row>
+				</van-row>
+>>>>>>> d17569d29bd07486a562a116797dc004c68acbca
 
           <van-row type="flex" justify="space-between" class="top">
             <van-col>我的组织</van-col>

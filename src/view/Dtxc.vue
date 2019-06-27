@@ -9,7 +9,7 @@
               <span class="xm">何*兴</span>
               <span class="sh" @click.stop="gz()" v-bind:style="{background:bj}">{{srr}}</span>
             </p>
-            <p class="dz">湖北省恩施土家族苗族自治州建始县</p>
+            <p class="dz"><van-icon name="location-o" />湖北省恩施土家族苗族自治州建始县</p>
           </div>
         </div>
 
@@ -49,7 +49,7 @@
               <span class="xm">何*兴</span>
               <span class="sh" @click.stop="gz()"  v-bind:style="{background:bj}">{{srr}}</span>
             </p>
-            <p class="dz">湖北省恩施土家族苗族自治州建始县</p>
+            <p class="dz"><van-icon name="location-o" />湖北省恩施土家族苗族自治州建始县</p>
           </div>
         </div>
 
@@ -102,8 +102,8 @@ export default {
         this.srr='关注'
         this.bj=''
       }else{
-        this.srr='已关注'
-        this.bj='green'
+        // this.srr='已关注'
+        // this.bj='green'
       }
 
     }
