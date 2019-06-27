@@ -1,17 +1,18 @@
 <template>
 	<div class="Out">
+	<section>
 		<van-nav-bar title="登录" left-arrow @click-left="onClickLeft">
 		</van-nav-bar>
-		<div class="tx"></div>
+		<div class="tx"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></div>
 		<div class="Info">
 			<van-row type="flex" class="DID">
 				<van-icon name="circle" class="circle" />
-				<van-field class="input" type="String" @blur="checkname()" v-model="username"clearable maxlength="11" placeholder="请输入手机号" right-icon="question-o"  @click-right-icon="$toast('仅支持 150 | 152 | 132 开头的手机号')" />
+				<van-field class="input" type="String" @blur="checkname()" @click="L" v-model="username"clearable maxlength="11" placeholder="请输入手机号" ref= 'intusername' right-icon="question-o"  @click-right-icon="$toast('仅支持 150 | 152 | 132 开头的手机号')" />
 			</van-row>
 			<span><strong>{{msgname}}</strong></span>
 			<van-row type="flex" class="DID">
 				<van-icon name="circle" class="circle" />
-				<van-field class="input" type="password" @blur="yao()" @click="L" clearable v-model="password" maxlength="16" placeholder="请输入密码" @keyup.13="onClickLogin()"/>
+				<van-field class="input" type="password" @blur="yao()" @click="L" clearable v-model="password" maxlength="16" placeholder="请输入密码" @keyup.13="onClickLogin()" ref="22222" right-icon="question-o"  @click-right-icon="$toast('字母或数字或下划线 密码格式 6 - 16 位')"/>
 				<!-- <input type="password"clearable onkeyup="value=value.replace(/^(0+)|[^\dA-Za-z_/.]+/g,'')" v-model="password" maxlength="16" placeholder="请输入密码" /> -->
 			</van-row>
 			<span><strong>{{lyao}}</strong></span>
@@ -41,6 +42,7 @@
 			</van-row>
 
 		</div>
+		</section>
 	</div>
 </template>
 
@@ -58,7 +60,8 @@
 				password: '',
 				msgname: '',
 				lyao:'',
-				isDisabled:true
+				isDisabled:true,
+				
 			}
 		},
 		methods: {
@@ -75,6 +78,7 @@
 			},
 			L(){
 				this.isDisabled = true
+				this.$refs.intusername.$el.querySelector('input').style= "color:yellow"
 			},
 			yao(){
 				var rng = /^\w{6,16}$/;
@@ -82,11 +86,9 @@
 				if (!rng.test(this.password)) {
 					this.lyao = "密码格式错误"
 				} else if(_this.msgname==" "){	
-					
 					this.isDisabled = false
 					this.lyao = ""
 				}else{
-					console.log(45)
 					this.lyao = ""
 					this.isDisabled = true
 				}
@@ -122,6 +124,12 @@
 </script>
 
 <style scoped>
+	section{
+		width:100%;
+		height:670px;
+		background:url(http://127.0.0.1:8848/%E3%82%9B%EF%BC%97%EF%BC%92%EF%BC%94%20.%C2%B0/QQ%E5%9B%BE%E7%89%8720190627144009.gif) no-repeat;
+		background-size:cover;
+	}
 	.QT {
 		border-left: 0px;
 		border-top: 0px;
@@ -129,6 +137,7 @@
 		border-bottom: 0px;
 		font-size: 0.3rem;
 		margin-bottom: 20px;
+		background:rgba(0,0,0,0);
 	}
 
 	.DL {
@@ -149,7 +158,8 @@
 
 	.input {
 		font-size: 0.5rem;
-		color: #FF0000;
+		color:#fff;
+		background:rgba(0,0,0,0.2);
 	}
 
 	.tx {
@@ -158,6 +168,11 @@
 		width: 81px;
 		border: 1px solid #888;
 		margin: 13px auto 48px
+	}
+	.tx img{
+		border-radius: 50%;
+		height: 81px;
+		width: 81px;
 	}
 
 	.Info {

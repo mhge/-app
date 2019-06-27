@@ -6,7 +6,7 @@
 
 		<van-row type="flex" class="Info">
 			<van-col class="in-top">
-				<div class="tu"></div>
+				<router-link to="/yao" class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></router-link>
 				<van-row type="flex" justify="space-between" class="tt">
 					<van-col class="use">
 						<!-- <textarea></textarea> -->
@@ -208,9 +208,6 @@
 		height: 108px;
 
 	}
-
-
-
 	.tu {
 		margin: 19px 11px 18px 0;
 		border-radius: 50%;
@@ -218,6 +215,11 @@
 		width: 65px;
 		border: 1px solid #aaa;
 		float: left;
+	}
+	.tu img{
+		border-radius: 50%;
+		height: 65px;
+		width: 65px;
 	}
 
 	.tt {

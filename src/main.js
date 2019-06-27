@@ -7,6 +7,7 @@ import Vant from "vant";
 import flexible from "lib-flexible";
 import router from "./router";
 import store from './store'
+import './mock/gn'
 
 
 Vue.config.productionTip = false;

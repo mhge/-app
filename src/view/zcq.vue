@@ -6,7 +6,8 @@
 		<div>
 			<van-row type="flex" class="wo">
 				<van-col>
-					<router-link to="/yao" class="p">头像</router-link>
+					<router-link to="/yao" class="p"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></router-link>
+					<!-- <div class="tx"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></div> -->
 				</van-col>
 				<van-col class="log">
 					<router-link to="/yao">登录</router-link>
@@ -160,6 +161,11 @@
 		text-align:center;
 		line-height:70px;
 		color: #000000;
+	}
+	.p img{
+		border-radius: 50%;
+		height: 70px;
+		width: 70px;
 	}
 
 	.log {
