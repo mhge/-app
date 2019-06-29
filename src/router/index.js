@@ -154,6 +154,7 @@ export default new Router({
     },
     {
       path: "/banner",
+      name:'banner',
       component: Banner
     },
     {
@@ -243,20 +244,20 @@ export default new Router({
       children: [
         {
           path: "/xmxq",
+          name:'xmxq',
           component: Xmxq
         },
         {
           path: "/jzdt",
+          name:'jzdt',
           component: Jzdt
         },
 
         {
           path: "/Jzhb",
+          name:'jzhb',
           component: Jzhb
-        },
-        { path: "/jzhb", 
-					component: Jzhb ,
-				}
+        }
       ]
     }
   ]

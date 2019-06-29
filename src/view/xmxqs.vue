@@ -7,7 +7,7 @@
       <!-- 图片 -->
       <van-row>
         <van-col span="24" class="imges">
-          <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
+          <img :src="list.img" alt>
         </van-col>
       </van-row>
       <!-- 慈善详情 -->
@@ -18,7 +18,7 @@
               <span>慈善募捐</span>
             </van-col>|
             <van-col span="9" offset="1">
-              <span>呵护山里娃的双手</span>
+              <span>{{list.title}}</span>
             </van-col>|
             <van-col span="6" offset="1">
               <span>共济公益</span>
@@ -27,14 +27,14 @@
           <van-row class="good2" type="flex">
             <van-col span="24">
               目标金额：
-              <span>￥10000</span>
+              <span>￥{{list.moneyed}}</span>
             </van-col>
           </van-row>
           <van-row class="good3" type="flex" justify="space-between">
             <van-col span="24">
               <van-row class="good5" type="flex">
                 <van-col span="22" offset="1" align="center">
-                  <span>￥10000</span>
+                  <span>￥{{list.money}}</span>
                 </van-col>
               </van-row>
               <van-row class="good5" type="flex">
@@ -73,7 +73,7 @@
           <!-- 显示滑动效果 -->
           <van-row>
             <van-col span="24">
-              <van-slider v-model="value" active-color="#ccc" bar-height="6px" :min="30" :max="90">
+              <van-slider v-model="value" active-color="#ccc" bar-height="6px" disabled :min="30" :max="90">
                 <div slot="button" class="custom-button">
                   <van-icon name="gold-coin"/>
                 </div>
@@ -85,7 +85,7 @@
             <van-col span="24">
               <van-row>
                 <van-col span="24">
-                  <p>发起方：北京天使妈妈慈善基金会</p>
+                  <p>发起方：{{list.initiator}}</p>
                 </van-col>
               </van-row>
               <van-row>
@@ -93,9 +93,9 @@
                   <span>活动备案号：455432121546555555ADSAMLD</span>
                 </van-col>
               </van-row>
-              <van-row>
+              <van-row class="spn">
                 <van-col span="24">
-                  <span>传得儿童关爱中心为山区学生筹募手套，呵护山里娃的双手。</span>
+                  <span>{{list.evolve}}</span>
                 </van-col>
               </van-row>
             </van-col>
@@ -108,14 +108,15 @@
             active-color="black"
             inactive-color="#A9A9A9"
             class="tab"
+            
           >
-            <van-tabbar-item to="/xmxq">
+            <van-tabbar-item :to="{name:'xmxq',query:{id:list.id}}" >
               <span>项目详情</span>
             </van-tabbar-item>
-            <van-tabbar-item to="/jzdt">
+            <van-tabbar-item :to="{name:'jzdt',query:{id:list.id}}" >
               <span>捐赠动态</span>
             </van-tabbar-item>
-            <van-tabbar-item to="/jzhb">
+            <van-tabbar-item :to="{name:'jzhb',query:{id:list.id}}" >
               <span>进展汇报</span>
             </van-tabbar-item>
           </van-tabbar>
@@ -124,41 +125,37 @@
       <router-view></router-view>
     </section>
     <!-- 底部 -->
-    <!-- <van-row >
-    <van-col span="22" offset="1">-->
     <van-tabbar v-model="act" active-color="#A9A9A9" inactive-color="#A9A9A9" class="bottom">
-      <!-- <van-col span="4"> -->
       <van-tabbar-item icon="like-o"></van-tabbar-item>
-      <!-- </van-col>
-      <van-col span="4">-->
       <van-tabbar-item icon="comment-o"></van-tabbar-item>
-      <!-- </van-col>
-      <van-col span="4">-->
       <van-tabbar-item icon="exchange"></van-tabbar-item>
-      <!-- </van-col>
-      <van-col span="10" offset='2'>-->
       <van-tabbar-item class="bottom1" @click="bot">
-        <!-- <van-button type="default">默认按钮</van-button> -->
         <span>我要捐钱</span>
       </van-tabbar-item>
-      <!-- </van-col> -->
     </van-tabbar>
-    <!-- </van-col>
-    </van-row>-->
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       title: "我的",
       value: 0,
       active: 0,
-      act: 0
+      act: 0,
+      list:''
     };
   },
   mounted() {
     this.$emit("get", this.title);
+        var that=this
+        axios({
+      url: "http://101.132.164.103:8080/together/projectid.do",
+      params: { id:that.$route.query.id }
+    }).then(function(data) {
+      that.list = data.data.info;
+    });
   },
   methods: {
     onClickLeft() {
@@ -197,7 +194,7 @@ section {
   height: 50px;
 }
 .about {
-  height: 94px;
+  height: 104px;
   border: dashed 1px #a9a9a9;
   margin-top: 15px;
 }
@@ -217,5 +214,14 @@ section {
 }
 .bottom1 {
   width: 200px;
+}
+.spn {
+  height: 48px;
+  overflow: hidden;
+}
+.spn span {
+  font-size: 12px;
+  line-height: 24px;
+  color: rgb(144, 142, 142);
 }
 </style>

@@ -4,45 +4,48 @@
 			<van-icon name="fire" slot="right" size="0.725rem" color="gray" />
 		</van-nav-bar>
 
-			<van-row type="flex" class="Info">
-				<van-col class="in-top">
-					<div class="tu"></div>
-					<van-row type="flex" justify="space-between" class="tt">
-						<van-col class="use">
-							<!-- <textarea></textarea> -->
-							<p>{{username}}</p>
-							<van-col class="zyws">
-								志愿卫士
-							</van-col>
-				
+		<van-row type="flex" class="Info">
+			<van-col class="in-top">
+				<div class="tu"></div>
+				<van-row type="flex" justify="space-between" class="tt">
+					<van-col class="use">
+						<!-- <textarea></textarea> -->
+						<p>{{username}}</p>
+						<van-col class="zyws">
+							志愿卫士
 						</van-col>
-						<van-icon name="arrow" />
-						
-					</van-row>
-				</van-col>
-				<van-col class="in-bot">
-					<div class="van-hairline--top"></div>
-					<van-row type="flex" justify="space-around" class="gz">
-						<van-col span="6"><span>2</span><span>关注</span></van-col>
-						<van-col span="6"><span>2</span><span>关注者</span></van-col>
-						<van-col span="6"><span>2</span><span>我的勋章</span></van-col>
-					</van-row>
-				</van-col>
-			</van-row>
+
+					</van-col>
+					<van-icon name="arrow" />
+
+				</van-row>
+			</van-col>
+			<van-col class="in-bot">
+				<div class="van-hairline--top"></div>
+				<van-row type="flex" justify="space-around" class="gz">
+					<van-col span="6"><span>2</span><span>关注</span></van-col>
+					<van-col span="6"><span>2</span><span>关注者</span></van-col>
+					<van-col span="6"><span>2</span><span>我的勋章</span></van-col>
+				</van-row>
+			</van-col>
+		</van-row>
 
 		<van-row type="flex" class="info">
 			<div class="mar">
-				<van-row type="flex" class="con">
-					<van-col class="icon">
-						<van-icon name="circle" />
-					</van-col>
-					<van-row type="flex" justify="space-between" class="top">
-						<van-col>我的动态</van-col>
-						<van-col>
-							<van-icon name="arrow" />
+				<router-link to="/dt" tag="span">
+					<van-row type="flex" class="con">
+						<van-col class="icon">
+							<van-icon name="circle" />
 						</van-col>
+						<van-row type="flex" justify="space-between" class="top">
+							<van-col>我的动态</van-col>
+							<van-col>
+								<van-icon name="arrow" />
+							</van-col>
+						</van-row>
 					</van-row>
-				</van-row>
+				</router-link>
+			<router-link to="/rz" tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -55,6 +58,7 @@
 						</van-col>
 					</van-row>
 				</van-row>
+			</router-link>
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -68,30 +72,33 @@
 					</van-row>
 				</van-row>
 				<div class="CX"></div>
-					<van-row type="flex">
-						<van-col class="icon">
-							<van-icon name="circle" />
+			<router-link to="/jk" tag="span">
+				<van-row type="flex">
+					<van-col class="icon">
+						<van-icon name="circle" />
+					</van-col>
+					<van-row type="flex" justify="space-between" class="top">
+						<van-col>捐助项目</van-col>
+						<van-col>
+							<van-icon name="arrow" />
 						</van-col>
-						<van-row type="flex" justify="space-between" class="top">
-							<van-col>捐助项目</van-col>
-							<van-col>
-								<van-icon name="arrow" />
-							</van-col>
-						</van-row>
 					</van-row>
-
-					<van-row type="flex">
-						<van-col class="icon">
-							<van-icon name="circle" />
+				</van-row>
+			</router-link>
+			<router-link to="/zxzm" tag="span">
+				<van-row type="flex">
+					<van-col class="icon">
+						<van-icon name="circle" />
+					</van-col>
+					<van-row type="flex" justify="space-between" class="top">
+						<van-col>志愿服务</van-col>
+						<van-col>
+							<van-icon name="arrow" />
 						</van-col>
-						<van-row type="flex" justify="space-between" class="top">
-							<van-col>志愿服务</van-col>
-							<van-col>
-								<van-icon name="arrow" />
-							</van-col>
-						</van-row>
 					</van-row>
+				</van-row>
 				<div class="CX"></div>
+			</router-link>
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -156,35 +163,37 @@
 		},
 		mounted() {
 			var _this = this
-			
+
 			let uid = localStorage.getItem('token')
-			
+
 			axios({
 				url: "http://jx.xuzhixiang.top/ap/api/productlist.php",
 				params: {
-					uid:10411
+					uid: 10411
 				}
 			}).then(res => {
 				console.log(res.data.data)
-				_this.username=res.data.data
+				_this.username = res.data.data.username
 			})
-		},
+		}
 	}
 </script>
 
 <style scoped>
-	p{
-		font-size:14px;
-		color:red;
+	p {
+		font-size: 14px;
+		color: red;
 		width: 150px;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
-	.zyws{
-		font-size:14px;
-		color:blue;
+
+	.zyws {
+		font-size: 14px;
+		color: blue;
 	}
+
 	.SS {
 		margin-right: 10px;
 		margin-left: 5px;
@@ -267,12 +276,13 @@
 		font-size: 24px
 	}
 
-	.mar{
+	.mar {
 		border-top: 10px solid rgb(248, 248, 248, );
 		border-bottom: 10px solid rgb(248, 248, 248);
 	}
-	.CX{
-		height:10px;
-		background-color: rgba(230,230,230,1);
+
+	.CX {
+		height: 10px;
+		background-color: rgba(230, 230, 230, 1);
 	}
 </style>

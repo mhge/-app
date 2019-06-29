@@ -56,11 +56,14 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      active:0
+    };
   },
   methods: {
     onClickLeft() {
-      Toast("返回");
+     
+      this.$router.go(-1);
     }
   }
 };

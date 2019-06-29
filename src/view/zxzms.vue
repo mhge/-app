@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-nav-bar title="志愿者招募" fixed left-arrow @click-left="onClickLeft" :z-index="100"/>
-
+<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
     <section>
       <div>
         <van-search v-model="value" placeholder="搜索你想知道的" shape="round" @search="onSearch"></van-search>
@@ -26,6 +26,7 @@
       </van-tabbar>
       <router-view></router-view>
     </section>
+    </van-pull-refresh>
   </div>
 </template>
 <script>
@@ -34,11 +35,18 @@ export default {
   data() {
     return {
       active: 0,
-      value: ""
+      value: "",
+      isLoading: false
     };
   },
   mounted() {},
   methods: {
+    onRefresh() {
+      setTimeout(() => {
+        this.$toast('刷新成功');
+        this.isLoading = false;
+      }, 1000);
+    },
     onClickLeft() {
       this.$router.push("./main");
     },

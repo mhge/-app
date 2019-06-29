@@ -1,31 +1,33 @@
 <template>
   <div class="head">
-    <van-nav-bar title="童话八音盒" fixed left-arrow @click-left="onClickLeft"/>
+    <van-nav-bar :title="list.title" fixed left-arrow @click-left="onClickLeft"/>
     <van-field/>
     <van-panel class="tit">
-      <div>童话八音盒图书"历险"计划志愿招募（补录）</div>
-      <div>童话八音盒--图书历险计划，希望更多的人了解盲童，并从全国手机对他们的祝福。</div>
+      <div>{{list.title}}</div>
+      <div class="good2">
+        <span>{{list.detail}}</span>
+        </div>
     </van-panel>
     <p class="width"></p>
     <van-cell-group>
       <van-cell title="招募人数" value="1111"/>
-      <van-cell title="报名起止" is-link value="2019/1/24～2019/3/20" style="font-size:12px"/>
+      <van-cell title="报名起止"  :value="list.bedate+ '~'+list.afdate" style="font-size:12px"/>
       <van-cell title="活动地点" is-link value="线上"/>
-      <van-cell title="咨询人" is-link value="jacky"/>
+      <van-cell title="咨询人" is-link :value="list.consultanter"/>
     </van-cell-group>
     <p class="width"></p>
-    <van-cell title="童话八音盒" is-link label="给盲童讲故事，我们走进去，他们走出来" style="font-size:12px;color:black;"/>
+    <van-cell :title="list.title" is-link label="给盲童讲故事，我们走进去，他们走出来" style="font-size:12px;color:black;"/>
     <p class="width">招募详情</p>
 
     <van-row type="flex" justify="center">
       <van-col span="4">
-        <img src="../assets/xz.jpg">
+        <img :src="list.img">
       </van-col>
       <van-col span="5">
         <a>童话八音盒</a>
       </van-col>
       <van-col span="4">
-        <img src="../assets/xz.jpg">
+        <img :src="list.img">
       </van-col>
     </van-row>
 
@@ -34,7 +36,7 @@
         <p>有一群小朋友,他们因为视力障碍,不能用眼睛去
 探知这个美好的世界,缺少与外界交流的机会。</p>
         <p>
-          <img src="../assets/xz.jpg">
+          <img :src="list.img">
         </p>
         <p>所以在2017年10月15日,国际盲人节那天,北京善
 源公益基金会发起了一个名叫“童话八音盒”的公
@@ -44,20 +46,20 @@
 关注盲童,以及盲人群体。</p>
         <p>现在月亮姐姐、钱峰、董倩等明星都已加入进来。</p>
         <p>
-          <img src="../assets/xz.jpg">
+          <img src="http://www.pubchn.com/file/upload/201905/28/14-25-38-64-135598.jpg">
         </p>
       </van-col>
     </van-row>
 
     <van-row type="flex" justify="center">
       <van-col span="4">
-        <img src="../assets/xz.jpg">
+        <img src="http://www.pubchn.com/file/upload/201905/28/14-26-05-94-135598.jpg">
       </van-col>
       <van-col span="5">
         <a>童话八音盒</a>
       </van-col>
       <van-col span="4">
-        <img src="../assets/xz.jpg">
+        <img src="http://img95.699pic.com/photo/50052/0071.jpg_wh300.jpg">
       </van-col>
     </van-row>
 
@@ -107,19 +109,19 @@
         <a></a>
         <p>1、报名</p>
         <p>招募对象:个人、学校、企业,将根据报名情况，邀请大家加入微信交流群报名请联系</p>
-        <img src="../assets/xz.jpg">
+        <img src="http://img95.699pic.com/photo/50052/0071.jpg_wh300.jpg">
       </van-col>
     </van-row>
 
     <van-row type="flex" justify="center">
       <van-col span="4">
-        <img src="../assets/xz.jpg">
+        <img src="http://www.pubchn.com/file/upload/201905/28/14-25-38-64-135598.jpg">
       </van-col>
       <van-col span="5">
         <a>注意事项</a>
       </van-col>
       <van-col span="4">
-        <img src="../assets/xz.jpg">
+        <img src="http://www.pubchn.com/file/upload/201905/28/14-25-38-64-135598.jpg">
       </van-col>
     </van-row>
 
@@ -150,16 +152,28 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   data(){
     return {
-      active:0
+      active:0,
+      list:''
     }
   },
   methods: {
     onClickLeft() {
       this.$router.push("/main");
     }
+  },
+  mounted(){
+            var that=this
+        axios({
+      url: "http://101.132.164.103:8080/together/activityid.do",
+      params: { id:that.$route.query.id }
+    }).then(function(data) {
+      console.log(data.data.info)
+      that.list = data.data.info;
+    });
   }
 };
 </script>
@@ -169,6 +183,9 @@ export default {
 }
 .van-cell {
   color: #8f8f90;
+}
+.van-cell span{
+  width: 200px
 }
 .width {
   background: #f2f2f9;
@@ -265,6 +282,15 @@ h4 {
 .van-tabbar-item {
   background-color: #e8e8ea;
   color: black;
+}
+.good2 {
+  height: 48px;
+  overflow: hidden;
+}
+.good2 span {
+  font-size: 12px;
+  line-height: 24px;
+  color: rgb(144, 142, 142);
 }
 
 </style>

@@ -3,9 +3,16 @@
     <!-- <h4>首页</h4> -->
     <!-- 头部及点击蒙版 -->
     <van-nav-bar left-text="logo名字" fixed class="left">
-      <van-icon name="location" slot="right" color="inherit" @click="showBasics" class="icons"/>
+      <van-icon name="location" slot="right" color="inherit" @click="showBasics" class="icons" />
 
-      <van-icon name="hot" slot="right" color="inherit" @click='icons' class="icons" style="margin-left:10px;"/>
+      <van-icon
+        name="hot"
+        slot="right"
+        color="inherit"
+        @click="icons"
+        class="icons"
+        style="margin-left:10px;"
+      />
     </van-nav-bar>
     <van-popup v-model="showBasic" :close-on-click-overlay="false">
       <van-row type="flex" class="san">
@@ -39,366 +46,275 @@
               </van-row>
               <van-row type="flex">
                 <van-col span="22" offset="1" class="san6">
-                  <van-button round type="danger" class="btn">点击完成日行一善</van-button>
-                  <van-icon name="close" class="icon" @click="icon"/>
+                  <van-button round type="danger" class="btn" @click="btn">点击完成日行一善</van-button>
+                  <van-icon name="close" class="icon" @click="icon" />
                 </van-col>
               </van-row>
             </van-col>
           </van-row>
         </van-col>
       </van-row>
-
     </van-popup>
+    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+      <!-- 非固定页面 -->
+      <section>
+        <!-- 搜索框 -->
+        <div>
+          <van-search v-model="val" placeholder="搜索你想知道的" shape="round" @click="search"></van-search>
+        </div>
+        <div>
+          <!-- 轮播图 -->
+          <van-swipe :autoplay="3000" indicator-color="black" :height="190" class="swipe">
+            <van-swipe-item v-for="(image, index) in list" :key="index">
+              <img :src="image.banner_img_url" @click="imgs" />
+            </van-swipe-item>
+          </van-swipe>
+        </div>
+        <!-- 组织入住及成为志愿者 -->
+        <div>
+          <van-row type="flex" justify="space-around">
+            <van-col span="10" class="spans" @click.native="spans1">
+              <van-row type="flex" justify="space-around">
+                <van-col span="24" class="spans1">
+                  <span>组织入住</span>
+                </van-col>
+              </van-row>
+              <van-row type="flex" justify="space-around">
+                <van-col span="24" class="spans2">志愿组织755个</van-col>
+              </van-row>
+            </van-col>
+            <van-col span="10" class="spans" @click.native="spans2">
+              <van-row type="flex" justify="space-around">
+                <van-col span="24" class="spans1">
+                  <span>成为志愿者</span>
+                </van-col>
+              </van-row>
+              <van-row type="flex" justify="space-around">
+                <van-col span="24" class="spans2">志愿者16353个</van-col>
+              </van-row>
+            </van-col>
+          </van-row>
+        </div>
+        <div class="copy"></div>
+        <!-- 八个链接栏 -->
+        <div>
+          <van-row type="flex" justify="space-around" class="navs">
+            <van-col span="6" class="nav" offset="2">
+              <van-row type="flex">
+                <van-col span="16" class="imgs">
+                  <img src="http://img95.699pic.com/photo/50059/1442.jpg_wh300.jpg" @click="flg1" />
+                </van-col>
+              </van-row>
+              <van-row type="flex">
+                <van-col span="24">
+                  <span>扶贫助困</span>
+                </van-col>
+              </van-row>
+            </van-col>
+            <van-col span="6" class="nav">
+              <van-row type="flex">
+                <van-col span="16" class="imgs">
+                  <img src="http://img95.699pic.com/photo/40032/4764.jpg_wh300.jpg" @click="flg2" />
+                </van-col>
+              </van-row>
+              <van-row type="flex">
+                <van-col span="24">
+                  <span>敬老助老</span>
+                </van-col>
+              </van-row>
+            </van-col>
+            <van-col span="6" class="nav">
+              <van-row type="flex">
+                <van-col span="16" class="imgs">
+                  <img src="http://img95.699pic.com/photo/50085/0072.jpg_wh300.jpg" @click="flg3" />
+                </van-col>
+              </van-row>
+              <van-row type="flex">
+                <van-col span="24">
+                  <span>关爱儿童</span>
+                </van-col>
+              </van-row>
+            </van-col>
+            <van-col span="6" class="nav">
+              <van-row type="flex">
+                <van-col span="16" class="imgs">
+                  <img src="http://img95.699pic.com/photo/50050/2339.jpg_wh300.jpg" alt />
+                </van-col>
+              </van-row>
+              <van-row type="flex">
+                <van-col span="24">
+                  <span>社区便民</span>
+                </van-col>
+              </van-row>
+            </van-col>
+          </van-row>
+          <van-row type="flex" justify="space-around" class="navs">
+            <van-col span="6" class="nav" offset="2">
+              <van-row type="flex">
+                <van-col span="16" class="imgs">
+                  <img src="http://img95.699pic.com/photo/50061/9527.jpg_wh300.jpg" alt />
+                </van-col>
+              </van-row>
+              <van-row type="flex">
+                <van-col span="24">
+                  <span>教育科普</span>
+                </van-col>
+              </van-row>
+            </van-col>
+            <van-col span="6" class="nav">
+              <van-row type="flex">
+                <van-col span="16" class="imgs">
+                  <img src="http://img95.699pic.com/photo/50057/7057.jpg_wh300.jpg" alt />
+                </van-col>
+              </van-row>
+              <van-row type="flex">
+                <van-col span="24">
+                  <span>绿色环保</span>
+                </van-col>
+              </van-row>
+            </van-col>
+            <van-col span="6" class="nav">
+              <van-row type="flex">
+                <van-col span="16" class="imgs">
+                  <img src="http://img95.699pic.com/photo/40129/9796.jpg_wh300.jpg" alt />
+                </van-col>
+              </van-row>
+              <van-row type="flex">
+                <van-col span="24">
+                  <span>文化活动</span>
+                </van-col>
+              </van-row>
+            </van-col>
+            <van-col span="6" class="nav">
+              <van-row type="flex">
+                <van-col span="16" class="imgs">
+                  <img
+                    src="http://img95.699pic.com/photo/50050/2004.jpg_wh300.jpg"
+                    @click="flg"
+                    alt
+                  />
+                </van-col>
+              </van-row>
+              <van-row type="flex">
+                <van-col span="24">
+                  <span>全部活动</span>
+                </van-col>
+              </van-row>
+            </van-col>
+          </van-row>
+        </div>
+        <div class="copy"></div>
+        <!-- 最新招募 -->
+        <div>
+          <van-row>
+            <van-col span="8" offset="1" style="color:black;font-size:18px;height:26px ">最新招募</van-col>
+            <van-col span="5" offset="9" style="color:#333;font-size:12px; ">
+              <div @click="con">查看更多></div>
+            </van-col>
+          </van-row>
+          <van-row class="panels" v-for="(item,index) in list1.slice(0,3)" :key="index">
+            <van-col span="22" offset="1">
+              <div>
+                <van-row type="flex" justify="space-between" class="panel">
+                  <van-col span="16">
+                    <h5>{{item.title}}</h5>
+                    <van-row type="flex" justify="space-between" class="panel3">
+                      <van-col span="11" class="time">
+                        <van-row>
+                          <van-col span="4">
+                            <van-icon name="location-o" />
+                          </van-col>
+                          <van-col span="19" class="ditu">{{item.address}}</van-col>
+                        </van-row>
+                      </van-col>|
+                      <van-col span="11" class="time">
+                        <van-row>
+                          <van-col span="4">
+                            <van-icon name="clock-o" />
+                          </van-col>
+                          <van-col span="19" class="ditu">六天前发布</van-col>
+                        </van-row>
+                      </van-col>
+                    </van-row>
+                  </van-col>
+                  <van-col span="6" class="panel2">
+                  <router-link :to="{name:'banner',query:{id:item.id}}">
+                  <div>
+                    <img :src="item.img" alt />
+                  </div>
+                  </router-link>
+                  </van-col>
+                </van-row>
+              </div>
+              <van-row class="panel4">
+                <van-col span="24">
+                  <span>{{item.detail}}</span>
+                </van-col>
+              </van-row>
+            </van-col>
+          </van-row>
+        </div>
+        <!-- 公益项目 -->
+        <div>
+          <van-row style="margin-top:15px">
+            <van-col span="8" offset="1" style="color:black;font-size:18px;height:26px ">公益项目</van-col>
+            <van-col span="5" offset="9" style="color:#333;font-size:12px; ">
+              <div @click="tap">查看更多></div>
+            </van-col>
+          </van-row>
 
-    <!-- 非固定页面 -->
-    <section>
-      <!-- 搜索框 -->
-      <div>
-        <van-search v-model="val" placeholder="搜索你想知道的" shape="round" @click="search"></van-search>
-      </div>
-      <div>
-        <!-- 轮播图 -->
-        <van-swipe :autoplay="3000" indicator-color="black" :height="190" class="swipe">
-          <van-swipe-item v-for="(image, index) in list" :key="index">
-            <img :src="image.banner_img_url"  @click="imgs">
-          </van-swipe-item>
-        </van-swipe>
-      </div>
-      <!-- 组织入住及成为志愿者 -->
-      <div>
-        <van-row type="flex" justify="space-around">
-          <van-col span="10" class="spans"  @click.native="spans1">
-            <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans1">
-                <span>组织入住</span>
-              </van-col>
-            </van-row>
-            <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans2">志愿组织755个</van-col>
-            </van-row>
-          </van-col>
-          <van-col span="10" class="spans"  @click.native="spans2">
-            <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans1">
-                <span>成为志愿者</span>
-              </van-col>
-            </van-row>
-            <van-row type="flex" justify="space-around">
-              <van-col span="24" class="spans2">志愿者16353个</van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-      </div>
-      <div class="copy"></div>
-      <!-- 八个链接栏 -->
-      <div>
-        <van-row type="flex" justify="space-around" class="navs">
-          <van-col span="6" class="nav" offset="2">
-            <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" @click="flg1">
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span>扶贫助困</span>
-              </van-col>
-            </van-row>
-          </van-col>
-          <van-col span="6" class="nav">
-            <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" @click="flg2">
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span>敬老助老</span>
-              </van-col>
-            </van-row>
-          </van-col>
-          <van-col span="6" class="nav">
-            <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" @click="flg3">
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span>关爱儿童</span>
-              </van-col>
-            </van-row>
-          </van-col>
-          <van-col span="6" class="nav">
-            <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span>社区便民</span>
-              </van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-        <van-row type="flex" justify="space-around" class="navs">
-          <van-col span="6" class="nav" offset="2">
-            <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span>教育科普</span>
-              </van-col>
-            </van-row>
-          </van-col>
-          <van-col span="6" class="nav">
-            <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span>绿色环保</span>
-              </van-col>
-            </van-row>
-          </van-col>
-          <van-col span="6" class="nav">
-            <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span>文化活动</span>
-              </van-col>
-            </van-row>
-          </van-col>
-          <van-col span="6" class="nav">
-            <van-row type="flex">
-              <van-col span="16" class="imgs">
-                <img src="https://img.yzcdn.cn/vant/cat.jpeg" @click="flg" alt>
-              </van-col>
-            </van-row>
-            <van-row type="flex">
-              <van-col span="24">
-                <span>全部活动</span>
-              </van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-      </div>
-      <div class="copy"></div>
-      <!-- 最新招募 -->
-      <div>
-        <van-row>
-          <van-col span="8" offset="1" style="color:black;font-size:18px;height:26px ">最新招募</van-col>
-          <van-col span="5" offset="9" style="color:#333;font-size:12px; ">
-            <div @click="con">查看更多></div>
-          </van-col>
-        </van-row>
-        <van-row class="panels"           v-for="(item,index) in list1.slice(0,3)"
-          :key="index">
-          <van-col span="22" offset="1">
-            <div>
-              <van-row type="flex" justify="space-between" class="panel">
-                <van-col span="16">
-                  <h5>{{item.pname}}</h5>
-                  <van-row type="flex" justify="space-between" class="panel3">
-                    <van-col span="11" class="time">
-                      <van-row>
-                        <van-col span="4">
-                          <van-icon name="location-o"/>
-                        </van-col>
-                        <van-col span="19" class="ditu">郑州市</van-col>
-                      </van-row>
+          <van-row v-for="(item,index) in list2" :key="index">
+            <van-col span="22" offset="1" class="goods">
+              <van-row class="good">
+                <van-col span="24">
+                  <router-link :to="{name:'banner',query:{id:item.id}}">
+                  <div>
+                    <img :src="item.img" alt />
+                  </div>
+                  </router-link>
+                </van-col>
+              </van-row>
+              <van-row>
+                <van-col span="24">
+                  <van-slider
+                    v-model="value"
+                    active-color="#A9A9A9"
+                    bar-height="6px"
+                    :min="20"
+                    :max="100"
+                    disabled
+                  >
+                    <div slot="button" class="custom-button">
+                      <van-icon name="gold-coin" />
+                    </div>
+                  </van-slider>
+                </van-col>
+              </van-row>
+              <van-row>
+                <van-col span="22" offset="1">
+                  <van-row class="good1" type="flex">
+                    <van-col span="5">
+                      <span>慈善募捐</span>
                     </van-col>|
-                    <van-col span="11" class="time">
-                      <van-row>
-                        <van-col span="4">
-                          <van-icon name="clock-o"/>
-                        </van-col>
-                        <van-col span="19" class="ditu">六天前发布</van-col>
-                      </van-row>
+                    <van-col span="10" offset="1">
+                      <span>{{item.title}}</span>
+                    </van-col>|
+                    <van-col span="7" offset="1">
+                      <span>共济公益</span>
+                    </van-col>
+                  </van-row>
+                  <van-row class="good2" type="flex">
+                    <van-col span="24">
+                      <span>{{item.evolve}}</span>
                     </van-col>
                   </van-row>
                 </van-col>
-                <van-col span="6" class="panel2">
-                  <img :src='item.pimg'  @click="res" alt>
-                </van-col>
               </van-row>
-            </div>
-            <van-row class="panel4">
-              <van-col span="24">
-                <span>{{item.pdesc}}</span>
-              </van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-      </div>
-      <!-- 公益项目 -->
-      <div>
-        <van-row style="margin-top:15px">
-          <van-col span="8" offset="1" style="color:black;font-size:18px;height:26px ">公益项目</van-col>
-          <van-col span="5" offset="9" style="color:#333;font-size:12px; ">
-            <div @click="tap">查看更多></div>
-          </van-col>
-        </van-row>
-
-        <van-row>
-          <van-col span="22" offset="1" class="goods">
-            <van-row class="good">
-              <van-col span="24">
-                <div @click="res">
-                  <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-                </div>
-              </van-col>
-            </van-row>
-            <van-row>
-              <van-col span="24">
-                <van-slider
-                  v-model="value"
-                  active-color="#A9A9A9"
-                  bar-height="6px"
-                  :min="this.$store.state.mony"
-                  :max="100"
-                >
-                  <div slot="button" class="custom-button">
-                    <van-icon name="gold-coin"/>
-                  </div>
-                </van-slider>
-              </van-col>
-            </van-row>
-            <van-row>
-              <van-col span="22" offset="1">
-                <van-row class="good1" type="flex">
-                  <van-col span="5">
-                    <span>慈善募捐</span>
-                  </van-col>|
-                  <van-col span="10" offset="1">
-                    <span>呵护山里娃的双手</span>
-                  </van-col>|
-                  <van-col span="7" offset="1">
-                    <span>共济公益</span>
-                  </van-col>
-                </van-row>
-                <van-row class="good2" type="flex">
-                  <van-col span="24">
-                    <span>
-                      旨在动员企业、团体、社会组织和公共捐资，在沙漠地区公路两旁建设
-                      沙漠锁边林和生态绿洲改善环境和气候。
-                    </span>
-                  </van-col>
-                </van-row>
-              </van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-        <van-row>
-          <van-col span="22" offset="1" class="goods">
-            <van-row class="good">
-              <van-col span="24">
-                <div @click="res">
-                  <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-                </div>
-              </van-col>
-            </van-row>
-            <van-row>
-              <van-col span="24">
-                <van-slider
-                  v-model="value"
-                  active-color="#A9A9A9"
-                  bar-height="6px"
-                  :min="30"
-                  :max="90"
-                >
-                  <div slot="button" class="custom-button">
-                    <van-icon name="gold-coin"/>
-                  </div>
-                </van-slider>
-              </van-col>
-            </van-row>
-            <van-row>
-              <van-col span="22" offset="1">
-                <van-row class="good1" type="flex">
-                  <van-col span="5">
-                    <span>慈善募捐</span>
-                  </van-col>|
-                  <van-col span="10" offset="1">
-                    <span>呵护山里娃的双手</span>
-                  </van-col>|
-                  <van-col span="7" offset="1">
-                    <span>共济公益</span>
-                  </van-col>
-                </van-row>
-                <van-row class="good2" type="flex">
-                  <van-col span="24">
-                    <span>
-                      旨在动员企业、团体、社会组织和公共捐资，在沙漠地区公路两旁建设
-                      沙漠锁边林和生态绿洲改善环境和气候。
-                    </span>
-                  </van-col>
-                </van-row>
-              </van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-        <van-row>
-          <van-col span="22" offset="1" class="goods">
-            <van-row class="good">
-              <van-col span="24">
-                <div @click="res">
-                  <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt>
-                </div>
-              </van-col>
-            </van-row>
-            <van-row>
-              <van-col span="24">
-                <van-slider
-                  v-model="value"
-                  active-color="#A9A9A9"
-                  bar-height="6px"
-                  :min="30"
-                  :max="90"
-                >
-                  <div slot="button" class="custom-button">
-                    <van-icon name="gold-coin"/>
-                  </div>
-                </van-slider>
-              </van-col>
-            </van-row>
-            <van-row>
-              <van-col span="22" offset="1">
-                <van-row class="good1" type="flex">
-                  <van-col span="5">
-                    <span>慈善募捐</span>
-                  </van-col>|
-                  <van-col span="10" offset="1">
-                    <span>呵护山里娃的双手</span>
-                  </van-col>|
-                  <van-col span="7" offset="1">
-                    <span>共济公益</span>
-                  </van-col>
-                </van-row>
-                <van-row class="good2" type="flex">
-                  <van-col span="24">
-                    <span>
-                      旨在动员企业、团体、社会组织和公共捐资，在沙漠地区公路两旁建设
-                      沙漠锁边林和生态绿洲改善环境和气候。
-                    </span>
-                  </van-col>
-                </van-row>
-              </van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-      </div>
-    </section>
+            </van-col>
+          </van-row>
+        </div>
+      </section>
+    </van-pull-refresh>
   </div>
 </template>
 <script>
@@ -408,10 +324,12 @@ export default {
     return {
       title: "最新招募",
       list: [],
-      list1:[],
+      list1: [],
+      list2: [],
       value: 0,
       val: "",
       showBasic: false,
+      isLoading: false
     };
   },
   mounted() {
@@ -422,23 +340,35 @@ export default {
       url: "http://jx.xuzhixiang.top/ap/api/bannerlist.php",
       params: { uid: 11940 }
     }).then(function(data) {
-      // console.log(data.data.data);
       that.list = data.data.data;
     });
 
     axios({
-      url:'http://jx.xuzhixiang.top/ap/api/productlist.php',
-      params:{uid:11940}
-    }).then(function(data){
-      console.log(data.data.data)
-        that.list1=data.data.data
-        console.log(that.list1)
-    })
+      url: "http://101.132.164.103:8080/together/activity.do"
+    }).then(function(data) {
+      that.list1 = data.data.info;
+      console.log(that.list1);
+    });
+    axios({
+      url: "http://101.132.164.103:8080/together/projectflag.do",
+      params: { uid: 11940 }
+    }).then(function(data) {
+      console.log(data.data.info);
+      that.list2 = data.data.info;
+    });
   },
   methods: {
+    onRefresh() {
+      setTimeout(() => {
+        this.$toast("刷新成功");
+        this.isLoading = false;
+      }, 1000);
+    },
+    btn() {
+      this.$toast("签到成功");
+    },
     search() {
       this.$router.push("./search");
-
     },
     con() {
       this.$router.push("./zxzms");
@@ -449,37 +379,41 @@ export default {
     showBasics() {
       this.showBasic = true;
     },
-    res() {
-      this.$router.push("./xzm");
-    },
-    flg(){
-      this.$router.push("./qbhds");
-    },
-    flg1(){
-      this.$router.push("./gyfp");
-    },
-    flg2(){
-      this.$router.push("./jlzl");
-    },
-    flg3(){
-      this.$router.push("./gaet");
-    },
-    icons(){
-      this.$router.push("./xz");
-    },
-    icon(){
+    yao() {
       this.showBasic = false;
     },
-    spans2(){
-      this.$router.push("./zyz");
-
+    // res(id) {
+    //   // this.$router.push("./xmxqs/"+id);
+    // },
+    // req() {
+    //   this.$router.push("./banner");
+    // },
+    flg() {
+      this.$router.push("./qbhds");
     },
-    spans1(){
+    flg1() {
+      this.$router.push("./gyfp");
+    },
+    flg2() {
+      this.$router.push("./jlzl");
+    },
+    flg3() {
+      this.$router.push("./gaet");
+    },
+    icons() {
+      this.$router.push("./xz");
+    },
+    icon() {
+      this.showBasic = false;
+    },
+    spans2() {
+      this.$router.push("./zyz");
+    },
+    spans1() {
       this.$router.push("./rz");
-
     },
     imgs(){
-      this.$router.push("./banner");
+      // this.$router.push("./banner");
 
     }
   }
@@ -554,9 +488,14 @@ section {
   font-size: 10px;
   color: rgb(144, 142, 142);
 }
+.panel4 {
+  height: 48px;
+  overflow: hidden;
+  margin: 8px 0;
+}
 .panel4 span {
-  font-size: 10px;
-  line-height: 36px;
+  font-size: 12px;
+  line-height: 24px;
   color: rgb(144, 142, 142);
 }
 .good img {
@@ -579,7 +518,13 @@ section {
   line-height: 32px;
 }
 .good2 {
-  font-size: 10px;
+  height: 48px;
+  overflow: hidden;
+}
+.good2 span {
+  font-size: 12px;
+  line-height: 24px;
+  color: rgb(144, 142, 142);
 }
 .san {
   width: 264px;
@@ -624,12 +569,12 @@ section {
   border-color: #fff;
   width: 90%;
 }
-.icon{
+.icon {
   font-size: 40px;
-  color:#A9A9A9;
+  color: #a9a9a9;
 }
-.icons{
+.icons {
   font-size: 20px;
-  color:#A9A9A9;
+  color: #a9a9a9;
 }
 </style>

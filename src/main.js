@@ -6,7 +6,8 @@ import App from "./App";
 import Vant from "vant";
 import flexible from "lib-flexible";
 import router from "./router";
-import store from "./store"
+import store from "./store";
+// import "./data/list"
 
 Vue.config.productionTip = false;
 Vue.use(Vant);
