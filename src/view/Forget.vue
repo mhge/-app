@@ -3,11 +3,11 @@
 		<van-nav-bar title="找回密码" left-text="返回" left-arrow @click-left="onClickLeft">
 		</van-nav-bar>
 		<van-cell-group>
-			<van-field v-model="phone" maxlength="11" label="手机号" right-icon="question" @click-right-icon="$toast('仅支持 132 | 150 | 152 开头的手机号')"
+			<van-field v-model="phone" maxlength="11" label="手机号" right-icon="question-o" @click-right-icon="$toast('仅支持 132 | 150 | 152 开头的手机号')"
 			 placeholder="请输入手机号" size="large" clearable />
 			<van-field v-model="password" maxlength="16" type="password" label="新密码" placeholder="请重新输入新密码" size="large"
-			 clearable right-icon="question" @click-right-icon="$toast('字母或数字或下划线 密码格式 4 - 16 位')" />
-			<van-field v-model="sms" maxlength="6" center clearable label="短信验证码" placeholder="请重新输入验证码" size="large" clearable right-icon="question" @click-right-icon="$toast('请检查键盘是否开启 大 小 写')">
+			 clearable right-icon="question-o" @click-right-icon="$toast('字母或数字或下划线 密码格式 4 - 16 位')" />
+			<van-field v-model="sms" maxlength="6" center clearable label="短信验证码" placeholder="请重新输入验证码" size="large" clearable right-icon="question-o" @click-right-icon="$toast('请检查键盘是否开启 大 小 写')">
 				<van-button class="ziti" slot="button" @click="yzm()" size="small" type="primary">{{yanzh}}</van-button>
 			</van-field>
 		</van-cell-group>

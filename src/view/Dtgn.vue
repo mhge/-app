@@ -1,51 +1,51 @@
 <template>
-  <div class="bob">
-    <div class="lb" v-for="(item,index) in lis" v-bind:key="index">
-      <div class="top">
-        <div class="tou">
-          <img class="tp1" :src="item.img">
-          <div>
-            <p class="xx">
-              <span class="xm">{{item.name}}</span>
-              <span class="sh">关注</span>
-            </p>
-            <p class="dz">
-              <van-icon name="location-o"/>
-              {{item.address}}
-            </p>
+  <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+    <div class="bob">
+      <div class="lb" v-for="(item,index) in filteredIis" v-bind:key="index">
+        <div class="top">
+          <div class="tou" @click="tz(item.id)">
+            <img class="tp1" :src="item.img">
+            <div>
+              <p class="xx">
+                <span class="xm">{{item.username}}</span>
+                <span class="sh">关注</span>
+              </p>
+              <p class="dz">
+                <van-icon name="location-o"/>
+                {{item.adress}}
+              </p>
+            </div>
           </div>
-        </div>
 
-        <h2>"生命诚可贵，梦想价更高"</h2>
-        <p class="xxqk">
-          "我的作业还没有写完。"我听见了17岁孙子虚弱的声音，这是他手术醒来说的第
-          一句话。我叫何顺兴，今年65岁，家住湖北省恩施州建始县前三溪村二组...
-        </p>
-        <div class="tpnr">
-          <img :src="item.img">
-          <img :src="item.img">
-          <img :src="item.img">
+          <h2>{{item.title}}</h2>
+          <p class="xxqk">
+{{item.needdetil}}
+          </p>
+          <div class="tpnr">
+            <img :src="item.img">
+            <img :src="item.img">
+            <img :src="item.img">
+          </div>
+          <p class="je">
+            <span>#社区便民#</span>
+            <span v-on:click.once="cc()">
+              <van-icon name="thumb-circle-o" class="bb" :color="ct" size="16px"/>
+              {{item.phone}}
+            </span>
+            <span>
+              <van-icon name="exchange" size="14px"/>52
+            </span>
+            <span>
+              <van-icon name="flag-o" size="16px"/>641
+            </span>
+            <span>
+              <van-icon name="underway-o" size="14px"/>01-21
+            </span>
+          </p>
         </div>
-        <p class="je">
-          <span>#社区便民#</span>
-          <span v-on:click.once="cc()">
-            <van-icon name="thumb-circle-o" class="bb" :color="ct" size="16px"/>
-            {{dian}}
-          </span>
-          <span>
-            <van-icon name="exchange" size="14px"/>52
-          </span>
-          <span>
-            <van-icon name="flag-o" size="16px"/>641
-          </span>
-          <span>
-            <van-icon name="underway-o" size="14px"/>01-21
-          </span>
-        </p>
       </div>
     </div>
-    <button @click="next()">dian</button>
-  </div>
+  </van-pull-refresh>
 </template>
 
 <script>
@@ -53,17 +53,20 @@ import axios from "axios";
 
 export default {
   name: "Dtgn",
+  props: ["sx"],
   data() {
     return {
       lis: [],
       dian: 552,
       ct: "",
-      pagenum: 1
+      gi: 0,
+      isLoading: false,
+      active: 4,
     };
   },
   methods: {
-    tz() {
-      this.$router.push("/xu");
+    tz(id) {
+      this.$router.push("/xu/" + id);
       console.log(11);
     },
     ttt() {
@@ -73,18 +76,31 @@ export default {
       this.dian = this.dian + 1;
       // this.ct='red'
     },
-    next() {
-      this.pagenum = this.pagenum + 1;
+    onRefresh() {
+      setTimeout(() => {
+        this.$toast("刷新成功");
+        this.isLoading = false;
+        this.gi = this.gi + 2;
+        if (this.gi >= this.lis.length) {
+          this.gi = 0;
+        }
+      }, 500);
     }
   },
   mounted() {
     var _this = this;
     axios({
-      url: "http://www.baidu.com/api"
+      url: "http://101.132.164.103:8080/together/dongtaibyflag.do",
+      params: { flag: 3 }
     }).then(function(data) {
-      _this.lis = data.data.list;
-      console.log(_this.lis, data.data.list);
+      _this.lis = data.data.info
+      console.log(_this.lis, data.data);
     });
+  },
+  computed: {
+    filteredIis: function() {
+      return this.lis.slice(this.gi, this.gi + 2);
+    }
   }
 };
 </script>
@@ -92,5 +108,6 @@ export default {
 /* .bb{
 font-size: 18px;
 } */
+
 @import "dt.css";
 </style>

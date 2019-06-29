@@ -32,7 +32,6 @@ import Xmxqs from "../view/xmxqs.vue";
 import Xmxq from "../view/xmxq.vue";
 import Zyz from "../view/zyz.vue";
 
-
 // wode
 
 import Zcq from "../view/zcq.vue";
@@ -43,8 +42,6 @@ import Forget from "../view/Forget.vue";
 import My from "../view/My.vue";
 import TCC from "../view/TCC";
 
-
-
 import Dt from "../view/Dt";
 import Dtxq from "../view/Dtxq";
 import Dtxc from "../view/Dtxc";
@@ -54,7 +51,6 @@ import Jk from "../view/JK";
 import Xu from "../view/Xu";
 import Fb from "../view/Fb";
 import Aix from "../view/Aix";
-
 
 Vue.use(Router);
 
@@ -102,16 +98,16 @@ export default new Router({
         }
       ]
     },
-		{
-		  path: "/fb",
-		  component: Fb
-		},
     {
-      path: "/xu",
+      path: "/fb",
+      component: Fb
+    },
+    {
+      path: "/xu/:id",
       component: Xu
     },
     {
-      path: "/jk",
+      path: "/jk/:id",
       component: Jk
     },
     {
@@ -270,13 +266,13 @@ export default new Router({
       path: "/register",
       component: Register
     },
-		{
-			path: "/forget",
-			component: Forget
-		},
-		{
-				path: "/my",
-				component: My
-		}
+    {
+      path: "/forget",
+      component: Forget
+    },
+    {
+      path: "/my",
+      component: My
+    }
   ]
 });
