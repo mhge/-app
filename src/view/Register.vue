@@ -3,9 +3,9 @@
 		<van-nav-bar title="注册" left-text="返回" left-arrow @click-left="onClickLeft">
 		</van-nav-bar>
 		<van-cell-group>
-			<van-field input clearable v-model="phone" maxlength="11" label="手机号" right-icon="question" @click-right-icon="$toast('仅支持 132 | 150 | 152 开头的手机号')"
+			<van-field input clearable v-model="phone" maxlength="11" label="手机号" right-icon="question-o" @click-right-icon="$toast('仅支持 132 | 150 | 152 开头的手机号')"
 			 placeholder="请输入手机号" size="large" />
-			<van-field input v-model="password" maxlength="16" type="password" clearable right-icon="question"
+			<van-field input v-model="password" maxlength="16" type="password" clearable right-icon="question-o"
 			 @click-right-icon="$toast('字母或数字或下划线 密码格式 4 - 16 位')" label="密码" placeholder="请输入密码" size="large" />
 			<van-field v-model="sms" center clearable label="短信验证码" placeholder="请输入短信验证码">
 				<van-button class="ziti" slot="button" @click="yzm()" size="small" type="primary">{{yanzh}}</van-button>

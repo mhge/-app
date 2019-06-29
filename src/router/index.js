@@ -107,11 +107,11 @@ export default new Router({
 		  component: Fb
 		},
     {
-      path: "/xu",
+      path: "/xu/:id",
       component: Xu
     },
     {
-      path: "/jk",
+      path:'/jk/:id',
       component: Jk
     },
     {

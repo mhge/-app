@@ -6,7 +6,8 @@
 
 		<van-row type="flex" class="Info">
 			<van-col class="in-top">
-				<router-link to="/yao" class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></router-link>
+				<van-col class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></van-col>
+				<!-- <div class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></div> -->
 				<van-row type="flex" justify="space-between" class="tt">
 					<van-col class="use">
 						<!-- <textarea></textarea> -->
@@ -162,20 +163,21 @@
 			}
 		},
 		mounted() {
-			var _this = this
+			// var _this = this
 
-			let uid = localStorage.getItem('token')
-
-			axios({
-				url: "http://jx.xuzhixiang.top/ap/api/productlist.php",
-				params: {
-					uid:6440
-				}
-			}).then(res => {
-				console.log(res.data)
-				_this.phone = res.data.data
-				_this.phone=_this.phone[2].pname
-			})
+			let yao = localStorage.getItem('token')
+			console.log(yao)
+			// axios({
+			// 	url: "http://jx.xuzhixiang.top/ap/api/productlist.php",
+			// 	params: {
+			// 		uid:6440
+			// 	}
+			// }).then(res => {
+			// 	console.log(res.data)
+			// 	this.phone = res.data.data
+			// 	this.phone = this.phone[2].pname
+			// })
+			this.phone = yao
 		}
 	}
 </script>

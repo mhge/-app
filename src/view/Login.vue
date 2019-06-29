@@ -7,13 +7,13 @@
 			<div class="Info">
 				<van-row type="flex" class="DID">
 					<van-icon name="circle" class="circle" />
-					<van-field class="input" type="String" v-model="phone" ref= 'intphone' @click="yao()" clearable maxlength="11" placeholder="请输入手机号"  right-icon="question"
+					<van-field class="input" type="String" v-model="phone" ref= 'intphone' @click="yao()" clearable maxlength="11" placeholder="请输入手机号"  right-icon="question-o"
 					 @click-right-icon="$toast('仅支持 132 | 150 | 152 开头的手机号')" @keyup.13="onClickLogin()"/>
 				</van-row>
 				<!-- <span><strong>{{msgname}}</strong></span> -->
 				<van-row type="flex" class="DID">
 					<van-icon name="circle" class="circle" />
-					<van-field class="input" type="password" clearable v-model="password" maxlength="16" placeholder="请输入密码" @click="yao()"  @keyup.13="onClickLogin()" ref= 'intpassword' />
+					<van-field class="input" type="password" clearable v-model="password" maxlength="16" placeholder="请输入密码" @click="yao()"  @keyup.13="onClickLogin()" ref= 'intpassword' /> 
 					<!-- <input type="password"clearable onkeyup="value=value.replace(/^(0+)|[^\dA-Za-z_/.]+/g,'')" v-model="password" maxlength="16" placeholder="请输入密码" /> -->
 				</van-row>
 				<!-- <span><strong>{{yao}}</strong></span> -->
@@ -104,8 +104,11 @@
 									password: _this.password
 								}
 							}).then(function(data) {
+								
 								if (data.data.code == "1") {
-									console.log(data)
+									localStorage.setItem('token',data.data.info.phone)
+									// console.log('token')
+									// console.log(data)
 									Dialog.alert({
 										message: '登陆成功'
 									}).then(() => {
@@ -166,7 +169,7 @@
 	.DID {
 		display: flex;
 		justify-content: space-around;
-		border-bottom: 0.0625rem solid #ccc;
+		border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.4);;
 		padding-bottom: 0.2rem
 	}
 
