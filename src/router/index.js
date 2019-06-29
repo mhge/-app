@@ -197,7 +197,7 @@ export default new Router({
       component: Banner
     },
     {
-      path: "/jqbm",
+      path: "/jqbm/:id",
       component: Jqbm
     },
     {

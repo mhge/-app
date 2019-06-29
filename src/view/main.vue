@@ -202,7 +202,7 @@
         </van-row>
         <van-row class="panels" @click="res">
           <van-col span="22" offset="1">
-            <div @click="jqbm">
+            <div>
               <van-row type="flex" justify="space-between" class="panel">
                 <van-col span="16">
                   <h5>美新路大朋友项目志愿者</h5>
@@ -535,9 +535,7 @@ export default {
     qbhd() {
       this.$router.push("./qbhd");
     },
-    jqbm() {
-      this.$router.push("./jqbm");
-    },
+
     send() {
       this.$router.push("./xz");
     }

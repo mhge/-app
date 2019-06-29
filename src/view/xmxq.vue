@@ -72,7 +72,23 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      content: ""
+    };
+  },
+  mounted() {
+    var _this = this;
+    this.axios({
+      url: "http://101.132.164.103:8080/together/activityid.do",
+      params: { id: 1 }
+    }).then(function(data) {
+      console.log(data);
+      _this.content = data.data.info;
+    });
+  }
+};
 </script>
 <style scoped>
 .van-cell__label {
