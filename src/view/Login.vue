@@ -32,10 +32,10 @@
 
 				<van-row type="flex" justify="space-between">
 					<van-col span="3">
-						<van-icon name="goods-collect-o" class="circle" />
+						<van-icon name="description" class="circle" />
 					</van-col>
 					<van-col span="3">
-						<van-icon name="bulb-o" class="circle" />
+						<van-icon name="edit" class="circle" />
 					</van-col>
 					<van-col span="3">
 						<van-icon name="records" class="circle" />
@@ -138,7 +138,7 @@
 	section {
 		width: 100%;
 		height: 700px;
-		/* background: url(https://wx1.sinaimg.cn/large/0069SR0Aly1g4fqe2ykpsg30bu0l1b2e.gif) no-repeat; */
+		background: url(https://wx1.sinaimg.cn/large/0069SR0Aly1g4fqe2ykpsg30bu0l1b2e.gif) no-repeat;
 		background-size: cover;
 	}
 
@@ -190,7 +190,7 @@
 	}
 
 	.Info {
-		margin: 0 50px;
+		margin: 0 50px 0 40px;
 	}
 
 	.van-button {
