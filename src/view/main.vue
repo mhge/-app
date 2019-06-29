@@ -482,13 +482,13 @@ export default {
   },
   mounted() {
     this.$emit("get", this.title);
-    //this.title.style.font-size='18px';
+    // this.title.style.font-size='18px';
     var that = this;
     axios({
       url: "http://jx.xuzhixiang.top/ap/api/bannerlist.php",
       params: { uid: 11940 }
     }).then(function(data) {
-      console.log(data.data.data);
+      // console.log(data.data.data);
       that.list = data.data.data;
     });
   },

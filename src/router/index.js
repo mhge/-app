@@ -32,12 +32,18 @@ import Xmxqs from "../view/xmxqs.vue";
 import Xmxq from "../view/xmxq.vue";
 import Zyz from "../view/zyz.vue";
 
+
+// wode
+
 import Zcq from "../view/zcq.vue";
 import yao from "../view/Yao.vue";
 import Login from "../view/Login.vue";
 import Register from "../view/Register.vue";
 import Forget from "../view/Forget.vue";
 import My from "../view/My.vue";
+import TCC from "../view/TCC";
+
+
 
 import Dt from "../view/Dt";
 import Dtxq from "../view/Dtxq";
@@ -49,7 +55,6 @@ import Xu from "../view/Xu";
 import Fb from "../view/Fb";
 import Aix from "../view/Aix";
 
-import TCC from "../view/TCC";
 
 Vue.use(Router);
 
@@ -69,14 +74,6 @@ export default new Router({
           component: Main
         }
       ]
-    },
-    {
-      path: "/zcq",
-      component: Zcq
-    },
-    {
-      path: "/fb",
-      component: Fb
     },
     {
       path: "/aix",
@@ -105,6 +102,10 @@ export default new Router({
         }
       ]
     },
+		{
+		  path: "/fb",
+		  component: Fb
+		},
     {
       path: "/xu",
       component: Xu
@@ -112,42 +113,6 @@ export default new Router({
     {
       path: "/jk",
       component: Jk
-    },
-    {
-      path: "zcq",
-      component: Zcq
-    },
-    {
-      path: "/tcc",
-      component: TCC
-    },
-    {
-      path: "/yao",
-      component: yao
-    },
-    {
-      path: "/login",
-      component: Login
-    },
-    {
-      path: "/register",
-      component: Register
-    },
-    {
-      path: "/forget",
-      component: Forget
-    },
-    {
-      path: "/my",
-      component: My
-    },
-    {
-      path: "/fb",
-      component: Fb
-    },
-    {
-      path: "/aix",
-      component: Aix
     },
     {
       path: "/dt",
@@ -267,7 +232,6 @@ export default new Router({
           path: "/jzdt",
           component: Jzdt
         },
-
         {
           path: "/Jzhb",
           component: Jzhb
@@ -285,6 +249,34 @@ export default new Router({
         { path: "/jlzl", component: Jlzl },
         { path: "/gaet", component: Gaet }
       ]
-    }
+    },
+    {
+      path: "/zcq",
+      component: Zcq
+    },
+    {
+      path: "/tcc",
+      component: TCC
+    },
+    {
+      path: "/yao",
+      component: yao
+    },
+    {
+      path: "/login",
+      component: Login
+    },
+    {
+      path: "/register",
+      component: Register
+    },
+		{
+			path: "/forget",
+			component: Forget
+		},
+		{
+				path: "/my",
+				component: My
+		}
   ]
 });

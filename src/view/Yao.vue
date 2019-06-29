@@ -15,8 +15,6 @@
 		<van-row type="flex" justify="center">
 			<van-col class="X">现在就去登录微善吧</van-col>
 		</van-row>
-
-
 	</div>
 </template>
 <script>
@@ -33,11 +31,13 @@
 		border: 1px solid #000000;
 		margin-top: 3.25rem;
 		margin-bottom: 2.25rem;
+		background:url(https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd) no-repeat;
+		background-size:cover;
 	}
 	.yuan div{
 		margin-left: 0.7rem;
 		font-size: 0.4rem;
-		color: #000000;
+		color: indigo;
 	}
 	.D{
 		margin-top: 0.65rem;
