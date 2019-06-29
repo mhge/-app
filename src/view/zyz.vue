@@ -95,6 +95,9 @@ export default {
       this.$router.push("/main");
     }
   }
+  // mounted() {
+  //   this.axios({ url: "http://101.132.164.103:8080/together/volunteer.do" });
+  // }
 };
 </script>
 <style scoped>

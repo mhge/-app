@@ -1,168 +1,77 @@
 <template>
   <div class="nav">
     <!-- <h4>最新招募</h4> -->
-    <van-row>
-      <van-col span="22" offset="1" class="panels">
-        <van-row>
-          <van-col span="22" offset="1">
-            <van-row type="flex" justify="space-between" class="panel">
-              <van-col span="16">
-                <h5>美新路大朋友项目志愿者</h5>
-                <van-row type="flex" justify="space-between" class="panel3">
-                  <van-col span="11" class="time">
-                    <van-row>
-                      <van-col span="4">
-                        <van-icon name="location-o"/>
-                      </van-col>
-                      <van-col span="19" class="ditu">郑州市</van-col>
-                    </van-row>
-                  </van-col>|
-                  <van-col span="11" class="time">
-                    <van-row>
-                      <van-col span="4">
-                        <van-icon name="clock-o"/>
-                      </van-col>
-                      <van-col span="19" class="ditu">六天前发布</van-col>
-                    </van-row>
-                  </van-col>
-                </van-row>
-              </van-col>
-              <van-col span="6" class="panel2">
-                <van-button type="default" class="btn">招募中</van-button>
-              </van-col>
-            </van-row>
-            <van-row class="panel4">
-              <van-col span="24">
-                <span>
-                  每月至少给小朋友寄一封信，每年至少去看望小朋友一次，承诺服务1
-                  年以上。
-                </span>
-              </van-col>
-            </van-row>
-            <van-row class="panel5">
-              <van-col span="2">
-                <van-icon name="circle" size="24px" color="#ccc"/>
-              </van-col>
-              <van-col span="20">
-                <span>郑州美新路大朋友基金会</span>
-              </van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-      </van-col>
-    </van-row>
-        <van-row>
-      <van-col span="22" offset="1" class="panels">
-        <van-row>
-          <van-col span="22" offset="1">
-            <van-row type="flex" justify="space-between" class="panel">
-              <van-col span="16">
-                <h5>美新路大朋友项目志愿者</h5>
-                <van-row type="flex" justify="space-between" class="panel3">
-                  <van-col span="11" class="time">
-                    <van-row>
-                      <van-col span="4">
-                        <van-icon name="location-o"/>
-                      </van-col>
-                      <van-col span="19" class="ditu">郑州市</van-col>
-                    </van-row>
-                  </van-col>|
-                  <van-col span="11" class="time">
-                    <van-row>
-                      <van-col span="4">
-                        <van-icon name="clock-o"/>
-                      </van-col>
-                      <van-col span="19" class="ditu">六天前发布</van-col>
-                    </van-row>
-                  </van-col>
-                </van-row>
-              </van-col>
-              <van-col span="6" class="panel2">
-                <van-button type="default" class="btn">招募中</van-button>
-              </van-col>
-            </van-row>
-            <van-row class="panel4">
-              <van-col span="24">
-                <span>
-                  每月至少给小朋友寄一封信，每年至少去看望小朋友一次，承诺服务1
-                  年以上。
-                </span>
-              </van-col>
-            </van-row>
-            <van-row class="panel5">
-              <van-col span="2">
-                <van-icon name="circle" size="24px" color="#ccc"/>
-              </van-col>
-              <van-col span="20">
-                <span>郑州美新路大朋友基金会</span>
-              </van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-      </van-col>
-    </van-row>
-        <van-row>
-      <van-col span="22" offset="1" class="panels">
-        <van-row>
-          <van-col span="22" offset="1">
-            <van-row type="flex" justify="space-between" class="panel">
-              <van-col span="16">
-                <h5>美新路大朋友项目志愿者</h5>
-                <van-row type="flex" justify="space-between" class="panel3">
-                  <van-col span="11" class="time">
-                    <van-row>
-                      <van-col span="4">
-                        <van-icon name="location-o"/>
-                      </van-col>
-                      <van-col span="19" class="ditu">郑州市</van-col>
-                    </van-row>
-                  </van-col>|
-                  <van-col span="11" class="time">
-                    <van-row>
-                      <van-col span="4">
-                        <van-icon name="clock-o"/>
-                      </van-col>
-                      <van-col span="19" class="ditu">六天前发布</van-col>
-                    </van-row>
-                  </van-col>
-                </van-row>
-              </van-col>
-              <van-col span="6" class="panel2">
-                <van-button type="default" class="btn">招募中</van-button>
-              </van-col>
-            </van-row>
-            <van-row class="panel4">
-              <van-col span="24">
-                <span>
-                  每月至少给小朋友寄一封信，每年至少去看望小朋友一次，承诺服务1
-                  年以上。
-                </span>
-              </van-col>
-            </van-row>
-            <van-row class="panel5">
-              <van-col span="2">
-                <van-icon name="circle" size="24px" color="#ccc"/>
-              </van-col>
-              <van-col span="20">
-                <span>郑州美新路大朋友基金会</span>
-              </van-col>
-            </van-row>
-          </van-col>
-        </van-row>
-      </van-col>
-    </van-row>
-    
+    <div v-for="item in content">
+      <van-row>
+        <van-col span="22" offset="1" class="panels">
+          <van-row>
+            <van-col span="22" offset="1">
+              <van-row type="flex" justify="space-between" class="panel">
+                <van-col span="18">
+                  <h5>{{item.title}}</h5>
+                  <van-row type="flex" justify="space-between" class="panel3">
+                    <van-col span="11" class="time">
+                      <van-row>
+                        <van-col span="4">
+                          <van-icon name="location-o"/>
+                        </van-col>
+                        <van-col span="19" class="ditu">{{item.address}}</van-col>
+                      </van-row>
+                    </van-col>|
+                    <van-col span="11" class="time">
+                      <van-row>
+                        <van-col span="4">
+                          <van-icon name="clock-o"/>
+                        </van-col>
+                        <van-col span="19" class="ditu">{{item.date}}</van-col>
+                      </van-row>
+                    </van-col>
+                  </van-row>
+                </van-col>
+                <van-col span="6" class="panel2">
+                  <van-button type="default" class="btn">招募中</van-button>
+                </van-col>
+              </van-row>
+              <van-row class="panel4">
+                <van-col span="24">
+                  <span>{{item.detail}}</span>
+                </van-col>
+              </van-row>
+              <van-row class="panel5">
+                <van-col span="2">
+                  <van-icon name="circle" size="24px" color="#ccc"/>
+                </van-col>
+                <van-col span="20">
+                  <span>{{item.initiator}}</span>
+                </van-col>
+              </van-row>
+            </van-col>
+          </van-row>
+        </van-col>
+      </van-row>
+    </div>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      title: "我的"
+      title: "我的",
+      content: ""
     };
   },
   mounted() {
     this.$emit("get", this.title);
+  },
+  mounted() {
+    var _this = this;
+    this.axios({
+      url: "http://101.132.164.103:8080/together/zhaomu.do",
+      params: { flag: 2 }
+    }).then(function(data) {
+      console.log(data.data.info);
+      _this.content = data.data.info;
+    });
   }
 };
 </script>
@@ -194,7 +103,7 @@ export default {
   font-size: 12px;
   line-height: 20px;
   background: rgb(247, 245, 245);
-  color: #A9A9A9
+  color: #a9a9a9;
 }
 .panel3 {
   font-size: 10px;
@@ -208,13 +117,11 @@ export default {
 }
 .panel5 {
   margin-top: 10px;
-  
 }
 .panel5 .div1 {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   border: 1px solid black;
-
 }
 </style>

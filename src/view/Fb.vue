@@ -19,12 +19,12 @@
         <span>进入</span>
       </p>
     </div>
-		<van-tabbar v-model="active">
-		  <van-tabbar-item icon="home-o" to="/main">首页</van-tabbar-item>
-		  <van-tabbar-item icon="search" to="/dt">动态</van-tabbar-item>
-		  <van-tabbar-item icon="friends-o" to="/fb">发布</van-tabbar-item>
-		  <van-tabbar-item icon="fire" to="/zcq">我的</van-tabbar-item>
-		</van-tabbar>
+    <van-tabbar v-model="active">
+	  <van-tabbar-item icon="home-o" to="/main">首页</van-tabbar-item>
+	  <van-tabbar-item icon="search" to="/dt">动态</van-tabbar-item>
+	  <van-tabbar-item icon="friends-o" to="/fb">发布</van-tabbar-item>
+	  <van-tabbar-item icon="fire" to="/zcq">我的</van-tabbar-item>
+	</van-tabbar>
   </div>
 </template>
 <script>
@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       title: "困难求助",
-			active:2
+      active:2
     };
   },
   methods: {

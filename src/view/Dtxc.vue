@@ -1,100 +1,68 @@
 <template>
+<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
   <div class="bob">
-    <div class="lb">
-      <div class="top" @click="tz()">
-        <div class="tou" @click="tz()">
-          <img class="tp1" src>
+    <div class="lb" v-for="(item,index) in filteredIis" v-bind:key="index">
+      <div class="top" @click="tz(item.flag)">
+        <div class="tou">
+          <img class="tp1" :src="item.img">
           <div>
             <p class="xx">
-              <span class="xm">何*兴</span>
-              <span class="sh" @click.stop="gz()" v-bind:style="{background:bj}">{{srr}}</span>
-            </p>
-            <p class="dz">湖北省恩施土家族苗族自治州建始县</p>
-          </div>
-        </div>
-
-        <h2>"生命诚可贵，梦想价更高"</h2>
-        <p class="xxqk">
-          "我的作业还没有写完。"我听见了17岁孙子虚弱的声音，这是他手术醒来说的第
-          一句话。我叫何顺兴，今年65岁，家住湖北省恩施州建始县前三溪村二组...
-        </p>
-        <div class="tpnr">
-          <img src="u=1022109268,3759531978&fm=27&gp=0.png">
-          <img src>
-          <img src>
-        </div>
-        <p class="je">
-          <span>#社区便民#</span>
-          <span>
-            <van-icon name="thumb-circle-o"/>522
-          </span>
-          <span>
-            <van-icon name="exchange"/>52
-          </span>
-          <span>
-            <van-icon name="flag-o"/>641
-          </span>
-          <span>
-            <van-icon name="underway-o"/>01-21
-          </span>
-        </p>
-      </div>
-    </div>
-    <div class="lb">
-      <div class="top">
-        <div class="tou" @click="tz()">
-          <img class="tp1" src>
-          <div>
-            <p class="xx">
-              <span class="xm">何*兴</span>
+              <span class="xm">{{item.username}}</span>
               <span class="sh" @click.stop="gz()"  v-bind:style="{background:bj}">{{srr}}</span>
             </p>
-            <p class="dz">湖北省恩施土家族苗族自治州建始县</p>
+            <p class="dz"><van-icon name="location-o"/>{{item.adress}}</p>
           </div>
         </div>
 
-        <h2>"生命诚可贵，梦想价更高"</h2>
+        <h2>{{item.title}}</h2>
         <p class="xxqk">
-          "我的作业还没有写完。"我听见了17岁孙子虚弱的声音，这是他手术醒来说的第
-          一句话。我叫何顺兴，今年65岁，家住湖北省恩施州建始县前三溪村二组...
+          {{item.needdetil}}
         </p>
         <div class="tpnr">
-          <img src>
-          <img src>
-          <img src>
+          <img :src="item.img"/>
+          <img :src="item.img"/>
+          <img :src="item.img"/>
         </div>
         <p class="je">
           <span>#社区便民#</span>
-          <span>
-            <van-icon name="thumb-circle-o"/>522
+         <span v-on:click.once="cc()">
+            <van-icon name="thumb-circle-o" class="bb" :color="ct" size="16px"/>{{dian}}
           </span>
           <span>
-            <van-icon name="exchange"/>52
+            <van-icon name="exchange" size="14px"/>52
           </span>
           <span>
-            <van-icon name="flag-o"/>641
+            <van-icon name="flag-o" size="16px"/>641
           </span>
           <span>
-            <van-icon name="underway-o"/>01-21
+            <van-icon name="underway-o" size="14px"/>01-21
           </span>
         </p>
       </div>
     </div>
   </div>
+</van-pull-refresh>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "Dtxc",
   data() {
     return {
       srr:'关注',
       sf:true,
-      bj:''
+      bj:'',
+      dian:552,
+      ct:'',
+      lis:[],
+      active: 2,
+      gi: 0,
+      isLoading: false,
     }
   },
   methods: {
-    tz() {
-      this.$router.push("/xu");
+    tz(id) {
+      this.$router.push("/xu/" + id);
     },
     gz(){
       this.sf=!this.sf
@@ -102,12 +70,44 @@ export default {
         this.srr='关注'
         this.bj=''
       }else{
-        this.srr='已关注'
-        this.bj='green'
+        // this.srr='已关注'
+        // this.bj='green'
       }
 
+    },
+    cc() {
+      this.dian=this.dian+1
+
+      // this.ct='red'
+    },
+    onRefresh() {
+      console.log(this.imggg[0])
+      setTimeout(() => {
+        this.$toast("刷新成功");
+        this.isLoading = false;
+        this.gi = this.gi + 2;
+        if (this.gi >= this.lis.length) {
+          this.gi = 0;
+        }
+      }, 500);
     }
-  }
+  },
+  mounted(){
+    var _this=this
+    axios({
+      url: "http://101.132.164.103:8080/together/dongtaibyflag.do",
+        params:{flag:1}
+    }).then(function(data){
+      _this.lis = data.data.info
+      console.log(data.data.info)
+    })
+  },
+  computed: {
+    filteredIis: function() {
+      return this.lis.slice(this.gi, this.gi + 2);
+    }
+  },
+
 };
 </script>
 <style scoped>

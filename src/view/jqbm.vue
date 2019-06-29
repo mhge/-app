@@ -2,22 +2,22 @@
   <div class="head">
     <van-nav-bar title="芙蓉路项目" fixed left-arrow @click-left="onClickLeft"/>
     <van-field/>
-    <van-panel title="标题">
-      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora sed minus quidem voluptas facilis consequatur molestias, tenetur impedit tempore fugit id ad incidunt voluptatem cumque, nemo explicabo obcaecati, placeat laudantium.</div>
+    <van-panel :title="content.title">
+      <div>{{content.detail}}</div>
     </van-panel>
     <p class="width"></p>
     <van-cell-group>
-      <van-cell title="招募人数" value="1111"/>
-      <van-cell title="报名起止" is-link value="内容"/>
-      <van-cell title="活动地点" is-link value="内容"/>
-      <van-cell title="咨询人" is-link value="内容"/>
+      <van-cell title="招募人数" :value="content.num"/>
+      <van-cell title="报名起止" is-link :value="content.afdate"/>
+      <van-cell title="活动地点" is-link :value="content.address"/>
+      <van-cell title="咨询人" is-link :value="content.consultanter"/>
     </van-cell-group>
     <p class="width"></p>
     <van-row>
       <van-col span="23" offset="1">
         <div class="bm">
-          <img src="../assets/xz.jpg">
-          <van-cell title="单元格" is-link label="描述"/>
+          <img :src="content.img">
+          <van-cell :title="content.title" is-link label="这个人很懒，什么也没有留下"/>
         </div>
       </van-col>
     </van-row>
@@ -49,13 +49,14 @@
       </van-col>
     </van-row>
     <van-tabbar v-model="active">
-      <van-tabbar-item to="tjsh">报名</van-tabbar-item>
+      <van-tabbar-item to="baoming">报名</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
 <script>
 export default {
   data() {
+<<<<<<< HEAD
     return {
       active:0
     };
@@ -64,7 +65,26 @@ export default {
     onClickLeft() {
      
       this.$router.go(-1);
+=======
+    return { active: "", content: "" };
+  },
+  methods: {
+    onClickLeft() {
+      this.$router.push("/main");
+>>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434
     }
+  },
+  mounted() {
+    var _this = this;
+    this.axios({
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      url: "http://101.132.164.103:8080/together/activityid.do",
+
+      params: { id: _this.$route.params.id }
+    }).then(function(data) {
+      console.log(data.data.info);
+      _this.content = data.data.info;
+    });
   }
 };
 </script>
@@ -84,7 +104,12 @@ export default {
 }
 .van-panel div {
   padding: 6px 0;
+  width: 360px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
+
 .bm {
   display: flex;
   align-items: center;

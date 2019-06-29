@@ -116,6 +116,7 @@
   </div>
 </template>
 <script>
+<<<<<<< HEAD
 import axios from "axios";
 export default {
   data(){
@@ -125,6 +126,23 @@ export default {
   },
   mounted(){
 
+=======
+export default {
+  data() {
+    return {
+      content: ""
+    };
+  },
+  mounted() {
+    var _this = this;
+    this.axios({
+      url: "http://101.132.164.103:8080/together/activityid.do",
+      params: { id: 1 }
+    }).then(function(data) {
+      console.log(data);
+      _this.content = data.data.info;
+    });
+>>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434
   }
 };
 </script>

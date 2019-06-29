@@ -7,6 +7,7 @@
         show-action
         @search="onSearch"
         @cancel="onCancel"
+        @mouseenter="send"
       />
     </form>
     <div class="search">
@@ -27,6 +28,15 @@ export default {
     },
     onCancel() {
       this.$router.push("/main");
+    },
+    send() {
+      var _this = this;
+      this.axios({
+        url: "http://101.132.164.103:8080/together/search.do",
+        params: { title: _this.value }
+      }).then(function(data) {
+        console.log(data);
+      });
     }
   }
 };

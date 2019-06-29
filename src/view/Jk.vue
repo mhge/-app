@@ -19,6 +19,7 @@
         type="String"
         value="元"
       >
+      <span class="yy">元</span>
     </div>
     <p class="zf">支付方式</p>
     <div class="fs">
@@ -40,9 +41,11 @@
       </p>
       <van-button type="primary" size="large" class="qr" :disabled="act" @click="qrzf()">确认支付</van-button>
     </div>
+    <div class="tck" v-show="istck">捐款成功</div>
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   name: "Jk",
   data() {
@@ -56,7 +59,8 @@ export default {
       act: true,
       jeindex: "",
       a: "",
-      sf:false,
+      sf: false,
+      istck:false,
     };
   },
   methods: {
@@ -64,21 +68,36 @@ export default {
       this.$router.go(-1);
     },
     dii() {
-      this.sf=!this.sf
-      if(this.sf==false){
-        this.a=''
-      }else{
+      this.sf = !this.sf;
+      if (this.sf == false) {
+        this.a = "";
+      } else {
         this.a = "red";
       }
-
     },
     xxk(i) {
       this.jeindex = i;
-      console.log(this.items[i]);
       this.value = this.items[i];
     },
     qrzf() {
-      console.log(11);
+      if(this.value!=''){
+        var _this = this;
+      axios({
+        url: "http://101.132.164.103:8080/together/insertpay.do",
+        params: { id: _this.$route.params.id, money: _this.value }
+      }).then(function(data) {
+        console.log(data)
+        if (data.data.code == 1) {
+          _this.value = "";
+          _this.istck=true;
+          setTimeout(function(){
+            _this.istck=false;
+            _this.$router.go(-1);
+        },800)
+        }
+      });
+      }
+
     }
   },
   updated() {
@@ -89,6 +108,29 @@ export default {
 };
 </script>
 <style scoped="">
+
+.tck {
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  font-size:24px;
+  margin-top:-50px;
+  margin-left:-50px;
+  line-height:100px;
+  color:green;
+  opacity:0.7;
+  background: #bbbbbb;
+
+}
+
+.yy {
+  float: right;
+  font-size: 16px;
+  margin-top: -30px;
+}
 .active {
   border: red 1px solid !important;
 }
