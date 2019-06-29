@@ -10,7 +10,7 @@
 				<van-row type="flex" justify="space-between" class="tt">
 					<van-col class="use">
 						<!-- <textarea></textarea> -->
-						<h2>{{this.$store.state.name}}</h2>
+						<h2>{{phone}}</h2>
 						<van-col class="zyws">
 							<b>志愿卫士</b>
 						</van-col>
@@ -158,7 +158,7 @@
 			return {
 				title: '我',
 				active: 3,
-				username: ''
+				phone:''
 			}
 		},
 		mounted() {
@@ -169,11 +169,12 @@
 			axios({
 				url: "http://jx.xuzhixiang.top/ap/api/productlist.php",
 				params: {
-					uid: 6440
+					uid:6440
 				}
 			}).then(res => {
-				console.log(res.data.data)
-				_this.username = res.data.data
+				console.log(res.data)
+				_this.phone = res.data.data
+				_this.phone=_this.phone[2].pname
 			})
 		}
 	}

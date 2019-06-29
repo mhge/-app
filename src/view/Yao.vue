@@ -15,8 +15,6 @@
 		<van-row type="flex" justify="center">
 			<van-col class="X">现在就去登录微善吧</van-col>
 		</van-row>
-
-
 	</div>
 </template>
 <script>
