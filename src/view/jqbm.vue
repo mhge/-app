@@ -56,7 +56,6 @@
 <script>
 export default {
   data() {
-<<<<<<< HEAD
     return {
       active:0
     };
@@ -65,13 +64,12 @@ export default {
     onClickLeft() {
      
       this.$router.go(-1);
-=======
     return { active: "", content: "" };
+  }
   },
   methods: {
     onClickLeft() {
       this.$router.push("/main");
->>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434
     }
   },
   mounted() {

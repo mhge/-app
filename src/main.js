@@ -8,8 +8,6 @@ import flexible from "lib-flexible";
 import router from "./router";
 import store from "./store";
 // import "./data/list"
-
-import store from "./store";
 import "./mock/gn";
 import { Panel } from "vant";
 import { Area } from "vant";
@@ -30,11 +28,8 @@ new Vue({
   el: "#app",
   router,
   store,
-<<<<<<< HEAD
   flexible,
-=======
   axios,
->>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434
   components: { App },
   template: "<App/>"
 });

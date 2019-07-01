@@ -1,7 +1,7 @@
 <template>
   <div class="nav">
     <!-- <h4>最新招募</h4> -->
-    <div v-for="item in content">
+    <div v-for="(item,index) in content" :key='index'>
       <van-row>
         <van-col span="22" offset="1" class="panels">
           <van-row>

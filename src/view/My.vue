@@ -6,24 +6,13 @@
 
 		<van-row type="flex" class="Info">
 			<van-col class="in-top">
-<<<<<<< HEAD:src/view/wode.vue
-				<div class="tu"></div>
-				<van-row type="flex" justify="space-between" class="tt">
-					<van-col class="use">
-						<!-- <textarea></textarea> -->
-						<p>{{username}}</p>
-						<van-col class="zyws">
-							志愿卫士
-=======
-				<van-col class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></van-col>
-				<!-- <div class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></div> -->
+				<router-link to="/yao" class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></router-link>
 				<van-row type="flex" justify="space-between" class="tt">
 					<van-col class="use">
 						<!-- <textarea></textarea> -->
 						<h2>{{phone}}</h2>
 						<van-col class="zyws">
 							<b>志愿卫士</b>
->>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434:src/view/My.vue
 						</van-col>
 
 					</van-col>
@@ -43,7 +32,7 @@
 
 		<van-row type="flex" class="info">
 			<div class="mar">
-				<router-link to="/dt" tag="span">
+				<router-link  tag="span">
 					<van-row type="flex" class="con">
 						<van-col class="icon">
 							<van-icon name="circle" />
@@ -56,7 +45,7 @@
 						</van-row>
 					</van-row>
 				</router-link>
-			<router-link to="/rz" tag="span">
+			<router-link  tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -83,11 +72,7 @@
 					</van-row>
 				</van-row>
 				<div class="CX"></div>
-<<<<<<< HEAD:src/view/wode.vue
-			<router-link to="/jk" tag="span">
-=======
-			<router-link to="/xu" tag="span">
->>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434:src/view/My.vue
+			<router-link  tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -100,11 +85,7 @@
 					</van-row>
 				</van-row>
 			</router-link>
-<<<<<<< HEAD:src/view/wode.vue
-			<router-link to="/zxzm" tag="span">
-=======
-			<router-link to="/" tag="span">
->>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434:src/view/My.vue
+			<router-link  tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -172,7 +153,7 @@
 <script>
 	import axios from 'axios'
 	export default {
-		name: 'My',
+		name: 'wode',
 		data() {
 			return {
 				title: '我',
@@ -181,25 +162,10 @@
 			}
 		},
 		mounted() {
-<<<<<<< HEAD:src/view/wode.vue
-			var _this = this
-
-			let uid = localStorage.getItem('token')
-
-			axios({
-				url: "http://jx.xuzhixiang.top/ap/api/productlist.php",
-				params: {
-					uid: 10411
-				}
-			}).then(res => {
-				console.log(res.data.data)
-				_this.username = res.data.data.username
-			})
-=======
 			// var _this = this
 
 			let yao = localStorage.getItem('token')
-			console.log(yao)
+
 			// axios({
 			// 	url: "http://jx.xuzhixiang.top/ap/api/productlist.php",
 			// 	params: {
@@ -211,22 +177,14 @@
 			// 	this.phone = this.phone[2].pname
 			// })
 			this.phone = yao
->>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434:src/view/My.vue
 		}
 	}
 </script>
 
 <style scoped>
-<<<<<<< HEAD:src/view/wode.vue
-	p {
-		font-size: 14px;
-		color: red;
-		width: 150px;
-=======
 	h2 {
 		color: red;
 		/* width: 150px;
->>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434:src/view/My.vue
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis; */

@@ -116,17 +116,8 @@
   </div>
 </template>
 <script>
-<<<<<<< HEAD
 import axios from "axios";
-export default {
-  data(){
-    return{
-      
-    }
-  },
-  mounted(){
 
-=======
 export default {
   data() {
     return {
@@ -142,7 +133,6 @@ export default {
       console.log(data);
       _this.content = data.data.info;
     });
->>>>>>> cc210c6abc987026d522ba1b6dd64e8a435cb434
   }
 };
 </script>
