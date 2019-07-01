@@ -1,6 +1,7 @@
 <template>
   <div>
     <van-row class="time">
+      <van-col span='22' offset='1'>
       <van-col span="10" offset="4">
         <van-cell title="2019-9-10" label="开始时间"/>
       </van-col>
@@ -9,52 +10,93 @@
       </van-col>
 
       <van-col span="24">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas.</p>
+        <p>爱美的女性经常会说：手是人的第二张脸，一定要好好呵护。当
+一双手出现在您面前,您一定会习惯性地去推断它的主人。纤细白
+嫩的双手一定会有一位年轻漂亮的女主人;骨节粗壮、皮肤黝黑的
+则可能是一位体力劳动者的双手;老人的手往往布满斑点,血管突兀
+,而婴儿的手则温香得让人陶醉;公司职员的手多洁净平滑,农民的手
+多泥土且满是皱褶;演员的手柔软无骨,运动员的手则可能布满老茧
+那么,看看下面这张照片,请您猜猜它的主人是谁。</p>
         <p>
-          <img src="../assets/xz.jpg">
+          <img src="http://img95.699pic.com/photo/50053/8092.jpg_wh300.jpg">
         </p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas.</p>
+        <p>这双手看起来粗糙不堪,很不洁净,黝黑脱皮,指甲里嵌着泥土,细看
+还有不少小疤痕,怎么看也是一双日常劳作的手。但看手型却很小
+,骨节也不够粗大,又不像成年人的手。相信大多数的朋友猜不到,
+这其实是一位贵州山区小学生的手。下面这位小男孩就是它的主
+人。</p>
         <p>
-          <img src="../assets/xz.jpg">
+          <img src="http://img95.699pic.com/photo/50052/0071.jpg_wh300.jpg">
         </p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas? Eveniet, atque.</p>
+        <p>这张照片拍摄于2014年,当时传德儿童关爱中心的负责人一瓢正在
+孩子所在学校开展千里之行支教活动。这是一位四年级的小男生,
+长相很俊秀,眼睛大大的,脸上有一种小小男子汉的坚毅表情。为什
+么孩子的手会变成这样?我们大概也猜得到原因。因为当地生活条
+件非常差,孩子们小小年纪就要分担家务。一放学,可能首先要做的
+不是作业,更不是玩耍,而是沉重的家务甚至农活,加上缺乏必要的卫
+生条件,久而久之,孩子们的手就变得如成人般粗糙。志愿者老师观
+察后发现几乎所有孩子的手都是这样,黑黑的,瘦瘦的,布满伤疤和不
+属于这个年龄的老茧,而到了冬天,情况就更加糟糕,很多孩子的手会
+生冻疮,又痛又痒,影响他们的正常生活和学习。</p>
         <p>
-          <img src="../assets/xz.jpg">
+          <img src="http://www.pubchn.com/file/upload/201905/28/14-25-38-64-135598.jpg">
         </p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas? Eveniet, atque.</p>
+        <p>天气日渐转凉，传德儿童关爱中心计划山区小学生筹集爱心手套
+呵护他们原本稚嫩的手。</p>
         <p>
-          <img src="../assets/xz.jpg">
+          <img src="http://www.pubchn.com/file/upload/201905/28/14-26-05-94-135598.jpg">
         </p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas? Eveniet, atqueLorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas? Eveniet, atque.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas? Eveniet, atque.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores, distinctio, commodi reiciendis quod recusandae alias non iure rerum nemo doloribus laborum quis tempore harum aliquam totam earum voluptas? Eveniet, atque..</p>
+        <p>机构介绍:传德儿童关爱中心成立于2009年,前身是北京赴太行山
+的支教队伍。现为北京市志愿服务联合会一级会员单位、多次得
+到北志联的报道和推荐。2018年挂靠北京天使妈妈慈善基金会获
+得公募资格。以传播爱心、传承美德为宗旨的传德儿童关爱中心
+秉承“正确做公益的理念,用自己独创的“养鱼方案”(给人鱼不如教
+人渔,教人渔不如教人养鱼)十年如一日为大山里的孩子带去需要的
+关爱!得到受惠师生及同行们的肯定与好评!迄今为止,支教足迹遍
+及云南、贵州、四川、宁夏、甘肃、青海、湖南、江西、内蒙古、
+黑龙江、河北、北京等地,受益学生数万人。曾多次获得国家级和
+省部级相关奖项,并得到腾讯网、央视网、中国网、中国青年网、
+红网等数十家媒体的关注和报道!。
+执行能力说明:传德儿童关爱中心主要开展的公益项目有:“与山里
+孩子一起成长支教活动、“停下来等等绿色“交通安全体验环保活
+动、“社区亲子趣味运动会等。拥有众多骨干志愿者,累计动员超过
+5000人次的志愿者开展志愿服务,为社会提供了3万多小时的志愿
+服务时间,为学校募集了包括课桌、校服、床铺等在内的大量物资。</p>
         <p>
-          <img src="../assets/xz.jpg">
+          <img src="http://www.pubchn.com/file/upload/201905/28/14-26-12-56-135598.jpg">
         </p>
       </van-col>
       <van-col span="24">
         <div>
           <h4>募捐目的</h4>
-          <p>Lorem ipsum dolor sit amet consectetur</p>
+          <p>为山区学生筹募手套,呵护山里娃的双手。</p>
         </div>
         <div>
           <h4>募捐款项用途</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elitconsectetur adipisicing elitconsectetur adipisicing elit.</p>
+          <p>计划募捐1万双手套,每双手套预算10元,总筹款10万元。通过天使
+妈妈基金会上线筹款,由传德儿童关爱中心进行采购,为节省执行
+费用,传德儿童关爱中心计划在每年支教活动进行时,将爱心手套
+送到学校。</p>
         </div>
 
         <div>
           <h4>受益人</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>位于甘肃、青海、贵州、云南、宁夏等中西部山区的中小学生。</p>
         </div>
         <div>
           <h4>剩余财产处理方案</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>全部用于执行该项目,执行完毕为止。</p>
         </div>
         <div>
           <h4>活动举办方</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>北京天使妈妈慈善基金会活动负责人张百爽</p>
         </div>
         <div>
           <h4>捐款票据索取</h4>
-          <p>Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>开具和邮寄公益捐赠收据需要成本,希望爱心用户按需申请(需将抬
+头、金额、捐赠截图、联系电话、地址、邮编等信息发至271670
+3825@qq.com,经确认后我会会尽快回邮捐赠收据)。如果您在捐
+赠时遇到问题需要咨询请电话联系我们:4000621885。</p>
         </div>
         <div class="bottom">
           <van-row>
@@ -65,13 +107,17 @@
               <h4>举办活动</h4>
             </van-col>
           </van-row>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p>善源公益平台为民政部指定的慈善组织互联网公开募捐信息平台,
+您捐赠的善款将直接进入具有公开募捐资质的慈善组织账户中。</p>
         </div>
+      </van-col>
       </van-col>
     </van-row>
   </div>
 </template>
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
@@ -103,5 +149,8 @@ h4 {
 }
 .bottom {
   margin-bottom: 30px;
+}
+p{
+  color:#A9A9A9
 }
 </style>

@@ -88,8 +88,8 @@ export default {
   },
   methods: {
     yao() {
-      this.$refs.intphone.$el.querySelector("input").style = "color:white";
-      this.$refs.intpassword.$el.querySelector("input").style = "color:white";
+      this.$refs.intphone.$el.querySelector("input").style = "color:indigo";
+      this.$refs.intpassword.$el.querySelector("input").style = "color:indigo";
     },
     onClickLeft() {
       this.$router.go(-1);
@@ -167,9 +167,9 @@ export default {
 section {
   width: 100%;
   height: 700px;
-  background: url(https://wx1.sinaimg.cn/large/0069SR0Aly1g4fqe2ykpsg30bu0l1b2e.gif)
-    no-repeat;
-  background-size: cover;
+  /* background: url(https://s2.ax1x.com/2019/06/30/Z3ZUY9.gif) */
+    /* no-repeat; */
+  /* background-size: cover; */
 }
 
 .QT {
@@ -183,10 +183,10 @@ section {
 }
 
 .DL {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0);
   color: white;
   margin-bottom: 0.5rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .circle {
@@ -221,6 +221,9 @@ section {
 
 .Info {
   margin: 0 50px 0 40px;
+	background: url(https://s2.ax1x.com/2019/06/30/Z3ZUY9.gif)
+	  no-repeat;
+		background-size: auto;
 }
 
 .van-button {
@@ -233,7 +236,7 @@ section {
   color: blue;
 }
 .liji a {
-  color: white;
+  color: blue;
 }
 
 .van-row {

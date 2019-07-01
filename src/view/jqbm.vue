@@ -56,7 +56,16 @@
 <script>
 export default {
   data() {
+    return {
+      active:0
+    };
+  },
+  methods: {
+    onClickLeft() {
+     
+      this.$router.go(-1);
     return { active: "", content: "" };
+  }
   },
   methods: {
     onClickLeft() {

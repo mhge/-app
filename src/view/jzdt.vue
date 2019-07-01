@@ -2,7 +2,7 @@
   <div>
     <div class="bground">
       <van-row>
-        <van-col span="10" offset="7">
+        <van-col span="11" offset="7">
           <div class="sground">
             <van-col span="16" offset="4">
               <van-cell title="453" label="捐款总人数"/>
@@ -51,7 +51,7 @@ export default {};
 }
 .sground .van-cell__title {
   text-align: center;
-  margin-top: 16px;
+  margin-top: 14px;
 }
 .sground {
   width: 100%;

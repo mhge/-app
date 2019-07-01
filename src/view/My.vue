@@ -6,8 +6,7 @@
 
 		<van-row type="flex" class="Info">
 			<van-col class="in-top">
-				<van-col class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></van-col>
-				<!-- <div class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></div> -->
+				<router-link to="/yao" class="tu"><img src="https://i03picsos.sogoucdn.com/fd6f8c1f1dc350cd" alt=""></router-link>
 				<van-row type="flex" justify="space-between" class="tt">
 					<van-col class="use">
 						<!-- <textarea></textarea> -->
@@ -33,7 +32,7 @@
 
 		<van-row type="flex" class="info">
 			<div class="mar">
-				<router-link to="/dt" tag="span">
+				<router-link  tag="span">
 					<van-row type="flex" class="con">
 						<van-col class="icon">
 							<van-icon name="circle" />
@@ -46,7 +45,7 @@
 						</van-row>
 					</van-row>
 				</router-link>
-			<router-link to="/rz" tag="span">
+			<router-link  tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -73,7 +72,7 @@
 					</van-row>
 				</van-row>
 				<div class="CX"></div>
-			<router-link to="/xu" tag="span">
+			<router-link  tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -86,7 +85,7 @@
 					</van-row>
 				</van-row>
 			</router-link>
-			<router-link to="/" tag="span">
+			<router-link  tag="span">
 				<van-row type="flex">
 					<van-col class="icon">
 						<van-icon name="circle" />
@@ -154,7 +153,7 @@
 <script>
 	import axios from 'axios'
 	export default {
-		name: 'My',
+		name: 'wode',
 		data() {
 			return {
 				title: '我',
@@ -166,7 +165,7 @@
 			// var _this = this
 
 			let yao = localStorage.getItem('token')
-			console.log(yao)
+
 			// axios({
 			// 	url: "http://jx.xuzhixiang.top/ap/api/productlist.php",
 			// 	params: {
