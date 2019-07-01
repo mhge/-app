@@ -1,12 +1,12 @@
 <template>
   <div class="head">
-    <van-nav-bar title="组织入住" fixed left-arrow @click-left="onClickLeft"/>
+    <van-nav-bar title="组织入住" fixed left-arrow @click-left="onClickLeft" />
     <img
       src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1309837259,2276102512&fm=26&gp=0.jpg"
-    >
+    />
     <van-cell-group>
       <van-cell title="志愿组织是什么?" label="由有志于社会公益事业的义务工作志愿者自愿组成的非
-营利性组织。"/>
+营利性组织。" />
     </van-cell-group>
     <van-row>
       <van-col span="20" offset="1">
@@ -14,7 +14,9 @@
           <h3>如何注册志愿组织?</h3>
           <van-row>
             <van-col span="24" class="flex">
-              <img src="../assets/xz.jpg">
+              <img
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561825419167&di=5e6a2d974e7243ce258a3e33cbd423f3&imgtype=0&src=http%3A%2F%2Fi9.hexunimg.cn%2F2016-06-08%2F184303568.jpg"
+              />
               <div>
                 <h4>寻找您的志愿小伙伴</h4>
                 <p>您首先需要有一群志同道合的志愿小伙伴。</p>
@@ -23,7 +25,7 @@
             <van-col span="24" class="flex">
               <img
                 src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1663822030,3517329342&fm=26&gp=0.jpg"
-              >
+              />
               <div>
                 <h4>注册您的志愿组织</h4>
                 <p>
@@ -35,7 +37,7 @@
             <van-col span="24" class="flex">
               <img
                 src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561825419167&di=5e6a2d974e7243ce258a3e33cbd423f3&imgtype=0&src=http%3A%2F%2Fi9.hexunimg.cn%2F2016-06-08%2F184303568.jpg"
-              >
+              />
               <div>
                 <h4>完善您的组织信息</h4>
                 <p>
@@ -47,7 +49,7 @@
             <van-col span="24" class="flex">
               <img
                 src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=778732679,4058714739&fm=26&gp=0.jpg"
-              >
+              />
               <div>
                 <h4>等待申请通过</h4>
                 <p>
@@ -59,7 +61,7 @@
             <van-col span="24" class="flex">
               <img
                 src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561825392406&di=f52a1dfe20adf5f252419135791c6b73&imgtype=0&src=http%3A%2F%2F2.eewimg.cn%2Fnews%2Fuploadfile%2Fszds%2Fuploadfile%2F201206%2F20120601051826846.jpg"
-              >
+              />
               <div>
                 <h4>发布志愿者招募</h4>
                 <p>

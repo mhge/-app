@@ -26,12 +26,10 @@ export default {
     }
   },
   mounted() {
-    var _this = this;
+    var _this =this;
     this.axios({
-      url: "http://101.132.164.103:8080/together/activity.do",
-      params: {}
+      url: "http://101.132.164.103:8080/together/activity.do"
     }).then(function(data) {
-      console.log(data);
       _this.content = data.data.info;
     });
   }
